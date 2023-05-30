@@ -4,7 +4,7 @@ import ProfilPic from "./ProfilPic";
 
 function Header() {
   return (
-    <div className="flex" style={{ width: "100%", height: "100%" }}>
+    <div className="flex flex-col" style={{ width: "100%", height: "100%" }}>
       <div style={{ width: "100%", height: "100%" }}>
         <Canvas>
           <color attach="background" args={["#111111"]} />

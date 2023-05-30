@@ -12,7 +12,7 @@ module.exports = {
       },
       fontFamily: {
         Humane: ["HUMANE", "sans-serif"],
-        antonio: ["Antonio", "sans-serif"],
+        Antonio: ["Antonio", "sans-serif"],
       },
     },
   },
