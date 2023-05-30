@@ -20,7 +20,7 @@ function Navbar() {
     },
   ];
   return (
-    <div className="font-Antonio px-20 py-3 flex items-center justify-between w-screen z-10 fixed top-0">
+    <div className="font-Antonio px-20 py-3 flex items-center justify-between w-screen z-20 fixed top-0">
       <div>
         <h2>Thomas Barrial</h2>
         <p className="text-xs opacity-50">@Biarritz France</p>

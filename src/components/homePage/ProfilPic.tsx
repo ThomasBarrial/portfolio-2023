@@ -7,8 +7,8 @@ import {
   useTexture,
   PerspectiveCamera,
 } from "@react-three/drei";
-import thomasBarrial from "../../public/image/thomasbarrial.webp";
-import thomasBarrialDepthMap from "../../public/image/thomasbarrialDepthMap.webp";
+import thomasBarrial from "../../../public/image/thomasbarrial.webp";
+import thomasBarrialDepthMap from "../../../public/image/thomasbarrialDepthMap.webp";
 
 extend({
   Pseudo3DMaterial: shaderMaterial(
@@ -66,7 +66,9 @@ function ProfilPic({ ...props }) {
       );
   }, []);
 
-  const aspectRatio = thomasBarrial.height / thomasBarrial.width;
+  const aspectRatio = 1.2;
+  console.log(aspectRatio);
+
   useFrame((state) => {
     depthMaterial.current.uniforms.uMouse.value = [
       state.mouse.x * 0.01,
@@ -98,7 +100,7 @@ function ProfilPic({ ...props }) {
       <Plane
         ref={planeRef}
         args={[0.5, 0.5]}
-        position={[viewport.width * 0.25, 0, 0]}
+        position={[viewport.width * 0.25, -0.1, 0]}
       >
         {React.createElement("pseudo3DMaterial", {
           ref: depthMaterial,
