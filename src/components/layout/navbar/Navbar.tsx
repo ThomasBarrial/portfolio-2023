@@ -28,7 +28,7 @@ function Navbar() {
                   {item.name}
                 </Link>
                 <Link
-                  className="ml-10 group-hover:-translate-y-6 transition transform duration-500"
+                  className="ml-10 -translate-y-1 group-hover:-translate-y-6 transition transform duration-500"
                   href={item.link}
                 >
                   {item.name}

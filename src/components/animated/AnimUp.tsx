@@ -11,19 +11,29 @@ interface IProps {
 function AnimUp({
   children,
   className,
-  duration,
+  duration = 1,
   index = 0,
 }: IProps): JSX.Element {
   const variants = {
     open: {
       y: 0,
       scale: 1,
-      transition: { type: "spring", duration: 1.5, bounce: 0.1 },
+      transition: {
+        type: "spring",
+        duration: duration,
+        bounce: 0,
+        ease: [0.17, 0.67, 0.83, 0.67],
+      },
     },
     closed: {
       y: "300px",
-      scale: 0.8,
-      transition: { type: "spring", duration: 1.5, bounce: 0.1 },
+      scale: 0.9,
+      transition: {
+        type: "spring",
+        duration: duration,
+        bounce: 0,
+        ease: [0.17, 0.67, 0.83, 0.67],
+      },
     },
   };
   return (

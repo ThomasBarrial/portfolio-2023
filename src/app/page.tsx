@@ -1,11 +1,13 @@
+import Services from "@/components/homePage/Services";
 import Header from "@/components/homePage/header/Header";
-import Section2 from "@/components/homePage/Section2";
 
 export default function Home() {
   return (
     <main className="flex flex-col items-center justify-center">
       <Header />
-      <Section2 />
+      <div className="z-20 bg-background">
+        <Services />
+      </div>
     </main>
   );
 }
