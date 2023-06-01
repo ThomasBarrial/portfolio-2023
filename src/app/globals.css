@@ -1,10 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Antonio:wght@100;200;300;400;500;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Antonio:wght@100;200;300;400;500;600;700&display=swap");
-
 @font-face {
   font-family: "HUMANE";
   src: url("/fonts/humane/Humane-bold.ttf");
+}
+
+.rotation {
+  transform: matrix3d(
+    0.5,
+    0,
+    -0.5,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0.5,
+    0,
+    0.5,
+    0,
+    100,
+    50,
+    0,
+    1
+  );
+}
+
+.rotationInitial {
+  transform: matrix3d(0, 0, 0, 0, 0 0 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 }
