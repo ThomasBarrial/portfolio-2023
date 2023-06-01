@@ -14,6 +14,13 @@ module.exports = {
         Humane: ["HUMANE", "sans-serif"],
         Antonio: ["Antonio", "sans-serif"],
       },
+      screens: {
+        desktop: "1200px",
+        xxl: "1550px",
+        // => @media (min-width: 1280px) { ... }
+        lg: "1100px",
+        md: "780px",
+      },
     },
   },
   plugins: [],
