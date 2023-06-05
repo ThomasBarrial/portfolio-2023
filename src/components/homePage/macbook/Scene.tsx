@@ -10,7 +10,7 @@ function Scene() {
   const vec = new THREE.Vector3();
   const { camera, mouse } = useThree();
   const [delta, setDelta] = useState(1.4);
-  const { scrollY } = useScroll();
+  //   const { scrollY } = useScroll();
   const [scale, setScale] = useState(12);
   const [groundLightWidth, setGroundlightWidth] = useState(3);
 

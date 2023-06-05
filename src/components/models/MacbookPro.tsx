@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useGLTF } from "@react-three/drei";
+import { Plane, useGLTF, useVideoTexture } from "@react-three/drei";
 import * as THREE from "three";
 import { Vector3, useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
@@ -18,13 +18,15 @@ export default function Model({ scale, position, delta }: IProps) {
 
   const [video] = useState(() => {
     const vid = document.createElement("video");
-    vid.src = "/videoEarth.mp4";
+    vid.src = "/videoPortfolio.mp4";
     vid.crossOrigin = "Anonymous";
     vid.loop = true;
     vid.muted = true;
     vid.play();
     return vid;
   });
+
+  const texture = useVideoTexture("/videoPortfolio.mp4");
 
   return (
     <group scale={scale} position={position} dispose={null}>
@@ -75,18 +77,10 @@ export default function Model({ scale, position, delta }: IProps) {
                 />
                 <mesh
                   name="Object_7"
-                  castShadow
-                  receiveShadow
                   geometry={nodes.Object_7.geometry}
                   position={[0, -0.01, 0]}
                 >
-                  <meshStandardMaterial
-                    emissive={"white"}
-                    side={THREE.DoubleSide}
-                  >
-                    <videoTexture attach="map" args={[video]} />
-                    <videoTexture attach="emissiveMap" args={[video]} />
-                  </meshStandardMaterial>
+                  <meshBasicMaterial map={texture} toneMapped={false} />
                 </mesh>
               </group>
               <group
