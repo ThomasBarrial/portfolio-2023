@@ -16,16 +16,6 @@ export default function Model({ scale, position, delta }: IProps) {
     "/models/macbook_pro_13_inch_2020.glb"
   ) as any;
 
-  const [video] = useState(() => {
-    const vid = document.createElement("video");
-    vid.src = "/videoPortfolio.mp4";
-    vid.crossOrigin = "Anonymous";
-    vid.loop = true;
-    vid.muted = true;
-    vid.play();
-    return vid;
-  });
-
   const texture = useVideoTexture("/videoPortfolio.mp4");
 
   return (

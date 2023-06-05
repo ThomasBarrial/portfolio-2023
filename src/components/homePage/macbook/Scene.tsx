@@ -15,8 +15,6 @@ function Scene() {
   const [groundLightWidth, setGroundlightWidth] = useState(3);
 
   useFrame((size) => {
-    console.log(size.viewport.width);
-
     if (size.viewport.width < 5 && size.viewport.width > 3) {
       setScale(10);
       setGroundlightWidth(2.8);
@@ -31,6 +29,8 @@ function Scene() {
   });
 
   //   useMotionValueEvent(scrollY, "change", (latest) => {
+  //       console.log("scrollY", latest);
+
   //     const minScroll = 500;
   //     const maxScroll =
   //       document.documentElement.scrollHeight - window.innerHeight;

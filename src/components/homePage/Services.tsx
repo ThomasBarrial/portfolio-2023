@@ -16,11 +16,13 @@ function Services() {
       ref={ref}
       className="h-screen w-screen relative flex  flex-col lg:flex-row-reverse items-center justify-center px-5 lg:px-20"
     >
-      {inView && (
-        <div className="w-full h-full font-Antonio flex flex-col justify-start lg:pt-32 pt-32 md:pt-20  md:pl-52 xl:pl-64 max-w-5xl pl-20 ">
+      <div className="w-full h-full font-Antonio flex flex-col justify-start lg:pt-32 pt-32 md:pt-20  md:pl-52 xl:pl-64 max-w-5xl pl-20 ">
+        {inView && (
           <AnimUp duration={2}>
             <h3>SERVICES</h3>
           </AnimUp>
+        )}
+        {inView && (
           <AnimUp duration={2.5}>
             <p className="mt-2">
               I am an experienced web and mobile developer, capable of creating
@@ -29,8 +31,8 @@ function Services() {
               solutions to help my clients achieve their online business goals.
             </p>
           </AnimUp>
-        </div>
-      )}
+        )}
+      </div>
       <div className="b w-full flex flex-col justify-end font-Humane text-[8rem] phone:text-[12rem] md:text-[12rem] leading-[0.75]">
         {inView && (
           <>
