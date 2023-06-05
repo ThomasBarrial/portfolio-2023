@@ -10,9 +10,10 @@ interface IProps {
 }
 
 function MobileMenu({ isOpen, setIsOpen }: IProps) {
+  console.log(isOpen);
   return (
     <div
-      className={`fixed h-screen translate-x-full w-screen z-20 transition ease-in-out duration-700 bg-background ${
+      className={`fixed h-screen w-screen z-40 transition ease-in-out duration-700 bg-background ${
         isOpen ? "translate-x-0" : "translate-x-full"
       }`}
     >

@@ -67,7 +67,6 @@ function ProfilPic({ ...props }) {
   }, []);
 
   const aspectRatio = 1.2;
-  console.log(aspectRatio);
 
   useFrame((state) => {
     depthMaterial.current.uniforms.uMouse.value = [

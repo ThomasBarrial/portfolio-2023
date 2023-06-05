@@ -17,7 +17,6 @@ function AnimUp({
   const variants = {
     open: {
       y: 0,
-      scale: 1,
       transition: {
         type: "spring",
         duration: duration,
@@ -27,7 +26,6 @@ function AnimUp({
     },
     closed: {
       y: "300px",
-      scale: 0.9,
       transition: {
         type: "spring",
         duration: duration,

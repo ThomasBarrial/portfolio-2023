@@ -48,7 +48,7 @@ function Services() {
       </div>
 
       <div
-        className={`hidden lg:flex h-[1px] w-[40%] right-20 bg-white absolute bottom-20`}
+        className={`hidden lg:flex h-[1px] w-[40%] right-20 bg-white absolute bottom-32`}
       />
     </div>
   );

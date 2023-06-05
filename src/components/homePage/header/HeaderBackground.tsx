@@ -140,7 +140,7 @@ function HeaderBackground() {
   const { viewport } = useThree();
 
   useFrame((state, delta) => {
-    shaderRef.current.uTime += delta * 0.5;
+    shaderRef.current.uTime += delta * 0.3;
   });
 
   return (
