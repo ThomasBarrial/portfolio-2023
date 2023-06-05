@@ -12,7 +12,7 @@ function Navbar() {
       <div className="font-Antonio left-1/2 -translate-x-1/2  px-5 lg:px-20 py-3 flex items-center justify-between w-screen z-30 fixed top-0 mix-blend-difference">
         <Link href="/">
           <h2>Thomas Barrial</h2>
-          <p className="text-xs opacity-50">@Biarritz France</p>
+          <p className="text-xs opacity-50">@Anglet France</p>
         </Link>
         <div className="hidden md:flex">
           {navBarLinks.map((item) => {

@@ -3,12 +3,17 @@ import Section4 from "@/components/homePage/Section4";
 import Services from "@/components/homePage/Services";
 import Header from "@/components/homePage/header/Header";
 import Loading from "@/components/layout/Loading";
-import getHomeData from "@/API/getHomeData";
+import { cache } from "react";
+import { client } from "../../sanity/lib/client";
+import { getAllPosts } from "../../sanity/lib/queries";
+
+const clientFetch = cache(client.fetch.bind(client));
 
 export const revalidate = 60;
 
-export default function Home() {
-  const data = getHomeData();
+export default async function Home() {
+  const posts = await clientFetch(getAllPosts);
+
   return (
     <main className="flex flex-col items-center justify-center">
       <Loading />

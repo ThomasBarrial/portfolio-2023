@@ -1,5 +1,8 @@
+import { Provider } from "react-redux";
 import "./globals.css";
 import Navbar from "@/components/layout/navbar/Navbar";
+import { store } from "@/store";
+import ReduxProvider from "@/store/ReduxProvider";
 
 export const metadata = {
   title: "ThomasBarrial",
@@ -15,7 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-background text-white">
         <Navbar />
-        {children}
+        <ReduxProvider>{children}</ReduxProvider>
       </body>
     </html>
   );
