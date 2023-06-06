@@ -1,0 +1,72 @@
+import { defineField, defineType } from "sanity";
+
+export default defineType({
+  name: "project",
+  title: "Project",
+  type: "document",
+  fields: [
+    defineField({
+      name: "name",
+      title: "Name",
+      type: "string",
+    }),
+    defineField({
+      name: "link",
+      title: "Link",
+      type: "string",
+    }),
+    defineField({
+      name: "categories",
+      title: "Categories",
+      type: "array",
+      of: [{ type: "reference", to: { type: "category" } }],
+    }),
+    defineField({
+      name: "mainImage",
+      title: "Main image",
+      type: "image",
+      options: {
+        hotspot: true,
+      },
+      fields: [
+        {
+          name: "alt",
+          type: "string",
+          title: "Alternative Text",
+        },
+      ],
+    }),
+    defineField({
+      name: "description",
+      title: "Description",
+      type: "blockContent",
+    }),
+    defineField({
+      name: "date",
+      title: "Date",
+      type: "date",
+      options: {
+        dateFormat: "DD-MM-YYYY",
+      },
+    }),
+    defineField({
+      name: "projectState",
+      title: "ProjectState",
+      type: "reference",
+      to: { type: "projectState" },
+    }),
+    defineField({
+      name: "gallery",
+      title: "Gallery",
+      type: "array",
+      of: [
+        {
+          type: "image",
+          options: {
+            hotspot: true,
+          },
+        },
+      ],
+    }),
+  ],
+});

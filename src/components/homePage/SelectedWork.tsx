@@ -1,6 +1,6 @@
 import React from "react";
 
-function Section4() {
+function SelectedWork() {
   return (
     <div className="h-screen bg-[#080808] w-screen flex items-center bc justify-center">
       section 4
@@ -8,4 +8,4 @@ function Section4() {
   );
 }
 
-export default Section4;
+export default SelectedWork;

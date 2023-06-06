@@ -7,3 +7,10 @@ export const getAllPosts = groq`
     categories[]->
 } | order(publishedAt desc)
 `;
+
+export const getAllProject = groq`
+*[_type == "project"] {
+    ...,
+    projectState->,
+    categories[]->
+} | order(publishedAt desc)`;

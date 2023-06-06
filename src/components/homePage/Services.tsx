@@ -25,10 +25,10 @@ function Services() {
         {inView && (
           <AnimUp duration={2.5}>
             <p className="mt-2">
-              I am an experienced web and mobile developer, capable of creating
-              cutting-edge websites and mobile applications using the latest
-              technologies. I am passionate about creating innovative digital
-              solutions to help my clients achieve their online business goals.
+              I am an web and mobile developer, capable of creating cutting-edge
+              websites and mobile applications using the latest technologies. I
+              am passionate about creating innovative digital solutions to help
+              my clients achieve their online business goals.
             </p>
           </AnimUp>
         )}
