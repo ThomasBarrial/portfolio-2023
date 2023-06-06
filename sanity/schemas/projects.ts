@@ -22,6 +22,12 @@ export default defineType({
       of: [{ type: "reference", to: { type: "category" } }],
     }),
     defineField({
+      name: "techno",
+      title: "Technologies",
+      type: "array",
+      of: [{ type: "reference", to: { type: "techno" } }],
+    }),
+    defineField({
       name: "mainImage",
       title: "Main image",
       type: "image",
@@ -39,7 +45,7 @@ export default defineType({
     defineField({
       name: "description",
       title: "Description",
-      type: "blockContent",
+      type: "string",
     }),
     defineField({
       name: "date",

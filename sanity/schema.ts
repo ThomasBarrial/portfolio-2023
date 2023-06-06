@@ -6,7 +6,16 @@ import post from "./schemas/post";
 import author from "./schemas/author";
 import projects from "./schemas/projects";
 import projectState from "./schemas/projectState";
+import techno from "./schemas/techno";
 
-export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [post, author, category, blockContent, projects, projectState],
-};
+const schemas: SchemaTypeDefinition[] = [
+  post,
+  author,
+  category,
+  blockContent,
+  projects,
+  projectState,
+  techno,
+];
+
+export default schemas;
