@@ -17,7 +17,7 @@ function Header() {
       </div>
 
       <div className="absolute  left-1/2 -translate-x-1/2 font-Humane z-10 w-screen h-screen px-5 lg:px-20 mix-blend-difference flex flex-col items-center justify-end">
-        <div className="w-full mb-10">
+        <div className="w-full mb-32 md:mb-10">
           {!isLoader.active && (
             <AnimUp duration={1.5}>
               <h2 className="font-Antonio text-lg  md:text-xl lg:text-2xl mb-2">

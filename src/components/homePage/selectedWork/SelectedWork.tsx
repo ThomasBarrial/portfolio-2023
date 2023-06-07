@@ -37,7 +37,7 @@ function SelectedWork({ projects }: IProps) {
   return (
     <div ref={ref} className="bg-background relative">
       {inView && (
-        <div className="text-9xl z-10 h-60 lg:h-48 mix-blend-difference fixed bottom-[20%] opacity-90 overflow-hidden left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] flex flex-col">
+        <div className="text-9xl z-10 h-60 lg:h-48 mix-blend-difference fixed bottom-[50%] lg:bottom-[20%] opacity-90 overflow-hidden left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] flex flex-col">
           <motion.div style={{ y }}>
             {projects.map((p) => {
               return (
