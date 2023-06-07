@@ -1,7 +1,11 @@
+import TestComponent from "@/components/about/TestComponent";
+
 export default function page() {
   return (
-    <div className="w-screen h-screen flex justify-center items-center">
-      ABOUT
-    </div>
+    <>
+      <TestComponent color="200" />
+      <TestComponent color="400" />
+      <TestComponent color="300" />
+    </>
   );
 }
