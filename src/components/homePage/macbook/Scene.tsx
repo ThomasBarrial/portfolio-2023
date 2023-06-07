@@ -10,7 +10,7 @@ function Scene() {
   const vec = new THREE.Vector3();
   const { camera, mouse } = useThree();
   const [delta, setDelta] = useState(1.4);
-  //   const { scrollY } = useScroll();
+  const { scrollY } = useScroll();
   const [scale, setScale] = useState(12);
   const [groundLightWidth, setGroundlightWidth] = useState(3);
 
@@ -29,22 +29,20 @@ function Scene() {
     camera.lookAt(0, 0, 0);
   });
 
-  //   useMotionValueEvent(scrollY, "change", (latest) => {
-  //       console.log("scrollY", latest);
+  // useMotionValueEvent(scrollY, "change", (latest) => {
+  //   const minScroll = 500;
+  //   const maxScroll =
+  //     document.documentElement.scrollHeight - window.innerHeight;
 
-  //     const minScroll = 500;
-  //     const maxScroll =
-  //       document.documentElement.scrollHeight - window.innerHeight;
+  //   const minValue = 1.8;
+  //   const maxValue = 1.2;
+  //   const scrollRange = maxScroll - minScroll;
+  //   const valueRange = maxValue - minValue;
 
-  //     const minValue = 1.8;
-  //     const maxValue = 1.2;
-  //     const scrollRange = maxScroll - minScroll;
-  //     const valueRange = maxValue - minValue;
-
-  //     const scrollValue =
-  //       ((latest - minScroll) * valueRange) / scrollRange + minValue;
-  //     setDelta(scrollValue);
-  //   });
+  //   const scrollValue =
+  //     ((latest - minScroll) * valueRange) / scrollRange + minValue;
+  //   setDelta(scrollValue);
+  // });
 
   return (
     <>

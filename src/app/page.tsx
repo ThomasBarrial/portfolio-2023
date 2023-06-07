@@ -23,13 +23,10 @@ export default async function Home() {
       <ProgressBar />
       <Loading />
       <Header />
-
-      {/* <div className="z-20 bg-[#050505]"> */}
       <Services />
       <MacBook />
+      <SelectedWork projects={projects} />
       <Section5 />
-      {/* <SelectedWork projects={projects} /> */}
-      {/* </div> */}
     </main>
   );
 }

@@ -2,7 +2,7 @@ import React from "react";
 
 function Section5() {
   return (
-    <div className="w-screen relative h-screen bg-red-200 flex items-center justify-center">
+    <div className="w-screen relative h-screen  z-20 bg-background flex items-center justify-center">
       section5
     </div>
   );
