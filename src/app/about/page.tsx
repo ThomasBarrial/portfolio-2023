@@ -8,6 +8,7 @@ export default function page() {
       <TestComponent color="400" />
       <Services />
       <TestComponent color="300" />
+      <TestComponent color="300" />
     </>
   );
 }
