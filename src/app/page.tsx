@@ -27,9 +27,6 @@ export default async function Home() {
       <MacBook />
       <SelectedWork projects={projects} />
       <Section5 />
-      <Section5 />
-      <Section5 />
-      <Section5 />
     </main>
   );
 }
