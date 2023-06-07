@@ -25,9 +25,9 @@ export default async function Home() {
       <Header />
 
       {/* <div className="z-20 bg-[#050505]"> */}
-      <Section5 />
       <Services />
       <MacBook />
+      <Section5 />
       {/* <SelectedWork projects={projects} /> */}
       {/* </div> */}
     </main>

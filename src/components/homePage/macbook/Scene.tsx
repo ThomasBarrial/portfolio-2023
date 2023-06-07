@@ -64,7 +64,7 @@ function Scene() {
         rotation={[0, Math.PI, 0]}
         position={[0, -0.2, 5]}
       />
-      {/* <MacbookPro scale={scale} position={[0, -0.5, 5.5]} delta={delta} /> */}
+      <MacbookPro scale={scale} position={[0, -0.5, 5.5]} delta={delta} />
       <Ground />
     </>
   );
