@@ -16,7 +16,7 @@ export default function Model({ scale, position, delta }: IProps) {
     "/models/macbook_pro_13_inch_2020.glb"
   ) as any;
 
-  // const texture = useVideoTexture("/videoFolio.mp4");
+  const texture = useVideoTexture("/videoFolio.mp4");
 
   return (
     <group scale={scale} position={position} dispose={null}>
@@ -49,7 +49,7 @@ export default function Model({ scale, position, delta }: IProps) {
               geometry={nodes.Object_7.geometry}
               position={[0, -0.01, 0]}
             >
-              {/* <meshBasicMaterial map={texture} toneMapped={false} /> */}
+              <meshBasicMaterial map={texture} toneMapped={false} />
             </mesh>
           </group>
 
