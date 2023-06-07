@@ -1,13 +1,17 @@
-import { Provider } from "react-redux";
 import "./globals.css";
 import Navbar from "@/components/layout/navbar/Navbar";
-import { store } from "@/store";
 import ReduxProvider from "@/store/ReduxProvider";
+import localFont from "next/font/local";
 
 export const metadata = {
   title: "ThomasBarrial",
   description: "Thomas Barrial | CREATIVE DEVELOPER & DESIGNER",
 };
+
+const humane = localFont({
+  src: "../../public/fonts/humane/Humane-Bold.ttf",
+  variable: "--font-Humane",
+});
 
 export default function RootLayout({
   children,
@@ -16,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-background text-white">
+      <body className={`bg-background text-white ${humane.variable}`}>
         <Navbar />
         <ReduxProvider>{children}</ReduxProvider>
       </body>

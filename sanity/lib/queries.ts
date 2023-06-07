@@ -12,5 +12,6 @@ export const getAllProject = groq`
 *[_type == "project"] {
     ...,
     projectState->,
-    categories[]->
+    categories[]->,
+    techno[]->
 } | order(publishedAt desc)`;

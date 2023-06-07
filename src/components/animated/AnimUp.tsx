@@ -6,13 +6,14 @@ interface IProps {
   className?: string;
   duration?: number;
   index?: number;
+  y?: number;
 }
 
 function AnimUp({
   children,
   className,
   duration = 1,
-  index = 0,
+  y = 300,
 }: IProps): JSX.Element {
   const variants = {
     open: {
@@ -25,7 +26,7 @@ function AnimUp({
       },
     },
     closed: {
-      y: "300px",
+      y: `${y}px`,
       transition: {
         type: "spring",
         duration: duration,

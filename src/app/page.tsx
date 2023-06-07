@@ -5,7 +5,10 @@ import Loading from "@/components/layout/Loading";
 import { cache } from "react";
 import { client } from "../../sanity/lib/client";
 import { getAllPosts, getAllProject } from "../../sanity/lib/queries";
-import SelectedWork from "@/components/homePage/SelectedWork";
+import SelectedWork from "@/components/homePage/selectedWork/SelectedWork";
+import Section5 from "@/components/homePage/Section5";
+
+import ProgressBar from "@/components/layout/ProgressBar";
 
 const clientFetch = cache(client.fetch.bind(client));
 
@@ -14,17 +17,18 @@ export const revalidate = 60;
 export default async function Home() {
   const posts = await clientFetch(getAllPosts);
   const projects = await clientFetch(getAllProject);
-  console.log(projects);
 
   return (
-    <main className="flex flex-col items-center justify-center">
+    <main className={`flex flex-col items-center justify-center`}>
+      <ProgressBar />
       <Loading />
       <Header />
 
       <div className="z-20 bg-[#050505]">
         <Services />
         <MacBook />
-        <SelectedWork />
+        <SelectedWork projects={projects} />
+        <Section5 />
       </div>
     </main>
   );

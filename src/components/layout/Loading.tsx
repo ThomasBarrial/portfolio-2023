@@ -8,12 +8,8 @@ type Props = {};
 
 export default function Loading({}: Props) {
   const { isLoader, dispatchToggleIsLoader } = useIsLoaderFromStore();
-  const [loadAnim, setLoadAnim] = useState("");
 
   useEffect(() => {
-    setInterval(() => {
-      setLoadAnim("transform -translate-y-full duration-1000");
-    }, 1500);
     setTimeout(() => {
       if (isLoader.active) {
         dispatchToggleIsLoader();
@@ -28,8 +24,8 @@ export default function Loading({}: Props) {
           isLoader.active ? "translate-y-0" : "-translate-y-full"
         } transform duration-1000`}
       >
-        <AnimUp duration={2}>
-          <h2 className="text-white font-teko text-9xl animate-fadeIn mt-10 font-Humane">
+        <AnimUp duration={2} y={320}>
+          <h2 className="text-white  font-teko px-5 lg:px-0 leading-[0.8] text-9xl animate-fadeIn mt-10 font-Humane">
             HELLO, WELCOME ON MY PORTFOLIO
           </h2>
         </AnimUp>

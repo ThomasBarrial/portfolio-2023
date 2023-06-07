@@ -4,11 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: "HUMANE";
-  src: url("/fonts/humane/Humane-bold.ttf");
-}
-
 .rotation {
   transform: matrix3d(
     0.5,
