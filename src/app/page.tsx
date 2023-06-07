@@ -27,8 +27,8 @@ export default async function Home() {
       <div className="z-20 bg-[#050505]">
         <Services />
         <MacBook />
-        <SelectedWork projects={projects} />
-        <Section5 />
+        {/* <SelectedWork projects={projects} /> */}
+        {/* <Section5 /> */}
       </div>
     </main>
   );
