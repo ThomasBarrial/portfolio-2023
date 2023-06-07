@@ -6,7 +6,9 @@ import AnimUp from "../animated/AnimUp";
 
 function TestComponent({ color }: { color: string }) {
   const ref = useRef(null);
-  const inView = useInView(ref);
+  const inView = useInView(ref, {
+    margin: "0px 100px -50px 0px",
+  });
 
   return (
     <div
