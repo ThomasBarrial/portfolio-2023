@@ -8,7 +8,7 @@ function Services() {
   const services = ["DEVELOPEMENT", "DESIGN", "3D MOTION"];
   const ref = useRef(null);
   const inView = useInView(ref, {
-    // margin: "0px 0px -200px 0px",
+    margin: "0px 0px -50px 0px",
   });
 
   return (
