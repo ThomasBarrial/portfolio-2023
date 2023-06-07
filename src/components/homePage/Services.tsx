@@ -14,7 +14,7 @@ function Services() {
   return (
     <div
       ref={ref}
-      className="h-screen w-screen relative flex  flex-col lg:flex-row-reverse items-center justify-center px-5 lg:px-20"
+      className="h-screen w-screen relative flex  flex-col lg:flex-row-reverse items-center justify-center px-5 lg:px-20 bg-background"
     >
       <div className="w-full h-full font-Antonio flex flex-col justify-start lg:pt-32 pt-32 md:pt-20  md:pl-52 xl:pl-64 max-w-5xl pl-20 ">
         {inView && (

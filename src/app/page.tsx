@@ -24,12 +24,12 @@ export default async function Home() {
       <Loading />
       <Header />
 
-      <div className="z-20 bg-[#050505]">
-        <Services />
-        <MacBook />
-        {/* <SelectedWork projects={projects} /> */}
-        {/* <Section5 /> */}
-      </div>
+      {/* <div className="z-20 bg-[#050505]"> */}
+      <Section5 />
+      <Services />
+      <MacBook />
+      {/* <SelectedWork projects={projects} /> */}
+      {/* </div> */}
     </main>
   );
 }
