@@ -11,7 +11,7 @@ module.exports = {
         background: "#080808",
       },
       fontFamily: {
-        Humane: ["HUMANE", "sans-serif"],
+        Humane: ["var(--font-Humane)"],
         Antonio: ["Antonio", "sans-serif"],
       },
       screens: {
