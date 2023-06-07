@@ -25,7 +25,7 @@ export default async function Home() {
       <Header />
       <Services />
       <MacBook />
-      {/* <SelectedWork projects={projects} /> */}
+      <SelectedWork projects={projects} />
       <Section5 />
       <Section5 />
       <Section5 />
