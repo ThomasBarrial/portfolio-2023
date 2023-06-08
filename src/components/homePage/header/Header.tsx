@@ -9,7 +9,7 @@ function Header() {
   const { isLoader } = useIsLoaderFromStore();
 
   return (
-    <div className="flex flex-col sticky top-0  h-screen w-screen">
+    <div className="flex flex-col sticky top-0 h-screen w-screen">
       <div style={{ width: "100%", height: "100%" }}>
         <Canvas performance={{ min: 0.1 }} gl={{ antialias: false }}>
           <HeaderBackground />
