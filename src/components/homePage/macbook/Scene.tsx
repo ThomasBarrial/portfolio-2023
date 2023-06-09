@@ -24,7 +24,6 @@ function Scene() {
     //   setScale(12);
     //   setGroundlightWidth(3);
     // }
-
     camera.position.lerp(vec.set(mouse.x * 1, 1 + mouse.y * 0.5, 21), 0.05);
     camera.lookAt(0, 0, 0);
   });

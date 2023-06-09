@@ -27,7 +27,7 @@ function SelectedWork({ projects }: IProps) {
   const y = useParallax(scrollYProgress, 300);
   const ref = useRef(null);
 
-  const inView = useInView(ref, { margin: "0px 0px -50px 0px" });
+  const inView = useInView(ref, { margin: "0px 0px -50px 0px", once: true });
 
   const displayIndex = (index: number) => {
     if (index + 1 >= 0 && index + 1 <= 9) {
@@ -37,7 +37,7 @@ function SelectedWork({ projects }: IProps) {
   };
 
   return (
-    <div ref={ref} className="bg-background relative z-20">
+    <div ref={ref} className="bg-background relative z-20 mt-20 lg:mt-0">
       <h2 className="sticky top-20 uppercase text-xl mb-0 lg:mb-10 px-5  lg:px-20 z-20 mix-blend-difference font-Antonio">
         Selected Work
       </h2>
