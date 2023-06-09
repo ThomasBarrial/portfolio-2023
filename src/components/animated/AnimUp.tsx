@@ -19,19 +19,17 @@ function AnimUp({
     open: {
       y: 0,
       transition: {
-        type: "spring",
         duration: duration,
         bounce: 0,
-        ease: [0.17, 0.67, 0.83, 0.67],
+        ease: "easeOut",
       },
     },
     closed: {
       y: `${y}px`,
       transition: {
-        type: "spring",
         duration: duration,
         bounce: 0,
-        ease: [0.17, 0.67, 0.83, 0.67],
+        ease: "easeOut",
       },
     },
   };

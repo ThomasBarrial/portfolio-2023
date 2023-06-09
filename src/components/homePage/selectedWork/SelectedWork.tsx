@@ -19,7 +19,7 @@ interface IProps {
 }
 
 function useParallax(value: MotionValue<number>, distance: number) {
-  return useTransform(value, [0.1, 1], [615, -650]);
+  return useTransform(value, [0.1, 1], [500, -650]);
 }
 
 function SelectedWork({ projects }: IProps) {
@@ -27,7 +27,7 @@ function SelectedWork({ projects }: IProps) {
   const y = useParallax(scrollYProgress, 300);
   const ref = useRef(null);
 
-  const inView = useInView(ref, { margin: "0px 0px -200px 0px" });
+  const inView = useInView(ref, { margin: "0px 0px -50px 0px" });
 
   const displayIndex = (index: number) => {
     if (index + 1 >= 0 && index + 1 <= 9) {
@@ -37,14 +37,23 @@ function SelectedWork({ projects }: IProps) {
   };
 
   return (
-    <div ref={ref} className="bg-background relative z-30">
+    <div ref={ref} className="bg-background relative z-20">
+      <h2 className="sticky top-20 uppercase text-xl mb-0 lg:mb-10 px-5  lg:px-20 z-20 mix-blend-difference font-Antonio">
+        Selected Work
+      </h2>
       {inView && (
-        <div className="text-9xl z-10 h-60 lg:h-48 mix-blend-difference md:w-[90%] lg:w-6/12  hidden md:flex items-end  fixed bottom-[20%] opacity-90 overflow-hidden right-10 -translate-y-1/2  flex-col">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 2 }}
+          className="text-9xl z-10 h-48 pointer-events-none lg:h-48 mix-blend-difference w-[90%]  hidden md:flex items-end  fixed bottom-[20%] opacity-90 overflow-hidden right-10 -translate-y-1/2  flex-col"
+        >
           <motion.div style={{ y }}>
             {projects.map((p) => {
               return (
                 <h3
-                  className="font-Humane my-20  text-right  lg:m-0  md:text-[12rem] lg:text-[15rem] leading-[0.8] uppercase"
+                  className="font-Humane text-right  pt-5  lg:pt-0 md:text-[12rem] lg:text-[15rem] leading-[0.8] uppercase"
                   key={p._id}
                 >
                   {p.name}
@@ -52,55 +61,12 @@ function SelectedWork({ projects }: IProps) {
               );
             })}
           </motion.div>
-        </div>
+        </motion.div>
       )}
       {projects.map((project) => {
         return <OneProject project={project} key={project._id} />;
       })}
     </div>
-    // <div ref={ref} className="pb-20 bg-[#080808]">
-    //   {projects.map((project, index) => {
-    //     return (
-    //       <div
-    //         className="px-5 relative lg:px-20 pb-30 font-Antonio lg:pt-0 py-44  lg:h-screen flex flex-col justify-start pt-20 md:items-center  w-screen"
-    //         key={project._id}
-    //       >
-    //         {inView && (
-    //           <div className="text-9xl h-32 fixed top-1/2 left-1/2 clip inner -translate-x-1/2 -translate-y-1/2 bg-red-200 w-full flex flex-col items-center">
-    //             <motion.div style={{ y }}>
-    //               <p className="">SECTION1</p>
-    //               <p className="">SECTION2</p>
-    //               <p className="">SECTION3</p>
-    //             </motion.div>
-    //           </div>
-    //         )}
-    //         <div className="w-full flex justify-between items-start mt-2">
-    //           <h3 className="font-Humane text-8xl">{displayIndex(index)}</h3>
-    //           <h3 className="w-full text-right text-xl">SELECTED WORK</h3>
-    //         </div>
-    //         <ProjectDescription project={project} />
-
-    //         <Image
-    //           className="mt-5 lg:mt-0 lg:max-w-5xl"
-    //           src={urlFor(project.mainImage).url()}
-    //           alt={
-    //             project.mainImage?.alt
-    //               ? project.mainImage.alt
-    //               : "Main project Image"
-    //           }
-    //           width={1700}
-    //           height={1000}
-    //         />
-
-    //         <div className=" absolute bottom-0 phone:relative phone:mt-5 w-[90%] phone:w-full lg:w-1/2 pt-2">
-    //           <h3 className="font-Humane text-[9rem] lg:text-[15rem] leading-[0.8] uppercase">
-    //             {project.name}
-    //           </h3>
-    //         </div>
-    //       </div>
-    //     );
-    //   })}
-    // </div>
   );
 }
 
