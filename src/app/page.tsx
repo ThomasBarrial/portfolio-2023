@@ -23,8 +23,8 @@ export default async function Home() {
       <Loading />
       <Header />
       <Services />
-      {/* <MacBook />
-      <SelectedWork projects={projects} />
+      <MacBook />
+      {/* <SelectedWork projects={projects} />
       <Section5 /> */}
     </main>
   );
