@@ -24,11 +24,11 @@ export default function Loading({}: Props) {
           isLoader.active ? "translate-y-0" : "-translate-y-full"
         } transform duration-1000`}
       >
-        <AnimUp duration={2} y={320}>
-          <h2 className="text-white  font-teko px-5 lg:px-0 leading-[0.8] text-9xl animate-fadeIn mt-10 font-Humane">
+        {/* <AnimUp duration={2} y={320}>
+          <h2 className="text-white  font-teko px-5 lg:px-0  text-4xl animate-fadeIn mt-10 font-Antonio">
             HELLO, WELCOME ON MY PORTFOLIO
           </h2>
-        </AnimUp>
+        </AnimUp> */}
         <motion.div
           initial={{ width: "0%" }}
           animate={{ width: "90%" }}

@@ -24,7 +24,7 @@ function OneProject({ project, key }: IProps) {
     >
       <div className="flex md:hidden h-36">
         {inProjectView && (
-          <AnimUp duration={1}>
+          <AnimUp duration={1.5}>
             <h2 className="font-Humane pt-5    text-left flex lg:m-0 text-[10rem] md:hidden leading-[0.8] uppercase">
               {project.name}
             </h2>
@@ -33,7 +33,7 @@ function OneProject({ project, key }: IProps) {
       </div>
       <div className="w-full lg:w-8/12 cursor-pointer h-[200px] phone:h-[400px] md:h-[530px] relative">
         <Image
-          className={`mt-5 lg:mt-0 lg:max-w-4xl object-cover overflow-hidden lg:translate-x-10  scale-100 lg:group-hover:scale-110 transform duration-1000 ease-out`}
+          className={`mt-5 lg:mt-0 lg:max-w-4xl object-cover overflow-hidden lg:translate-x-10  scale-110 `}
           src={urlFor(project.mainImage).url()}
           alt={
             project.mainImage?.alt
@@ -46,14 +46,14 @@ function OneProject({ project, key }: IProps) {
       <div className="b  h-44">
         {inProjectView && (
           <div className="flex font-Antonio text-sm translate-y-10 w-full md:w-6/12 lg:border-none border-b pb-10">
-            <AnimUp duration={1}>
+            <AnimUp duration={1.5}>
               <div className="flex-col mr-10 lg:mr-12 hidden lg:flex">
                 <p className="mt-2">Role</p>
                 <p className="mt-2">Technologies</p>
                 <p className="mt-2">Description</p>
               </div>
             </AnimUp>
-            <AnimUp duration={1}>
+            <AnimUp duration={1.5}>
               <div>
                 <div className="flex mt-2">
                   {" "}
