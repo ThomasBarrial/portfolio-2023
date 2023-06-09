@@ -47,7 +47,7 @@ function SelectedWork({ projects }: IProps) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 2 }}
-          className="text-9xl z-10 h-48 pointer-events-none lg:h-48 mix-blend-difference w-[90%]  hidden md:flex items-end  fixed bottom-[20%] opacity-90 overflow-hidden right-10 -translate-y-1/2  flex-col"
+          className="text-9xl z-10 h-48 pr-20 pointer-events-none lg:h-48 mix-blend-difference w-[90%]  hidden md:flex items-end  fixed bottom-[20%] opacity-90 overflow-hidden right-0 -translate-y-1/2  flex-col"
         >
           <motion.div style={{ y }}>
             {projects.map((p) => {
