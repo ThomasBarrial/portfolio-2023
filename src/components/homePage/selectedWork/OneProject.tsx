@@ -24,7 +24,7 @@ function OneProject({ project, key }: IProps) {
     >
       <div className="flex md:hidden h-36">
         {inProjectView && (
-          <AnimUp duration={2}>
+          <AnimUp duration={1}>
             <h2 className="font-Humane pt-5    text-left flex lg:m-0 text-[10rem] md:hidden leading-[0.8] uppercase">
               {project.name}
             </h2>
@@ -46,14 +46,14 @@ function OneProject({ project, key }: IProps) {
       <div className="b  h-44">
         {inProjectView && (
           <div className="flex font-Antonio text-sm translate-y-10 w-full md:w-6/12 lg:border-none border-b pb-10">
-            <AnimUp duration={2}>
+            <AnimUp duration={1}>
               <div className="flex-col mr-10 lg:mr-12 hidden lg:flex">
                 <p className="mt-2">Role</p>
                 <p className="mt-2">Technologies</p>
                 <p className="mt-2">Description</p>
               </div>
             </AnimUp>
-            <AnimUp duration={2}>
+            <AnimUp duration={1}>
               <div>
                 <div className="flex mt-2">
                   {" "}

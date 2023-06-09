@@ -18,12 +18,12 @@ function Services() {
     >
       <div className="w-full h-full font-Antonio flex flex-col justify-start lg:pt-32 pt-32 md:pt-20  md:pl-52 xl:pl-64 max-w-5xl pl-20 ">
         {inView && (
-          <AnimUp duration={2}>
+          <AnimUp duration={1}>
             <h3>SERVICES</h3>
           </AnimUp>
         )}
         {inView && (
-          <AnimUp duration={2.5}>
+          <AnimUp duration={1.5}>
             <p className="mt-2">
               I am an web and mobile developer, capable of creating cutting-edge
               websites and mobile applications using the latest technologies. I

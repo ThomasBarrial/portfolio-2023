@@ -15,11 +15,10 @@ const clientFetch = cache(client.fetch.bind(client));
 export const revalidate = 60;
 
 export default async function Home() {
-  const posts = await clientFetch(getAllPosts);
   const projects = await clientFetch(getAllProject);
 
   return (
-    <main className={`flex flex-col items-center justify-center`}>
+    <main>
       <ProgressBar />
       <Loading />
       <Header />
