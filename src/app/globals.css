@@ -36,3 +36,27 @@
   border-radius: 20px;
   background: #000000;
 }
+/* 
+.animUp {
+  animation-name: example-animation;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes example-animation {
+  0% {
+    transform: translateY(200px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+} */
+
+.animUp-inital {
+  transform: translateY(300px);
+}
+
+.animUp-animate {
+  transform: translateY(0px);
+  transition: transform 2s;
+}

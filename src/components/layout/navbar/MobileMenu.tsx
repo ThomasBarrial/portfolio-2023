@@ -10,7 +10,6 @@ interface IProps {
 }
 
 function MobileMenu({ isOpen, setIsOpen }: IProps) {
-  console.log(isOpen);
   return (
     <div
       className={`fixed h-screen w-screen z-40 transition ease-in-out duration-700 bg-background ${
@@ -29,19 +28,15 @@ function MobileMenu({ isOpen, setIsOpen }: IProps) {
           {navBarLinks.map((item, index) => {
             return (
               <div key={item.name}>
-                <AnimatePresence>
-                  {isOpen && (
-                    <AnimUp>
-                      <Link
-                        onClick={() => setIsOpen(false)}
-                        className="ml-10"
-                        href={item.link}
-                      >
-                        {item.name}
-                      </Link>
-                    </AnimUp>
-                  )}
-                </AnimatePresence>
+                <AnimUp className="pt-2" duration={1 + index * 0.1}>
+                  <Link
+                    onClick={() => setIsOpen(false)}
+                    className="ml-10"
+                    href={item.link}
+                  >
+                    {item.name}
+                  </Link>
+                </AnimUp>
               </div>
             );
           })}
