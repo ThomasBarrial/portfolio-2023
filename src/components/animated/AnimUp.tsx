@@ -17,7 +17,7 @@ function AnimUp({
   className,
   duration = 1,
   delay = 0,
-  y = 150,
+  y = 200,
   threshold = 0,
   triggerOnce = true,
 }: IProps): JSX.Element {
