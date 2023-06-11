@@ -1,31 +1,32 @@
 "use client";
-import { useInView } from "framer-motion";
-import React, { useRef } from "react";
 import { Project } from "../../../../utils/types/types";
 import Image from "next/image";
 import AnimUp from "@/components/animated/AnimUp";
 import urlFor from "../../../../sanity/lib/urlFor";
+import ProjectDetails from "./ProjectDetails";
 
 interface IProps {
   project: Project;
   key: string;
 }
 
-function OneProject({ project, key }: IProps) {
-  const projectRef = useRef(null);
-  const inProjectView = useInView(projectRef, {
-    margin: "0px 0px -500px 0px",
-    once: true,
-  });
+function OneProject({ project }: IProps) {
   return (
     <div
-      ref={projectRef}
-      key={key}
-      className="border md:h-screen w-screen px-5 lg:px-20 flex flex-col items-center justify-center"
+      key={project._id}
+      className="group flex w-screen flex-col items-center justify-center  px-5 py-0  md:h-screen md:py-0 lg:px-20"
     >
-      <div className="w-full lg:w-10/12 cursor-pointer group h-[400px] md:h-[530px] relative">
+      <div className="z-10 flex h-36 w-full translate-y-12 mix-blend-exclusion lg:hidden">
+        <AnimUp duration={1.5}>
+          <h2 className="flex pt-5 text-left font-Humane text-[10rem] uppercase leading-[0.8] lg:m-0">
+            {project.name}
+          </h2>
+        </AnimUp>
+      </div>
+
+      <div className="relative h-[220px] max-h-[600px] w-full max-w-5xl cursor-pointer overflow-hidden phone:h-[400px] md:h-[70%] lg:w-10/12">
         <Image
-          className="mt-5 lg:mt-0 lg:max-w-4xl object-cover overflow-hidden scale-100 group-hover:scale-105 transform duration-500 ease-out"
+          className={`object-cover  `}
           src={urlFor(project.mainImage).url()}
           alt={
             project.mainImage?.alt
@@ -35,15 +36,8 @@ function OneProject({ project, key }: IProps) {
           fill
         />
       </div>
-      <div className="h-52 mix-blend-difference  -translate-y-14">
-        {inProjectView && (
-          <AnimUp duration={1}>
-            <h2 className="font-Humane pt-5   text-center md:text-right flex lg:m-0 text-[10rem] md:hidden leading-[0.8] uppercase">
-              {project.name}
-            </h2>
-          </AnimUp>
-        )}
-      </div>
+
+      <ProjectDetails project={project} />
     </div>
   );
 }

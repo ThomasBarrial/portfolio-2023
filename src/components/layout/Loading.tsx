@@ -20,15 +20,10 @@ export default function Loading({}: Props) {
   return (
     <>
       <div
-        className={`h-screen w-screen bg-background flex flex-col items-center justify-center z-50 text-white fixed top-0 ${
+        className={`fixed top-0 z-50 flex h-screen w-screen flex-col items-center justify-center bg-background text-white ${
           isLoader.active ? "translate-y-0" : "-translate-y-full"
         } transform duration-1000`}
       >
-        <AnimUp duration={2} y={320}>
-          <h2 className="text-white  font-teko px-5 lg:px-0 leading-[0.8] text-9xl animate-fadeIn mt-10 font-Humane">
-            HELLO, WELCOME ON MY PORTFOLIO
-          </h2>
-        </AnimUp>
         <motion.div
           initial={{ width: "0%" }}
           animate={{ width: "90%" }}
@@ -38,11 +33,11 @@ export default function Loading({}: Props) {
             bounce: 0,
             ease: [0.17, 0.67, 0.83, 0.67],
           }}
-          className="h-[1px] bg-white mt-10"
+          className="mt-10 h-[1px] bg-white"
         />
       </div>
       <div
-        className={`h-screen w-screen bg-white flex flex-col items-center justify-center z-40 text-white fixed top-0 ${
+        className={`fixed top-0 z-40 flex h-screen w-screen flex-col items-center justify-center bg-white text-white ${
           isLoader.active ? "translate-y-96" : "-translate-y-full"
         } transform duration-1000`}
       />

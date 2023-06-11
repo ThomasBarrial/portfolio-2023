@@ -1,51 +1,40 @@
 "use client";
-import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 interface IProps {
   children?: React.ReactNode;
   className?: string;
   duration?: number;
   index?: number;
+  delay?: number;
   y?: number;
+  threshold?: number;
+  triggerOnce?: boolean;
 }
 
 function AnimUp({
   children,
   className,
   duration = 1,
-  y = 300,
+  delay = 0,
+  y = 200,
+  threshold = 0,
+  triggerOnce = true,
 }: IProps): JSX.Element {
-  const variants = {
-    open: {
-      y: 0,
-      transition: {
-        type: "spring",
-        duration: duration,
-        bounce: 0,
-        ease: [0.17, 0.67, 0.83, 0.67],
-      },
-    },
-    closed: {
-      y: `${y}px`,
-      transition: {
-        type: "spring",
-        duration: duration,
-        bounce: 0,
-        ease: [0.17, 0.67, 0.83, 0.67],
-      },
-    },
+  const [ref, inView] = useInView({
+    triggerOnce: triggerOnce,
+    threshold,
+  });
+
+  const styles = {
+    transition: `transform ${duration}s ease ${delay}s`,
+    transform: inView ? "translateY(0)" : `translateY(${y}px)`,
   };
   return (
-    <div className="overflow-hidden">
-      <motion.div
-        className={className}
-        variants={variants}
-        initial="closed"
-        animate="open"
-        exit="closed"
-      >
+    <div ref={ref} className="overflow-hidden">
+      <div className={`${className} ${inView ? "in-view" : ""}`} style={styles}>
         {children}
-      </motion.div>
+      </div>
     </div>
   );
 }

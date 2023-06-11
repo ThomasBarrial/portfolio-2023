@@ -4,7 +4,7 @@ import Scene from "./Scene";
 
 function Macbook() {
   return (
-    <div className=" relative h-screen w-screen">
+    <div className="h-screen w-screen hidden lg:flex bg-background">
       <Canvas
         performance={{ min: 0.1 }}
         gl={{ antialias: false }}

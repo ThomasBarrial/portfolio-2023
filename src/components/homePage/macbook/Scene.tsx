@@ -15,16 +15,15 @@ function Scene() {
   const [groundLightWidth, setGroundlightWidth] = useState(3);
 
   useFrame((size, event) => {
-    if (size.viewport.width < 5 && size.viewport.width > 3) {
-      setScale(10);
-      setGroundlightWidth(2.8);
-    } else if (size.viewport.width < 3) {
-      setScale(9);
-    } else {
-      setScale(12);
-      setGroundlightWidth(3);
-    }
-
+    // if (size.viewport.width < 5 && size.viewport.width > 3) {
+    //   setScale(10);
+    //   setGroundlightWidth(2.8);
+    // } else if (size.viewport.width < 3) {
+    //   setScale(9);
+    // } else {
+    //   setScale(12);
+    //   setGroundlightWidth(3);
+    // }
     camera.position.lerp(vec.set(mouse.x * 1, 1 + mouse.y * 0.5, 21), 0.05);
     camera.lookAt(0, 0, 0);
   });
