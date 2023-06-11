@@ -26,7 +26,7 @@ export default function RootLayout({
         <ReduxProvider>
           <ProgressBar />
           <Navbar />
-          {/* <Loading /> */}
+          <Loading />
           {children}
         </ReduxProvider>
       </body>
