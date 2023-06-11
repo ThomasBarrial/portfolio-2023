@@ -1,7 +1,9 @@
+import ProgressBar from "@/components/layout/ProgressBar";
 import "./globals.css";
 import Navbar from "@/components/layout/navbar/Navbar";
 import ReduxProvider from "@/store/ReduxProvider";
 import localFont from "next/font/local";
+import Loading from "@/components/layout/Loading";
 
 export const metadata = {
   title: "ThomasBarrial",
@@ -21,8 +23,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`bg-background text-white ${humane.variable}`}>
-        <Navbar />
-        <ReduxProvider>{children}</ReduxProvider>
+        <ReduxProvider>
+          <ProgressBar />
+          <Navbar />
+          {/* <Loading /> */}
+          {children}
+        </ReduxProvider>
       </body>
     </html>
   );

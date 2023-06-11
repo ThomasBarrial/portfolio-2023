@@ -9,6 +9,7 @@ import SelectedWork from "@/components/homePage/selectedWork/SelectedWork";
 import Section5 from "@/components/homePage/Section5";
 
 import ProgressBar from "@/components/layout/ProgressBar";
+import PageTransition from "@/components/layout/PageTransition";
 
 const clientFetch = cache(client.fetch.bind(client));
 
@@ -19,13 +20,13 @@ export default async function Home() {
 
   return (
     <main>
-      <ProgressBar />
-      <Loading />
-      <Header />
-      <Services />
-      <MacBook />
-      <SelectedWork projects={projects} />
-      <Section5 />
+      <PageTransition>
+        <Header />
+        <Services />
+        <MacBook />
+        <SelectedWork projects={projects} />
+        <Section5 />
+      </PageTransition>
     </main>
   );
 }

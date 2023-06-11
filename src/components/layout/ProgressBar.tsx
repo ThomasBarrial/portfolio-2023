@@ -12,7 +12,7 @@ function ProgressBar() {
 
   return (
     <motion.div
-      className=" bg-white fixed top-0 left-0 right-0 h-[2px] z-[99]"
+      className=" fixed left-0 right-0 top-0 z-[99] h-[2px] bg-white"
       style={{ scaleX, transformOrigin: "0%" }}
     />
   );

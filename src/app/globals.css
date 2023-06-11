@@ -36,3 +36,40 @@
   border-radius: 20px;
   background: #000000;
 }
+
+.page-transition {
+  animation: moveAnimation 3.5s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes moveAnimation {
+  0% {
+    transform: translateY(100%);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+.underpage-transition {
+  animation: underPageTransition 3.5s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes underPageTransition {
+  0% {
+    transform: translateY(100%);
+  }
+  50% {
+    transform: translateY(-10%);
+  }
+  75% {
+    transform: translateY(-30%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}

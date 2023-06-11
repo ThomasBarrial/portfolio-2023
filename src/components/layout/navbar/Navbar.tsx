@@ -9,7 +9,7 @@ function Navbar() {
 
   return (
     <>
-      <div className="font-Antonio left-1/2 -translate-x-1/2  px-5 lg:px-20 py-3 flex items-center justify-between w-screen z-30 fixed top-0 mix-blend-difference">
+      <div className="fixed left-1/2 top-0  z-30 flex w-screen -translate-x-1/2 items-center justify-between px-5 py-3 font-Antonio mix-blend-difference lg:px-20">
         <Link href="/">
           <h2>Thomas Barrial</h2>
           <p className="text-xs opacity-50">@Anglet France</p>
@@ -18,17 +18,17 @@ function Navbar() {
           {navBarLinks.map((item) => {
             return (
               <div
-                className="group overflow-hidden h-6  flex flex-col"
+                className="group flex h-6  flex-col overflow-hidden"
                 key={item.name}
               >
                 <Link
-                  className="ml-10 group-hover:-translate-y-6 transition transform duration-500"
+                  className="ml-10 transform transition duration-500 group-hover:-translate-y-6"
                   href={item.link}
                 >
                   {item.name}
                 </Link>
                 <Link
-                  className="ml-10 -translate-y-1 group-hover:-translate-y-6 transition transform duration-500"
+                  className="ml-10 -translate-y-1 transform transition duration-500 group-hover:-translate-y-6"
                   href={item.link}
                 >
                   {item.name}

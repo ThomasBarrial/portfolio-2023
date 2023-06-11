@@ -13,9 +13,13 @@ function TestComponent({ color }: { color: string }) {
   return (
     <div
       ref={ref}
-      className={`h-screen text-5xl flex items-center justify-center w-screen bg-red-${color}`}
+      className={`flex h-screen w-screen items-center justify-center text-5xl bg-red-${color}`}
     >
-      {inView && <AnimUp>SECTION</AnimUp>}
+      {inView && (
+        <AnimUp duration={1.5} y={500}>
+          SECTION
+        </AnimUp>
+      )}
     </div>
   );
 }

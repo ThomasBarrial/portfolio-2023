@@ -4,38 +4,46 @@ import HeaderBackground from "./HeaderBackground";
 import WordAnim from "@/components/animated/WordAnim";
 import AnimUp from "@/components/animated/AnimUp";
 import { useIsLoaderFromStore } from "@/store/isLoader.slice";
+import { useInView } from "react-intersection-observer";
+import { useRef } from "react";
 
 function Header() {
   const { isLoader } = useIsLoaderFromStore();
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+  });
+
+  console.log(inView);
 
   return (
-    <div className="flex flex-col lg:sticky top-0 h-screen w-screen">
+    <div className="top-0 flex h-screen w-screen flex-col lg:sticky">
       <div style={{ width: "100%", height: "100%" }}>
         <Canvas performance={{ min: 0.1 }} gl={{ antialias: false }}>
           <HeaderBackground />
         </Canvas>
       </div>
 
-      <div className="absolute  left-1/2 -translate-x-1/2 font-Humane z-10 w-screen pointer-events-none h-screen px-5 lg:px-20 mix-blend-difference flex flex-col items-center justify-end">
-        <div className="w-full mb-32 md:mb-10">
-          {!isLoader.active && (
-            <AnimUp duration={1.5}>
-              <h2 className="font-Antonio text-lg  md:text-xl lg:text-2xl mb-2">
-                WELCOME ON MY 2023 PORTFOLIO
-              </h2>
-            </AnimUp>
-          )}
+      <div
+        ref={ref}
+        className="pointer-events-none  absolute left-1/2 z-10 flex h-screen w-screen -translate-x-1/2 flex-col items-center justify-end px-5 font-Humane mix-blend-difference lg:px-20"
+      >
+        <div className="mb-32 w-full md:mb-10">
+          <AnimUp duration={1.5}>
+            <h2 className="mb-2 font-Antonio  text-lg md:text-xl lg:text-2xl">
+              WELCOME ON MY 2023 PORTFOLIO
+            </h2>
+          </AnimUp>
 
           <h1>
-            <WordAnim word="DESIGNER" isAnim={isLoader.active} />
+            <WordAnim word="DESIGNER" isAnim={inView} />
           </h1>
 
           <h1 className="flex flex-col md:flex-row">
             <div className="mr-0 md:mr-5">
-              <WordAnim word="CREATIVE" isAnim={isLoader.active} />
+              <WordAnim word="CREATIVE" isAnim={inView} />
             </div>
 
-            <WordAnim word="DEVELOPER" isAnim={isLoader.active} />
+            <WordAnim word="DEVELOPER" isAnim={inView} />
           </h1>
         </div>
       </div>
