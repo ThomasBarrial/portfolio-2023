@@ -8,6 +8,8 @@ interface IProps {
   index?: number;
   delay?: number;
   y?: number;
+  threshold?: number;
+  triggerOnce?: boolean;
 }
 
 function AnimUp({
@@ -16,10 +18,12 @@ function AnimUp({
   duration = 1,
   delay = 0,
   y = 300,
+  threshold = 0,
+  triggerOnce = true,
 }: IProps): JSX.Element {
   const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
+    triggerOnce: triggerOnce,
+    threshold,
   });
 
   const styles = {
@@ -28,10 +32,7 @@ function AnimUp({
   };
   return (
     <div ref={ref} className="overflow-hidden">
-      <div
-        className={`${className} animUp-initial ${inView ? "in-view" : ""}`}
-        style={styles}
-      >
+      <div className={`${className} ${inView ? "in-view" : ""}`} style={styles}>
         {children}
       </div>
     </div>

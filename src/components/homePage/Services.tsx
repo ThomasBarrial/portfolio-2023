@@ -6,8 +6,8 @@ function Services() {
   const services = ["DEVELOPEMENT", "DESIGN", "3D MOTION"];
 
   return (
-    <div className="h-screen w-screen relative z-20 flex  flex-col lg:flex-row-reverse items-center justify-center px-5 lg:px-20 bg-background">
-      <div className="w-full h-full font-Antonio flex flex-col justify-start lg:pt-32 pt-32 md:pt-20  md:pl-52 xl:pl-64 max-w-5xl pl-20 ">
+    <div className="relative z-20 flex h-screen w-screen  flex-col items-center justify-center bg-background px-5 lg:flex-row-reverse lg:px-20">
+      <div className="flex h-full w-full max-w-5xl flex-col justify-start pl-20 pt-32 font-Antonio  md:pl-52 md:pt-20 lg:pt-32 xl:pl-64 ">
         <AnimUp duration={1}>
           <h3>SERVICES</h3>
         </AnimUp>
@@ -21,12 +21,12 @@ function Services() {
           </p>
         </AnimUp>
       </div>
-      <div className="b w-full flex flex-col justify-end font-Humane text-[8rem] phone:text-[12rem] md:text-[12rem] leading-[0.75]">
+      <div className="b flex w-full flex-col justify-end font-Humane text-[8rem] leading-[0.75] phone:text-[12rem] md:text-[12rem]">
         <>
           {services.map((service, index) => {
             return (
               <div key={service}>
-                <AnimUp className="pt-2" duration={2 + index * 0.2}>
+                <AnimUp className="pt-2" duration={1.5 + index * 0.1}>
                   {service}
                 </AnimUp>
               </div>
@@ -36,7 +36,7 @@ function Services() {
       </div>
 
       <div
-        className={`hidden lg:flex h-[1px] w-[40%] right-20 bg-white absolute bottom-32`}
+        className={`absolute bottom-32 right-20 hidden h-[1px] w-[40%] bg-white lg:flex`}
       />
     </div>
   );

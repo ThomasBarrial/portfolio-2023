@@ -19,7 +19,7 @@ interface IProps {
 }
 
 function useParallax(value: MotionValue<number>, distance: number) {
-  return useTransform(value, [0.1, 1], [500, -650]);
+  return useTransform(value, [0.1, 1], [600, -590]);
 }
 
 function SelectedWork({ projects }: IProps) {
@@ -37,23 +37,17 @@ function SelectedWork({ projects }: IProps) {
   };
 
   return (
-    <div ref={ref} className="bg-background relative z-20 mt-20 lg:mt-0">
-      <h2 className="sticky top-20 uppercase text-xl mb-0 lg:mb-10 px-5  lg:px-20 z-20 mix-blend-difference font-Antonio">
-        Selected Work
+    <div ref={ref} className="relative z-20 mt-20 bg-background lg:mt-0">
+      <h2 className="sticky top-20 z-0 mr-5 text-right font-Humane text-[10rem] uppercase leading-[0.8] opacity-10 lg:ml-20 lg:mr-0 lg:text-left lg:text-[20rem]">
+        Selected<br></br>Work
       </h2>
       {inView && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 2 }}
-          className="text-9xl z-10 h-48 pr-20 pointer-events-none lg:h-48 mix-blend-difference w-[90%]  hidden md:flex items-end  fixed bottom-[20%] opacity-90 overflow-hidden right-0 -translate-y-1/2  flex-col"
-        >
+        <div className="pointer-events-none fixed bottom-[20%] right-0 z-10 hidden h-48 w-[90%]  -translate-y-1/2 flex-col items-end  overflow-hidden pr-20 text-9xl mix-blend-difference lg:flex  lg:h-48">
           <motion.div style={{ y }}>
             {projects.map((p) => {
               return (
                 <h3
-                  className="font-Humane text-right  pt-5  lg:pt-0 md:text-[12rem] lg:text-[15rem] leading-[0.8] uppercase"
+                  className="pt-5 text-right  font-Humane  uppercase leading-[0.8] md:text-[12rem] lg:pt-0 lg:text-[15rem]"
                   key={p._id}
                 >
                   {p.name}
@@ -61,7 +55,7 @@ function SelectedWork({ projects }: IProps) {
               );
             })}
           </motion.div>
-        </motion.div>
+        </div>
       )}
       {projects.map((project) => {
         return <OneProject project={project} key={project._id} />;
