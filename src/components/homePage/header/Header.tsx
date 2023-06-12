@@ -3,17 +3,13 @@ import { Canvas } from "@react-three/fiber";
 import HeaderBackground from "./HeaderBackground";
 import WordAnim from "@/components/animated/WordAnim";
 import AnimUp from "@/components/animated/AnimUp";
-import { useIsLoaderFromStore } from "@/store/isLoader.slice";
 import { useInView } from "react-intersection-observer";
-import { useRef } from "react";
 
 function Header() {
-  const { isLoader } = useIsLoaderFromStore();
   const [ref, inView] = useInView({
     triggerOnce: true,
+    threshold: 1,
   });
-
-  console.log(inView);
 
   return (
     <div className="top-0 flex h-screen w-screen flex-col lg:sticky">
@@ -28,7 +24,7 @@ function Header() {
         className="pointer-events-none  absolute left-1/2 z-10 flex h-screen w-screen -translate-x-1/2 flex-col items-center justify-end px-5 font-Humane mix-blend-difference lg:px-20"
       >
         <div className="mb-32 w-full md:mb-10">
-          <AnimUp duration={1.5}>
+          <AnimUp inView={inView} duration={2.5}>
             <h2 className="mb-2 font-Antonio  text-lg md:text-xl lg:text-2xl">
               WELCOME ON MY 2023 PORTFOLIO
             </h2>

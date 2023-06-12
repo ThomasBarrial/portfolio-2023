@@ -4,6 +4,7 @@ import Image from "next/image";
 import AnimUp from "@/components/animated/AnimUp";
 import urlFor from "../../../../sanity/lib/urlFor";
 import ProjectDetails from "./ProjectDetails";
+import { useInView } from "react-intersection-observer";
 
 interface IProps {
   project: Project;
@@ -11,13 +12,20 @@ interface IProps {
 }
 
 function OneProject({ project }: IProps) {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  });
+
+  console.log(inView);
   return (
     <div
+      ref={ref}
       key={project._id}
       className="group flex w-screen flex-col items-center justify-center  px-5 py-0  md:h-screen md:py-0 lg:px-20"
     >
       <div className="z-10 flex h-36 w-full translate-y-12 mix-blend-exclusion lg:hidden">
-        <AnimUp duration={1.5}>
+        <AnimUp inView={inView} duration={1.5}>
           <h2 className="flex pt-5 text-left font-Humane text-[10rem] uppercase leading-[0.8] lg:m-0">
             {project.name}
           </h2>
@@ -37,7 +45,7 @@ function OneProject({ project }: IProps) {
         />
       </div>
 
-      <ProjectDetails project={project} />
+      <ProjectDetails inView={inView} project={project} />
     </div>
   );
 }

@@ -1,13 +1,16 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import AnimUp from "../animated/AnimUp";
-import { useRouter, usePathname } from "next/navigation";
-import { useIsLoaderFromStore } from "@/store/isLoader.slice";
+import { usePathname } from "next/navigation";
+import { useInView } from "react-intersection-observer";
 
 function PageTransition({ children }: { children: React.ReactNode }) {
   const [translatePage, setTranslatePage] = useState(false);
   const pathName = usePathname();
-  const { isLoader } = useIsLoaderFromStore();
+
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+  });
 
   const generatePathName = (pathName: string) => {
     const array = pathName.split("");
@@ -31,8 +34,11 @@ function PageTransition({ children }: { children: React.ReactNode }) {
 
   return (
     <>
-      <div className="page-transition fixed z-50 flex h-screen w-screen items-center justify-center bg-background">
-        <AnimUp duration={1} threshold={0} y={100}>
+      <div
+        ref={ref}
+        className="page-transition fixed z-50 flex h-screen w-screen items-center justify-center bg-background"
+      >
+        <AnimUp inView={inView} duration={1} y={100}>
           <h1 className="font-Humane text-[14rem] uppercase lg:text-[20rem]">
             {generatePathName(pathName)}
           </h1>
