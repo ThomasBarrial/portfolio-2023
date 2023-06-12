@@ -38,7 +38,7 @@
 }
 
 .page-transition {
-  animation: moveAnimation 3.5s ease-in-out;
+  animation: moveAnimation 2.5s ease-in-out;
   animation-fill-mode: forwards;
 }
 
@@ -55,7 +55,7 @@
 }
 
 .underpage-transition {
-  animation: underPageTransition 3.5s ease-in-out;
+  animation: underPageTransition 2.5s ease-in-out;
   animation-fill-mode: forwards;
 }
 
@@ -63,11 +63,14 @@
   0% {
     transform: translateY(100%);
   }
+  25% {
+    transform: translateY(0%);
+  }
   50% {
-    transform: translateY(-10%);
+    transform: translateY(0%);
   }
   75% {
-    transform: translateY(-30%);
+    transform: translateY(0%);
   }
   100% {
     transform: translateY(-100%);

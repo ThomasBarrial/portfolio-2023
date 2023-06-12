@@ -4,11 +4,11 @@ import ProgressBar from "@/components/layout/ProgressBar";
 
 function page() {
   return (
-    <>
+    <main>
       <PageTransition>
         <MasqueTest />
       </PageTransition>
-    </>
+    </main>
   );
 }
 
