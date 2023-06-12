@@ -1,7 +1,11 @@
+import PageTransition from "@/components/layout/PageTransition";
+
 export default function page() {
   return (
-    <div className="w-screen h-screen flex justify-center items-center">
-      CONTACT
-    </div>
+    <PageTransition>
+      <div className="flex h-screen w-screen items-center justify-center bg-background">
+        CONTACT
+      </div>
+    </PageTransition>
   );
 }

@@ -4,12 +4,13 @@ import { Project } from "../../../../utils/types/types";
 
 interface IProps {
   project: Project;
+  inView: boolean;
 }
 
-function ProjectDetails({ project }: IProps) {
+function ProjectDetails({ project, inView }: IProps) {
   return (
     <div className="h-20 w-full pt-5 lg:pt-10">
-      <AnimUp duration={1.5} y={80}>
+      <AnimUp inView={inView} duration={1.5} y={80}>
         <div className="flex w-full flex-col items-end pb-10 font-Antonio  text-sm md:w-full  lg:flex-row">
           <div className="flex items-center lg:mr-5">
             <p className="mr-2 hidden opacity-50 md:flex">Completed</p>

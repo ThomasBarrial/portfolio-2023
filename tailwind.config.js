@@ -22,6 +22,16 @@ module.exports = {
         md: "780px",
         phone: "550px",
       },
+      animation: {
+        "page-transition": "moveAnimation 3s linear",
+      },
+      keyframes: {
+        moveAnimation: {
+          "0%": { transform: "translateY(100%)" },
+          "50%": { transform: "translateY(0)" },
+          "100%": { transform: "translateY(-100%)" },
+        },
+      },
     },
   },
   plugins: [],
