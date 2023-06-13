@@ -1,9 +1,8 @@
 "use client";
-import { useRef } from "react";
 import AnimUp from "../../animated/AnimUp";
 import { useInView } from "react-intersection-observer";
-import layoutSectionClass from "@/components/layout/navbar/utils/layoutSectionClass";
 import LayoutSection from "@/components/layout/navbar/utils/LayoutSection";
+import Line from "@/components/layout/Line";
 
 function Services() {
   const [ref, inView] = useInView({
@@ -51,9 +50,7 @@ function Services() {
         </>
       </div>
 
-      <div
-        className={`absolute bottom-32 right-20 hidden h-[1px] w-[40%] bg-white lg:flex`}
-      />
+      <Line position={"bottom-right"} />
     </LayoutSection>
   );
 }

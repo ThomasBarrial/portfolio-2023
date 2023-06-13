@@ -1,5 +1,5 @@
 import { AnimatePresence } from "framer-motion";
-import { navBarLinks } from "./utils/navbarLinks";
+import { navBarLinks } from "../../../../utils/navbarLinks";
 import AnimUp from "@/components/animated/AnimUp";
 import Link from "next/link";
 import { Dispatch, SetStateAction } from "react";

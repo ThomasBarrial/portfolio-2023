@@ -1,29 +1,17 @@
 "use client";
-
-import Image from "next/image";
-import urlFor from "../../../../sanity/lib/urlFor";
 import { Project } from "../../../../utils/types/types";
-import {
-  MotionValue,
-  useInView,
-  useScroll,
-  useTransform,
-  motion,
-} from "framer-motion";
+import { useInView, useScroll, motion } from "framer-motion";
 import { useRef } from "react";
 import OneProject from "./OneProject";
+import useParallax from "../../../../utils/useParallax";
 
 interface IProps {
   projects: Project[];
 }
 
-function useParallax(value: MotionValue<number>, distance: number) {
-  return useTransform(value, [0.1, 1], [600, -590]);
-}
-
 function SelectedWork({ projects }: IProps) {
   const { scrollYProgress } = useScroll();
-  const y = useParallax(scrollYProgress, 300);
+  const y = useParallax(scrollYProgress, 450, -890);
   const ref = useRef(null);
 
   const inView = useInView(ref, { margin: "0px 0px -50px 0px", once: true });

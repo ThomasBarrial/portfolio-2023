@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import { navBarLinks } from "./utils/navbarLinks";
+import { navBarLinks } from "../../../../utils/navbarLinks";
 import MobileMenu from "./MobileMenu";
 
 function Navbar() {

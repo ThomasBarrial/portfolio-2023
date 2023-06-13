@@ -9,6 +9,7 @@ import SelectedWork from "@/components/homePage/selectedWork/SelectedWork";
 import PageTransition from "@/components/layout/PageTransition";
 import Experience from "@/components/homePage/experience/Experience";
 import AboutSection from "@/components/homePage/about/AboutSection";
+import Footer from "@/components/homePage/footer/Footer";
 
 const clientFetch = cache(client.fetch.bind(client));
 
@@ -26,6 +27,7 @@ export default async function Home() {
         <SelectedWork projects={projects} />
         <Experience />
         <AboutSection />
+        <Footer />
       </PageTransition>
     </main>
   );
