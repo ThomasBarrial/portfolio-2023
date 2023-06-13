@@ -1,7 +1,9 @@
 "use client";
 import { useRef } from "react";
-import AnimUp from "../animated/AnimUp";
+import AnimUp from "../../animated/AnimUp";
 import { useInView } from "react-intersection-observer";
+import layoutSectionClass from "@/components/layout/navbar/utils/layoutSectionClass";
+import LayoutSection from "@/components/layout/navbar/utils/LayoutSection";
 
 function Services() {
   const [ref, inView] = useInView({
@@ -11,21 +13,23 @@ function Services() {
   const services = ["DEVELOPEMENT", "DESIGN", "3D MOTION"];
 
   return (
-    <div
-      ref={ref}
-      className="relative z-20 flex h-screen w-screen  flex-col items-center justify-center bg-background px-5 lg:flex-row-reverse lg:px-20"
-    >
-      <div className="flex h-full w-full max-w-5xl flex-col justify-start pl-20 pt-32 font-Antonio  md:pl-52 md:pt-20 lg:pt-32 xl:pl-64 ">
+    <LayoutSection className="flex flex-col items-center justify-center lg:flex-row-reverse">
+      <div
+        ref={ref}
+        className="flex h-full w-full max-w-5xl flex-col justify-start pl-20 pt-32 font-Antonio  md:pl-52 md:pt-20 lg:pt-32 xl:pl-64 "
+      >
         <AnimUp inView={inView} duration={1}>
           <h3>SERVICES</h3>
         </AnimUp>
 
         <AnimUp inView={inView} duration={1.5}>
           <p className="mt-2">
-            I am an web and mobile developer, capable of creating cutting-edge
-            websites and mobile applications using the latest technologies. I am
-            passionate about creating innovative digital solutions to help my
-            clients achieve their online business goals.
+            {` My name is Thomas, and I'm a creative front-end developer and web
+            designer. My goal is to showcase products, brands, and projects
+            online through innovative, unique, original, and aesthetic user
+            experiences. Working with me would allow you to bring your creative
+            vision to life online, captivate your target audience, and provide a
+            memorable and engaging user experience`}
           </p>
         </AnimUp>
       </div>
@@ -50,7 +54,7 @@ function Services() {
       <div
         className={`absolute bottom-32 right-20 hidden h-[1px] w-[40%] bg-white lg:flex`}
       />
-    </div>
+    </LayoutSection>
   );
 }
 

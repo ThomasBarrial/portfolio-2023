@@ -1,5 +1,5 @@
 import TestComponent from "@/components/about/TestComponent";
-import Services from "@/components/homePage/Services";
+import Services from "@/components/homePage/services/Services";
 import Macbook from "@/components/homePage/macbook/Macbook";
 import PageTransition from "@/components/layout/PageTransition";
 

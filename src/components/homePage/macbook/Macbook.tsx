@@ -1,10 +1,11 @@
 "use client";
 import { Canvas } from "@react-three/fiber";
 import Scene from "./Scene";
+import LayoutSection from "@/components/layout/navbar/utils/LayoutSection";
 
 function Macbook() {
   return (
-    <div className="h-screen w-screen hidden lg:flex bg-background">
+    <LayoutSection className="hidden lg:flex">
       <Canvas
         performance={{ min: 0.1 }}
         gl={{ antialias: false }}
@@ -14,7 +15,7 @@ function Macbook() {
         <Scene />
         <ambientLight intensity={1} />
       </Canvas>
-    </div>
+    </LayoutSection>
   );
 }
 
