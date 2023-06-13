@@ -8,7 +8,7 @@ import { useInView } from "react-intersection-observer";
 function Header() {
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 1,
+    threshold: 0.3,
   });
 
   return (
@@ -21,7 +21,7 @@ function Header() {
 
       <div
         ref={ref}
-        className="pointer-events-none  absolute left-1/2 z-10 flex h-screen w-screen -translate-x-1/2 flex-col items-center justify-end px-5 font-Humane mix-blend-difference lg:px-20"
+        className="pointer-events-none absolute left-1/2 z-10 flex h-screen w-screen max-w-[150rem] -translate-x-1/2 flex-col items-center justify-end px-5 font-Humane mix-blend-difference lg:px-20"
       >
         <div className="mb-32 w-full md:mb-10">
           <AnimUp inView={inView} duration={2.5}>

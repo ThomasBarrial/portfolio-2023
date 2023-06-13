@@ -17,12 +17,11 @@ function OneProject({ project }: IProps) {
     threshold: 0.5,
   });
 
-  console.log(inView);
   return (
     <div
       ref={ref}
       key={project._id}
-      className="group flex w-screen flex-col items-center justify-center  px-5 py-0  md:h-screen md:py-0 lg:px-20"
+      className="group flex w-screen max-w-[150rem]  flex-col items-center justify-center px-5 py-0  md:h-screen md:py-0 lg:px-20"
     >
       <div className="z-10 flex h-36 w-full translate-y-12 mix-blend-exclusion lg:hidden">
         <AnimUp inView={inView} duration={1.5}>

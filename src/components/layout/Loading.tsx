@@ -1,8 +1,6 @@
 "use client";
 import { useIsLoaderFromStore } from "@/store/isLoader.slice";
 import React, { useEffect, useState } from "react";
-import AnimUp from "../animated/AnimUp";
-import { motion } from "framer-motion";
 
 type Props = {};
 
@@ -11,6 +9,7 @@ export default function Loading({}: Props) {
   const [count, setCount] = useState(0);
 
   let newCount = 0;
+
   useEffect(() => {
     setTimeout(() => {
       if (isLoader.active) {
@@ -20,7 +19,6 @@ export default function Loading({}: Props) {
 
     const counting = setInterval(() => {
       newCount++;
-      console.log(newCount);
       setCount(newCount);
 
       if (newCount == 100) {
