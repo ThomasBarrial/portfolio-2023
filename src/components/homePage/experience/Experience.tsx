@@ -15,7 +15,7 @@ function Experience() {
     <LayoutSection className="flex flex-col  items-end justify-center">
       <div
         ref={ref}
-        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rotate-6"
       >
         <ParallaxText baseVelocity={-5}>
           USER EXPERIENCE TECHNOLOGIES PERFOMANCES

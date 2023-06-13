@@ -8,6 +8,7 @@ import SelectedWork from "@/components/homePage/selectedWork/SelectedWork";
 
 import PageTransition from "@/components/layout/PageTransition";
 import Experience from "@/components/homePage/experience/Experience";
+import AboutSection from "@/components/homePage/about/AboutSection";
 
 const clientFetch = cache(client.fetch.bind(client));
 
@@ -24,6 +25,7 @@ export default async function Home() {
         <MacBook />
         <SelectedWork projects={projects} />
         <Experience />
+        <AboutSection />
       </PageTransition>
     </main>
   );

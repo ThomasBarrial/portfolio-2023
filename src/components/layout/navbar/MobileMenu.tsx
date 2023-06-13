@@ -11,8 +11,6 @@ interface IProps {
 }
 
 function MobileMenu({ isOpen, setIsOpen }: IProps) {
-  console.log(isOpen);
-
   return (
     <div
       className={`fixed z-40 h-screen w-screen bg-background transition duration-700 ease-in-out ${

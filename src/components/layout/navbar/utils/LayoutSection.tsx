@@ -2,7 +2,7 @@ import React from "react";
 
 interface IProps {
   children: React.ReactNode;
-  className: string;
+  className?: string;
   ref?: (node?: Element | null | undefined) => void;
 }
 
