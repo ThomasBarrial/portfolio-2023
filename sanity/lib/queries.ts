@@ -15,3 +15,8 @@ export const getAllProject = groq`
     categories[]->,
     techno[]->
 } | order(publishedAt desc)`;
+
+export const getAllSocialMedia = groq`
+*[_type == "socialMedia"] {
+    ...,
+} `;

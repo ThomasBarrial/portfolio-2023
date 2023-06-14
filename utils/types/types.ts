@@ -54,3 +54,13 @@ export interface Techno {
   _type: "techno";
   _id: string;
 }
+
+export interface SocialMedia {
+  _type: "socialMedia";
+  name: string;
+  link: string;
+  _updatedAt: Date;
+  _createdAt: Date;
+  _rev: string;
+  _id: string;
+}
