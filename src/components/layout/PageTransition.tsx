@@ -24,7 +24,6 @@ function PageTransition({ children }: { children: React.ReactNode }) {
   };
 
   useEffect(() => {
-    console.log("hello");
     generatePathName(pathName);
 
     setTimeout(() => {

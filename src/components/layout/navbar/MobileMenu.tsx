@@ -1,5 +1,5 @@
 import { AnimatePresence } from "framer-motion";
-import { navBarLinks } from "./utils/navbarLinks";
+import { navBarLinks } from "../../../../utils/navbarLinks";
 import AnimUp from "@/components/animated/AnimUp";
 import Link from "next/link";
 import { Dispatch, SetStateAction } from "react";
@@ -11,8 +11,6 @@ interface IProps {
 }
 
 function MobileMenu({ isOpen, setIsOpen }: IProps) {
-  console.log(isOpen);
-
   return (
     <div
       className={`fixed z-40 h-screen w-screen bg-background transition duration-700 ease-in-out ${

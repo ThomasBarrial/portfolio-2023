@@ -1,8 +1,9 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import { navBarLinks } from "./utils/navbarLinks";
+import { navBarLinks } from "../../../../utils/navbarLinks";
 import MobileMenu from "./MobileMenu";
+import ComeUpText from "@/components/animated/ComeUpText";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,23 +18,9 @@ function Navbar() {
         <div className="hidden md:flex">
           {navBarLinks.map((item) => {
             return (
-              <div
-                className="group flex h-6  flex-col overflow-hidden"
-                key={item.name}
-              >
-                <Link
-                  className="ml-10 transform transition duration-500 group-hover:-translate-y-6"
-                  href={item.link}
-                >
-                  {item.name}
-                </Link>
-                <Link
-                  className="ml-10 -translate-y-1 transform transition duration-500 group-hover:-translate-y-6"
-                  href={item.link}
-                >
-                  {item.name}
-                </Link>
-              </div>
+              <Link href={item.link} key={item.name}>
+                <ComeUpText text={item.name} />
+              </Link>
             );
           })}
         </div>

@@ -4,6 +4,7 @@ import ParallaxText from "./ParralaxText";
 import AnimUp from "@/components/animated/AnimUp";
 import { useInView } from "react-intersection-observer";
 import LayoutSection from "@/components/layout/navbar/utils/LayoutSection";
+import Line from "@/components/layout/Line";
 
 function Experience() {
   const [ref, inView] = useInView({
@@ -15,14 +16,16 @@ function Experience() {
     <LayoutSection className="flex flex-col  items-end justify-center">
       <div
         ref={ref}
-        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+        className="absolute left-1/2 top-1/2 flex h-screen w-screen -translate-x-1/2 -translate-y-1/2 items-center justify-center overflow-hidden"
       >
-        <ParallaxText baseVelocity={-5}>
-          USER EXPERIENCE TECHNOLOGIES PERFOMANCES
-        </ParallaxText>
-        <ParallaxText baseVelocity={5}>
-          USER EXPERIENCE TECHNOLOGIES PERFOMANCES
-        </ParallaxText>
+        <div className="rotate-3">
+          <ParallaxText baseVelocity={-5}>
+            USER EXPERIENCE TECHNOLOGIES PERFOMANCES
+          </ParallaxText>
+          <ParallaxText baseVelocity={5}>
+            USER EXPERIENCE TECHNOLOGIES PERFOMANCES
+          </ParallaxText>
+        </div>
       </div>
       <div className=" w-10/12 font-Antonio text-xl leading-relaxed phone:w-8/12 md:w-5/12">
         <AnimUp inView={inView}>
@@ -35,9 +38,7 @@ function Experience() {
           </p>
         </AnimUp>
       </div>
-      <div
-        className={`absolute bottom-32 left-10 h-[1px] w-1/2 bg-white md:left-20 md:w-[40%] `}
-      />
+      <Line position={"bottom-left"} />
     </LayoutSection>
   );
 }
