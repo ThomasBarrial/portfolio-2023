@@ -1,82 +1,62 @@
 "use client";
 import React, { useRef } from "react";
 import { Project } from "../../../utils/types/types";
-import { Canvas, extend, useFrame } from "@react-three/fiber";
-import {
-  PerspectiveCamera,
-  Plane,
-  useScroll,
-  Scroll,
-  shaderMaterial,
-} from "@react-three/drei";
+import { Canvas, extend, useFrame, useThree } from "@react-three/fiber";
+import { Plane, useScroll, Scroll, shaderMaterial } from "@react-three/drei";
 import { useControls } from "leva";
+import { Vector3, PerspectiveCamera } from "three";
+import ProjectPicture from "./ProjectPicture";
 
 interface IProps {
   projects: Project[];
 }
 
-const WaveMaterial = shaderMaterial(
-  {
-    scrollY: 0,
-  },
-  /*glsl*/ `
-  varying vec2 vUv;
-  uniform float scrollY;
-
-  void main() {
-    vec4 modelPosition = modelMatrix * vec4(position, 1.0);
-    modelPosition.z += sin(-modelPosition.y * scrollY) * 0.1;
-    vec4 viewPosition = viewMatrix * modelPosition;
-    vec4 projectionPosition = projectionMatrix * viewPosition;
-
-    gl_Position = projectionPosition;
-    vUv = uv;
-  }`,
-  /*glsl*/ `
-  precision mediump float;
- 
-
-  void main()
-  {
-    gl_FragColor = vec4(0.5, 0.0, 1.0, 1.0);
-  }`
-);
-
-extend({ WaveMaterial });
-
 function Content({ projects }: IProps) {
-  const ref = useRef<any>();
-  const objectDistance = 3;
+  const numbers = [1, 2, 3, 1, 2, 3, 1, 2, 3];
+  const groupRef = useRef<any>();
+  const planeRef = useRef();
+  const { camera } = useThree();
+  const data = useScroll();
 
-  const { position } = useControls({
-    position: {
-      value: -2,
-      min: 0,
-      max: 1,
-      step: 0.001,
-    },
+  // Fonction pour positionner les plans en cercl
+
+  // Utilisez useFrame pour animer le cercle en fonction du scroll
+  useFrame((state) => {
+    const scroll = window.scrollY; // Ou toute autre valeur de scroll que vous utilisez
+    groupRef.current.rotation.z = -scroll * 0.00115; // Ajustez la vitesse de rotation selon vos besoins
   });
 
-  console.log(position);
+  // Positionne la caméra au centre du cercle face au premier plan
+  useFrame(() => {
+    console.log(numbers.length);
+    const angle = numbers.length * 5;
+    console.log(angle);
+    const radius = 5;
+    const x = Math.cos(angle) * radius;
+    const y = Math.sin(angle) * radius;
+    const z = 0;
+    const position = new Vector3(x, y, z);
 
-  useFrame(({ camera, size }) => {
-    const scrollY = window.scrollY;
-    camera.position.y = (-scrollY / size.height) * objectDistance;
-    console.log(scrollY * 0.01);
+    camera.position.copy(position);
+    camera.lookAt(new Vector3(0, 0, 0));
 
-    console.log(position);
-    // ref.current.scrollY = position;
+    const fov = 30; // Ajustez la valeur du FOV pour rapprocher ou éloigner la caméra
+    // @ts-ignore
+    camera.fov = fov;
+    camera.updateProjectionMatrix();
   });
 
   return (
-    <group>
-      {projects.map((project, index) => {
+    <group ref={groupRef}>
+      {numbers.map((number, index) => {
+        const angle = (Math.PI * 2 * index) / numbers.length;
+        const radius = 10;
+        const x = Math.cos(angle) * radius;
+        const y = Math.sin(angle) * radius;
+        const position = new Vector3(x, y, 0);
+
         return (
-          <mesh key={project._id} position={[0, -objectDistance * index, 0]}>
-            <Plane args={[1.5, 1, 50, 50]}>
-              <meshBasicMaterial color={"red"} />
-            </Plane>
-          </mesh>
+          <ProjectPicture numbers={numbers} key={index} position={position} />
         );
       })}
     </group>
