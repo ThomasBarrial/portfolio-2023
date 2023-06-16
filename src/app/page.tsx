@@ -2,7 +2,7 @@ import MacBook from "@/components/homePage/macbook/Macbook";
 import Services from "@/components/homePage/services/Services";
 import Header from "@/components/homePage/header/Header";
 import { cache } from "react";
-import { client } from "../../sanity/lib/client";
+import { client, clientFetch } from "../../sanity/lib/client";
 import {
   getAllPosts,
   getAllProject,
@@ -14,8 +14,6 @@ import PageTransition from "@/components/layout/PageTransition";
 import Experience from "@/components/homePage/experience/Experience";
 import AboutSection from "@/components/homePage/about/AboutSection";
 import Footer from "@/components/homePage/footer/Footer";
-
-const clientFetch = cache(client.fetch.bind(client));
 
 export const revalidate = 60;
 

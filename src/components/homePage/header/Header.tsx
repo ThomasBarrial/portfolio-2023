@@ -4,6 +4,7 @@ import HeaderBackground from "./HeaderBackground";
 import WordAnim from "@/components/animated/WordAnim";
 import AnimUp from "@/components/animated/AnimUp";
 import { useInView } from "react-intersection-observer";
+import * as THREE from "three";
 
 function Header() {
   const [ref, inView] = useInView({
@@ -14,7 +15,15 @@ function Header() {
   return (
     <div className="top-0 flex h-screen w-screen flex-col lg:sticky">
       <div style={{ width: "100%", height: "100%" }}>
-        <Canvas performance={{ min: 0.1 }} gl={{ antialias: false }}>
+        <Canvas
+          performance={{ min: 0.1 }}
+          dpr={[1, 2]}
+          gl={{
+            antialias: true,
+            toneMapping: THREE.ACESFilmicToneMapping,
+            outputEncoding: THREE.sRGBEncoding,
+          }}
+        >
           <HeaderBackground />
         </Canvas>
       </div>

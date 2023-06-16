@@ -1,12 +1,25 @@
-import MasqueTest from "@/components/MasqueTest";
 import PageTransition from "@/components/layout/PageTransition";
-import ProgressBar from "@/components/layout/ProgressBar";
+import { clientFetch } from "../../../sanity/lib/client";
+import { getAllProject } from "../../../sanity/lib/queries";
+import { Project } from "../../../utils/types/types";
+import Scene from "@/components/work/Scene";
 
-function page() {
+async function page() {
+  const projects = await clientFetch(getAllProject);
   return (
     <main>
       <PageTransition>
-        <MasqueTest />
+        <Scene projects={projects} />
+        {/* {projects.map((project: Project) => {
+          return (
+            <section
+              className="relative flex h-screen w-screen items-center px-20 font-Humane text-[20rem]"
+              key={project._id}
+            >
+              {project.name}
+            </section>
+          );
+        })} */}
       </PageTransition>
     </main>
   );
