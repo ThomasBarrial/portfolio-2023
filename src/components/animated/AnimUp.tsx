@@ -1,5 +1,4 @@
 "use client";
-import { useInView } from "react-intersection-observer";
 
 interface IProps {
   children?: React.ReactNode;

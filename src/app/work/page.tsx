@@ -1,12 +1,18 @@
-import MasqueTest from "@/components/MasqueTest";
 import PageTransition from "@/components/layout/PageTransition";
-import ProgressBar from "@/components/layout/ProgressBar";
+import { clientFetch } from "../../../sanity/lib/client";
+import { getAllProject } from "../../../sanity/lib/queries";
+import { Project } from "../../../utils/types/types";
+import Scene from "@/components/work/Scene";
+import { Canvas } from "@react-three/fiber";
+import Items from "@/components/work/Items";
 
-function page() {
+async function page() {
+  const projects = await clientFetch(getAllProject);
+
   return (
     <main>
       <PageTransition>
-        <MasqueTest />
+        <Scene />
       </PageTransition>
     </main>
   );
