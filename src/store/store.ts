@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 import isLoaderReducer from "./isLoader.slice";
+import clickedReducer from "./isClickedSlice";
 
 export const store = configureStore({
   reducer: {
     isLoader: isLoaderReducer,
+    clicked: clickedReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({ serializableCheck: false }),

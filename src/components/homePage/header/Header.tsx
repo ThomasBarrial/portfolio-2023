@@ -15,15 +15,7 @@ function Header() {
   return (
     <div className="top-0 flex h-screen w-screen flex-col lg:sticky">
       <div style={{ width: "100%", height: "100%" }}>
-        <Canvas
-          performance={{ min: 0.1 }}
-          dpr={[1, 2]}
-          gl={{
-            antialias: true,
-            toneMapping: THREE.ACESFilmicToneMapping,
-            outputEncoding: THREE.sRGBEncoding,
-          }}
-        >
+        <Canvas performance={{ min: 0.1 }} dpr={[1, 1.5]}>
           <HeaderBackground />
         </Canvas>
       </div>

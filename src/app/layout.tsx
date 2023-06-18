@@ -4,7 +4,6 @@ import Navbar from "@/components/layout/navbar/Navbar";
 import ReduxProvider from "@/store/ReduxProvider";
 import localFont from "next/font/local";
 import Loading from "@/components/layout/Loading";
-import PageTransition from "@/components/layout/PageTransition";
 
 export const metadata = {
   title: "ThomasBarrial",
