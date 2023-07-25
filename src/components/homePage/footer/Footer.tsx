@@ -18,10 +18,10 @@ function Footer({ socialMedia }: IProps) {
 
   return (
     <LayoutSection className="flex flex-col items-center justify-center">
-      <h2 className="absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-center font-Humane text-[10rem] leading-[0.8] opacity-5 md:text-[25rem]">{`LET'S WORK`}</h2>
+      <h2 className="absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-center font-Humane text-[10rem] leading-[0.8] opacity-10 md:text-[25rem]">{`LET'S WORK`}</h2>
       <div
         ref={ref}
-        className="z-10 flex w-6/12 flex-col items-center justify-center  text-center font-Antonio text-2xl uppercase leading-relaxed"
+        className="z-10 flex w-11/12 flex-col items-center justify-center text-center  font-Antonio text-2xl uppercase leading-relaxed md:w-6/12"
       >
         <AnimUp inView={inView}>
           <p className="mb-10">
@@ -43,18 +43,18 @@ function Footer({ socialMedia }: IProps) {
           </Link>
         </AnimUp>
       </div>
-      <div className="bpx-5 absolute bottom-10 flex w-full justify-between font-Antonio lg:px-20 ">
-        <AnimUp inView={inView}>
+      <div className="absolute bottom-10 flex w-full flex-col-reverse justify-between px-5 font-Antonio md:flex-row lg:px-20 ">
+        <AnimUp className="mt-5 md:mt-0" inView={inView}>
           <div className="flex">
             <p>@edition2023/develop & design by Thomas barrial</p>
             <p className="ml-5">credit</p>
           </div>
         </AnimUp>
         <AnimUp inView={inView}>
-          <div className="flex underline">
+          <div className="flex justify-between  underline">
             {socialMedia.map((item) => {
               return (
-                <a href={item.link} key={item._id}>
+                <a className="" href={item.link} key={item._id}>
                   <ComeUpText text={item.name} />
                 </a>
               );

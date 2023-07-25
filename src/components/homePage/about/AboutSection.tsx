@@ -21,7 +21,7 @@ function AboutSection() {
             priority
           />
         </motion.div>
-        <p className="absolute left-5 top-10 w-8/12 lg:left-10 lg:w-6/12 ">
+        <p className="absolute left-5 top-10 w-8/12 text-sm md:text-base lg:left-10 lg:w-6/12 ">
           I am an enthusiast of extreme sports and what I love about these
           sports is the creative aspect and the fact that each athlete has their
           own identity and style. Over two years ago, my passion for technology
@@ -34,7 +34,7 @@ function AboutSection() {
           ABOUT ME
         </h2>
         <Link
-          className="group absolute bottom-10 right-5 transform rounded-full bg-white bg-opacity-10 px-4 py-2 mix-blend-difference duration-500  ease-in-out hover:bg-opacity-80 hover:text-background lg:right-10"
+          className="group absolute bottom-28 right-5 transform rounded-full bg-white bg-opacity-10 px-4 py-2 mix-blend-difference duration-500 ease-in-out  hover:bg-opacity-80 hover:text-background md:bottom-10 lg:right-10"
           href="/about"
         >
           Learn more about me
