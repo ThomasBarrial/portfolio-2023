@@ -9,7 +9,7 @@ interface IProps {
 
 function ProjectDetails({ project, inView }: IProps) {
   return (
-    <div className="h-20 w-full pt-5 lg:pt-10">
+    <div className="h-20 w-full max-w-5xl pt-5 lg:w-10/12 lg:pt-10">
       <AnimUp inView={inView} duration={1.5} y={80}>
         <div className="flex w-full flex-col items-end pb-10 font-Antonio  text-sm md:w-full  lg:flex-row">
           <div className="flex items-center lg:mr-5">
