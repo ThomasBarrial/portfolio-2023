@@ -16,6 +16,20 @@ export const getAllProject = groq`
     techno[]->
 } | order(publishedAt desc)`;
 
+export const getProjectsSlug = groq`
+*[_type == "project"] {
+slug
+}
+`;
+
+export const getOneProject = groq`
+*[_type == "project" && slug.current == $slug][0] {
+  ...,
+  projectState->,
+  categories[]->,
+  techno[]->
+}`;
+
 export const getAllSocialMedia = groq`
 *[_type == "socialMedia"] {
     ...,

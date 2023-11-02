@@ -5,19 +5,21 @@ import AnimUp from "@/components/animated/AnimUp";
 import urlFor from "../../../../sanity/lib/urlFor";
 import ProjectDetails from "./ProjectDetails";
 import { useInView } from "react-intersection-observer";
-import { useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useScroll } from "framer-motion";
 import useParallax from "../../../../utils/useParallax";
+import HoverProjectDetails from "./HoverProjectDetails";
 
 interface IProps {
   project: Project;
   key: string;
+  setIsBlendMode: Dispatch<SetStateAction<boolean>>;
   index: number;
   socialMedia: SocialMedia[];
 }
 
-function OneProject({ project, index, socialMedia }: IProps) {
+function OneProject({ project, index, socialMedia, setIsBlendMode }: IProps) {
   const [isDesktopClicked, setIsDesktopClicked] = useState(false);
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -32,6 +34,7 @@ function OneProject({ project, index, socialMedia }: IProps) {
 
   const onProjectClick = () => {
     if (window.innerWidth > 1100) {
+      setIsBlendMode(false);
       setIsDesktopClicked(true);
     } else {
       router.push("/");
@@ -43,6 +46,7 @@ function OneProject({ project, index, socialMedia }: IProps) {
       // Vous pouvez effectuer ici les actions à exécuter lors du défilement
       setTimeout(() => {
         setIsDesktopClicked(false);
+        setIsBlendMode(true);
       }, 200);
     };
 
@@ -78,8 +82,8 @@ function OneProject({ project, index, socialMedia }: IProps) {
 
       <div
         className={`relative ${
-          isDesktopClicked ? "scale-105" : "scale-100"
-        } h-[220px]  max-h-[600px] w-full max-w-5xl transform cursor-pointer overflow-hidden duration-700 phone:h-[400px] md:h-[70%] lg:w-10/12 `}
+          isDesktopClicked ? "scale-110 opacity-50" : "scale-100"
+        } h-[220px]  max-h-[600px] w-full max-w-5xl transform cursor-pointer overflow-hidden duration-700 phone:h-[400px] md:h-[80%] lg:w-10/12 `}
       >
         <Image
           className={`object-cover`}
@@ -93,10 +97,11 @@ function OneProject({ project, index, socialMedia }: IProps) {
         />
       </div>
 
-      <ProjectDetails
+      <ProjectDetails isDesktopClicked={isDesktopClicked} project={project} />
+
+      <HoverProjectDetails
         isDesktopClicked={isDesktopClicked}
         project={project}
-        inView={inView}
         socialMedia={socialMedia}
         index={index}
       />

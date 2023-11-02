@@ -1,7 +1,7 @@
 "use client";
 import { Project, SocialMedia } from "../../../../utils/types/types";
 import { useInView, useScroll, motion } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import OneProject from "./OneProject";
 import useParallax from "../../../../utils/useParallax";
 
@@ -14,6 +14,7 @@ function SelectedWork({ projects, socialMedia }: IProps) {
   const { scrollYProgress } = useScroll();
   const y = useParallax(scrollYProgress, 450, -890);
   const ref = useRef(null);
+  const [isBlendMode, setIsBlendMode] = useState(true);
 
   const inView = useInView(ref, { margin: "0px 0px -50px 0px", once: true });
 
@@ -26,7 +27,11 @@ function SelectedWork({ projects, socialMedia }: IProps) {
         Selected Work
       </h2>
       {inView && (
-        <div className="pointer-events-none fixed bottom-[20%] right-1/2 z-10 hidden h-48 w-screen max-w-[150rem] -translate-y-1/2 translate-x-1/2  flex-col items-end overflow-hidden  pr-20 text-9xl mix-blend-difference lg:flex  lg:h-48">
+        <div
+          className={`${
+            isBlendMode ? "mix-blend-difference" : ""
+          } pointer-events-none fixed bottom-[20%] right-1/2 z-10 hidden h-48 w-screen max-w-[150rem] -translate-y-1/2 translate-x-1/2  flex-col items-end overflow-hidden  pr-20 text-9xl  lg:flex  lg:h-48`}
+        >
           <motion.div style={{ y }}>
             {projects.map((p) => {
               return (
@@ -41,9 +46,10 @@ function SelectedWork({ projects, socialMedia }: IProps) {
           </motion.div>
         </div>
       )}
-      {projects.map((project, index) => {
+      {projects.map((project: Project, index) => {
         return (
           <OneProject
+            setIsBlendMode={setIsBlendMode}
             socialMedia={socialMedia}
             project={project}
             key={project._id}

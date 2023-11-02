@@ -16,7 +16,6 @@ async function page() {
     <main>
       <PageTransition>
         <MasqueTest projects={projects} socialMedia={socialMedia} />
-        {/* <Footer socialMedia={socialMedia} /> */}
       </PageTransition>
     </main>
   );

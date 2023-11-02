@@ -9,9 +9,6 @@ import {
 } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 import { Project, SocialMedia } from "../../utils/types/types";
-import Image from "next/image";
-import urlFor from "../../sanity/lib/urlFor";
-import ComeUpText from "./animated/ComeUpText";
 import OneProject from "./homePage/selectedWork/OneProject";
 
 function useParallax(
@@ -32,7 +29,7 @@ const MasqueTest = ({ projects, socialMedia }: IProps) => {
   const ref = useRef(null);
 
   const distance2 = projects.length * 63.6 + -59;
-  const distance = (projects.length - 1) * 208;
+  const distance = (projects.length - 1) * 225;
 
   const inView = useInView(ref, { margin: "0px 0px -50px 0px", once: true });
 
@@ -53,7 +50,10 @@ const MasqueTest = ({ projects, socialMedia }: IProps) => {
   }, []);
 
   return (
-    <div ref={ref} className="flex flex-col items-center justify-center py-10">
+    <div
+      ref={ref}
+      className="flex flex-col items-center justify-center pb-10 pt-20"
+    >
       <motion.div className="progress-bar" style={{ scaleX }} />
       <div className="fixed top-20 z-0 flex w-full max-w-[150rem] flex-col px-4 font-Humane text-[28rem]  opacity-10 md:flex-row">
         <div className="flex">
@@ -104,6 +104,7 @@ const MasqueTest = ({ projects, socialMedia }: IProps) => {
         return (
           <OneProject
             project={project}
+            setIsBlendMode={setIsBlendMode}
             key={project._id}
             index={index}
             socialMedia={socialMedia}

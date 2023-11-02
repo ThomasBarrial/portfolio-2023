@@ -1,6 +1,9 @@
+import { Slug } from "sanity";
+
 export interface Project {
   _type: "project";
   _id: string;
+  slug: Slug;
   name: string;
   link: string;
   categories: Category[];
