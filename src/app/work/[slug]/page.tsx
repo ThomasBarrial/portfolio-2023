@@ -23,9 +23,7 @@ export async function generateStaticParams() {
 }
 
 async function page({ params: { slug } }: Props) {
-  console.log(slug);
   const project: Project = await client.fetch(getOneProject, { slug });
-  console.log(project);
 
   return (
     <PageTransition>

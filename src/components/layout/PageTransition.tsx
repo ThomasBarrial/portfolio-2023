@@ -16,10 +16,28 @@ function PageTransition({ children }: { children: React.ReactNode }) {
     const array = pathName.split("");
     array.shift();
 
+    let foundSlash = false;
+    let result = [];
+
     if (array.length === 0) {
       return "HOME";
     } else {
-      return array.join("");
+      for (let i = 0; i < array.length; i++) {
+        if (array[i] === "/") {
+          foundSlash = true;
+          continue; // Passe à l'élément suivant après avoir trouvé "/"
+        }
+
+        if (foundSlash) {
+          result.push(array[i]);
+        }
+      }
+
+      if (foundSlash) {
+        return result.join("");
+      } else {
+        return array.join("");
+      }
     }
   };
 
