@@ -1,9 +1,8 @@
-import MasqueTest from "@/components/MasqueTest";
 import PageTransition from "@/components/layout/PageTransition";
 import { getAllProject, getAllSocialMedia } from "../../../sanity/lib/queries";
 import { client } from "../../../sanity/lib/client";
 import { cache } from "react";
-import Footer from "@/components/homePage/footer/Footer";
+import ProjectList from "@/components/work/ProjectList";
 
 const clientFetch = cache(client.fetch.bind(client));
 
@@ -15,7 +14,7 @@ async function page() {
   return (
     <main>
       <PageTransition>
-        <MasqueTest projects={projects} socialMedia={socialMedia} />
+        <ProjectList projects={projects} socialMedia={socialMedia} />
       </PageTransition>
     </main>
   );

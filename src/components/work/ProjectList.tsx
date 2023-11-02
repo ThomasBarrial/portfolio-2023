@@ -8,8 +8,8 @@ import {
   useInView,
 } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
-import { Project, SocialMedia } from "../../utils/types/types";
-import OneProject from "./homePage/selectedWork/OneProject";
+import { Project, SocialMedia } from "../../../utils/types/types";
+import OneProject from "../homePage/selectedWork/OneProject";
 
 function useParallax(
   value: MotionValue<number>,
@@ -24,7 +24,7 @@ interface IProps {
   socialMedia: SocialMedia[];
 }
 
-const MasqueTest = ({ projects, socialMedia }: IProps) => {
+const ProjectList = ({ projects, socialMedia }: IProps) => {
   const { scrollYProgress } = useScroll();
   const ref = useRef(null);
 
@@ -65,21 +65,6 @@ const MasqueTest = ({ projects, socialMedia }: IProps) => {
           <h2 className="uppercase leading-[0.8]">K</h2>
         </div>
       </div>
-      {/* 
-      <div className="pointer-events-none fixed bottom-[20%] right-1/2 z-10 hidden h-48 w-screen max-w-[150rem] -translate-y-1/2 translate-x-1/2  flex-col items-end overflow-hidden  pr-20 text-9xl mix-blend-difference lg:flex  lg:h-48">
-        <motion.div style={{ y }}>
-          {projects.map((p) => {
-            return (
-              <h3
-                className="pt-5 text-right  font-Humane  uppercase leading-[0.8] md:text-[12rem] lg:pt-0 lg:text-[15rem]"
-                key={p._id}
-              >
-                {p.name}
-              </h3>
-            );
-          })}
-        </motion.div>
-      </div> */}
 
       <div
         className={`${
@@ -115,4 +100,4 @@ const MasqueTest = ({ projects, socialMedia }: IProps) => {
   );
 };
 
-export default MasqueTest;
+export default ProjectList;
