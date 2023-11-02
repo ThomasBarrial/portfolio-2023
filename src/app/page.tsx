@@ -29,7 +29,7 @@ export default async function Home() {
         <Header />
         <Services />
         <MacBook />
-        <SelectedWork projects={projects} />
+        <SelectedWork socialMedia={socialMedia} projects={projects} />
         <Experience />
         <AboutSection />
         <Footer socialMedia={socialMedia} />

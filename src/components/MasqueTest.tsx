@@ -5,16 +5,40 @@ import {
   useTransform,
   motion,
   useSpring,
+  useInView,
 } from "framer-motion";
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { Project, SocialMedia } from "../../utils/types/types";
+import Image from "next/image";
+import urlFor from "../../sanity/lib/urlFor";
+import ComeUpText from "./animated/ComeUpText";
+import OneProject from "./homePage/selectedWork/OneProject";
 
-function useParallax(value: MotionValue<number>, distance: number) {
-  return useTransform(value, [0, 1], [0, -250]);
+function useParallax(
+  value: MotionValue<number>,
+  distance: number,
+  start: number
+) {
+  return useTransform(value, [0, 1], [start, -distance]);
 }
 
-const MasqueTest = () => {
+interface IProps {
+  projects: Project[];
+  socialMedia: SocialMedia[];
+}
+
+const MasqueTest = ({ projects, socialMedia }: IProps) => {
   const { scrollYProgress } = useScroll();
-  const y = useParallax(scrollYProgress, 300);
+  const ref = useRef(null);
+
+  const distance2 = projects.length * 63.6 + -59;
+  const distance = (projects.length - 1) * 208;
+
+  const inView = useInView(ref, { margin: "0px 0px -50px 0px", once: true });
+
+  const y = useParallax(scrollYProgress, distance, 8);
+  const y2 = useParallax(scrollYProgress, distance2, distance2);
+  const [isBlendMode, setIsBlendMode] = useState(false);
 
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -22,29 +46,70 @@ const MasqueTest = () => {
     restDelta: 0.001,
   });
 
+  useEffect(() => {
+    setTimeout(() => {
+      setIsBlendMode(true);
+    }, 1500);
+  }, []);
+
   return (
-    <div className="block">
-      {/* <motion.div className="progress-bar" style={{ scaleX }} /> */}
-      <div className="fixed left-1/2 top-1/2 flex h-32 w-full -translate-x-1/2 -translate-y-1/2 flex-col items-center overflow-hidden bg-red-200 text-9xl">
+    <div ref={ref} className="flex flex-col items-center justify-center py-10">
+      <motion.div className="progress-bar" style={{ scaleX }} />
+      <div className="fixed top-20 z-0 flex w-full max-w-[150rem] flex-col px-4 font-Humane text-[28rem]  opacity-10 md:flex-row">
+        <div className="flex">
+          <h2 className="uppercase leading-[0.8]">W</h2>
+          <h2 className="uppercase leading-[0.8]">0</h2>
+        </div>
+        <div className="flex">
+          <h2 className="uppercase leading-[0.8]">R</h2>
+          <h2 className="uppercase leading-[0.8]">K</h2>
+        </div>
+      </div>
+      {/* 
+      <div className="pointer-events-none fixed bottom-[20%] right-1/2 z-10 hidden h-48 w-screen max-w-[150rem] -translate-y-1/2 translate-x-1/2  flex-col items-end overflow-hidden  pr-20 text-9xl mix-blend-difference lg:flex  lg:h-48">
         <motion.div style={{ y }}>
-          <p className="">SECTION1</p>
-          <p className="">SECTION2</p>
-          <p className="">SECTION3</p>
+          {projects.map((p) => {
+            return (
+              <h3
+                className="pt-5 text-right  font-Humane  uppercase leading-[0.8] md:text-[12rem] lg:pt-0 lg:text-[15rem]"
+                key={p._id}
+              >
+                {p.name}
+              </h3>
+            );
+          })}
+        </motion.div>
+      </div> */}
+
+      <div
+        className={`${
+          isBlendMode ? "mix-blend-difference" : ""
+        } fixed left-1/2 top-1/2 z-20 flex h-44 w-10/12 -translate-x-1/2 -translate-y-1/2 flex-col items-end  overflow-hidden`}
+      >
+        <motion.div style={{ y }}>
+          {projects.map((item) => {
+            return (
+              <h3
+                className="py-5 text-right font-Humane uppercase leading-[0.8] md:text-[12rem] lg:pt-0 lg:text-[15rem]"
+                key={item._id}
+              >
+                {item.name}
+              </h3>
+            );
+          })}
         </motion.div>
       </div>
 
-      <div id="content">
-        {[1, 2, 3].map((value, index) => {
-          return (
-            <div
-              key={index}
-              className="flex h-screen w-screen items-center justify-center bg-red-400"
-            >
-              <div className="h-96 w-6/12 bg-lime-600" />
-            </div>
-          );
-        })}
-      </div>
+      {projects.map((project, index) => {
+        return (
+          <OneProject
+            project={project}
+            key={project._id}
+            index={index}
+            socialMedia={socialMedia}
+          />
+        );
+      })}
     </div>
   );
 };

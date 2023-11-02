@@ -1,5 +1,5 @@
 "use client";
-import { Project } from "../../../../utils/types/types";
+import { Project, SocialMedia } from "../../../../utils/types/types";
 import { useInView, useScroll, motion } from "framer-motion";
 import { useRef } from "react";
 import OneProject from "./OneProject";
@@ -7,21 +7,15 @@ import useParallax from "../../../../utils/useParallax";
 
 interface IProps {
   projects: Project[];
+  socialMedia: SocialMedia[];
 }
 
-function SelectedWork({ projects }: IProps) {
+function SelectedWork({ projects, socialMedia }: IProps) {
   const { scrollYProgress } = useScroll();
   const y = useParallax(scrollYProgress, 450, -890);
   const ref = useRef(null);
 
   const inView = useInView(ref, { margin: "0px 0px -50px 0px", once: true });
-
-  const displayIndex = (index: number) => {
-    if (index + 1 >= 0 && index + 1 <= 9) {
-      return `#0${index + 1}`;
-    }
-    return `#${index}`;
-  };
 
   return (
     <div
@@ -47,8 +41,15 @@ function SelectedWork({ projects }: IProps) {
           </motion.div>
         </div>
       )}
-      {projects.map((project) => {
-        return <OneProject project={project} key={project._id} />;
+      {projects.map((project, index) => {
+        return (
+          <OneProject
+            socialMedia={socialMedia}
+            project={project}
+            key={project._id}
+            index={index}
+          />
+        );
       })}
     </div>
   );
