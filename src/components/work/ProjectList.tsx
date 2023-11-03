@@ -69,7 +69,7 @@ const ProjectList = ({ projects, socialMedia }: IProps) => {
       <div
         className={`${
           isBlendMode ? "mix-blend-difference" : ""
-        } fixed left-1/2 top-1/2 z-20 flex h-44 w-10/12 -translate-x-1/2 -translate-y-1/2 flex-col items-end  overflow-hidden`}
+        } fixed left-1/2 top-1/2 z-20 hidden h-44 w-10/12 -translate-x-1/2 -translate-y-1/2 flex-col items-end overflow-hidden  lg:flex`}
       >
         <motion.div style={{ y }}>
           {projects.map((item) => {

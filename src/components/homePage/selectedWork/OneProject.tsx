@@ -10,6 +10,8 @@ import { useRouter } from "next/navigation";
 import { useScroll } from "framer-motion";
 import useParallax from "../../../../utils/useParallax";
 import HoverProjectDetails from "./HoverProjectDetails";
+import { useDispatch } from "react-redux";
+import { setIndex } from "@/store/workSectionIndex.slice";
 
 interface IProps {
   project: Project;
@@ -22,9 +24,11 @@ interface IProps {
 function OneProject({ project, index, socialMedia, setIsBlendMode }: IProps) {
   const [isDesktopClicked, setIsDesktopClicked] = useState(false);
   const [ref, inView] = useInView({
-    triggerOnce: true,
+    triggerOnce: false,
     threshold: 0.5,
   });
+
+  const dispatch = useDispatch();
 
   const { scrollYProgress } = useScroll();
 
@@ -58,10 +62,15 @@ function OneProject({ project, index, socialMedia, setIsBlendMode }: IProps) {
     };
   }, [isDesktopClicked]);
 
-  console.log(isDesktopClicked, project.name);
+  useEffect(() => {
+    if (inView) {
+      dispatch(setIndex(index));
+    }
+  }, [inView]);
 
   return (
     <div
+      id={project._id}
       ref={ref}
       key={project._id}
       className="group relative flex w-screen max-w-[150rem]  flex-col items-center justify-center px-5 py-0  md:h-screen md:py-0 lg:px-20"
