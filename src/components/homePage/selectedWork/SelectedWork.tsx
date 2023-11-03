@@ -12,7 +12,7 @@ interface IProps {
 
 function SelectedWork({ projects, socialMedia }: IProps) {
   const { scrollYProgress } = useScroll();
-  const y = useParallax(scrollYProgress, 450, -890);
+  const y = useParallax(scrollYProgress, 480, -980);
   const ref = useRef(null);
   const [isBlendMode, setIsBlendMode] = useState(true);
 
