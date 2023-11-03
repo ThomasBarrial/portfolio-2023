@@ -3,11 +3,14 @@ import React from "react";
 interface IProps {
   text: string;
   className?: string;
+  height?: string;
 }
 
-function ComeUpText({ text, className }: IProps) {
+function ComeUpText({ text, className, height = "h-6" }: IProps) {
   return (
-    <div className={`group flex h-6  flex-col overflow-hidden ${className}`}>
+    <div
+      className={`group flex flex-col overflow-hidden ${className} ${height}`}
+    >
       <p className="transform transition duration-500 group-hover:-translate-y-6 md:ml-10">
         {text}
       </p>
