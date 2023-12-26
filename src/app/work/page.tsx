@@ -4,6 +4,7 @@ import { client } from "../../../sanity/lib/client";
 import { cache } from "react";
 import ProjectList from "@/components/work/ProjectList";
 import Indicator from "@/components/work/Indicator";
+import Footer from "@/components/layout/footer/Footer";
 
 const clientFetch = cache(client.fetch.bind(client));
 
@@ -17,6 +18,7 @@ async function page() {
       <PageTransition>
         <Indicator projects={projects} />
         <ProjectList projects={projects} socialMedia={socialMedia} />
+        <Footer socialMedia={socialMedia} />
       </PageTransition>
     </main>
   );

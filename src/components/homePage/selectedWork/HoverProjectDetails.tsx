@@ -23,7 +23,7 @@ function HoverProjectDetails({
     return `#${index}`;
   };
   return (
-    <div className="absolute left-1/3 top-20 z-20 hidden h-[70%] w-[30%] -translate-x-1/2 flex-col   lg:flex">
+    <div className="absolute left-1/3 top-20 z-20 hidden h-[70%] w-[25%] -translate-x-2/3 flex-col    lg:flex">
       {/* INDEX NUMBER */}
       <AnimUp
         duration={1.2}
@@ -34,14 +34,14 @@ function HoverProjectDetails({
       </AnimUp>
 
       {/* INDEX 1 */}
-      <div className="flex-flex-col h-full items-center justify-center space-y-1 pt-5  font-Antonio  text-lg">
+      <div className="flex-flex-col h-full items-center justify-center space-y-1 pt-5  font-Antonio  text-sm">
         <AnimUp
           inView={isDesktopClicked}
           duration={1}
           className="flex items-center lg:mr-5"
         >
-          <p className="mr-2 hidden text-gray-200 md:flex">Completed</p>
-          <p className="text-base">
+          <p className="mr-2 hidden text-gray-300 md:flex">Completed</p>
+          <p className="text-sm">
             {new Date(project.date).toLocaleDateString("en-En", {
               day: "numeric",
               month: "long",
@@ -54,10 +54,10 @@ function HoverProjectDetails({
           duration={1.2}
           className="flex items-center lg:mr-5"
         >
-          <p className="mr-2 hidden items-center text-gray-200 md:flex">Role</p>
+          <p className="mr-2 hidden items-center text-gray-300 md:flex">Role</p>
           {project.categories.map((c) => {
             return (
-              <p className="flex text-base" key={c._id}>
+              <p className="flex text-sm" key={c._id}>
                 <span className="flex">&nbsp;</span>
                 {c.title}&nbsp;/
               </p>
@@ -69,8 +69,8 @@ function HoverProjectDetails({
           duration={1.5}
           className="flex items-center lg:mr-5"
         >
-          <p className="mr-2 hidden text-gray-200 md:flex">Technologies</p>
-          <div className="flex flex-wrap text-base">
+          <p className="mr-2 hidden text-gray-300 md:flex">Technologies</p>
+          <div className="flex flex-wrap text-sm">
             {project.techno.map((t) => {
               return (
                 <p key={t._id}>
