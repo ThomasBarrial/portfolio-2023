@@ -19,10 +19,18 @@ interface IProps {
   setIsBlendMode: Dispatch<SetStateAction<boolean>>;
   index: number;
   socialMedia: SocialMedia[];
+  isDesktopClicked: boolean;
+  setIsDesktopClicked: Dispatch<SetStateAction<boolean>>;
 }
 
-function OneProject({ project, index, socialMedia, setIsBlendMode }: IProps) {
-  const [isDesktopClicked, setIsDesktopClicked] = useState(false);
+function OneProject({
+  project,
+  index,
+  socialMedia,
+  setIsBlendMode,
+  isDesktopClicked,
+  setIsDesktopClicked,
+}: IProps) {
   const [ref, inView] = useInView({
     triggerOnce: false,
     threshold: 0.5,
@@ -41,7 +49,7 @@ function OneProject({ project, index, socialMedia, setIsBlendMode }: IProps) {
       setIsBlendMode(false);
       setIsDesktopClicked(true);
     } else {
-      router.push("/");
+      router.push(`/work/${project.slug.current}`);
     }
   };
 
@@ -73,7 +81,7 @@ function OneProject({ project, index, socialMedia, setIsBlendMode }: IProps) {
       id={project._id}
       ref={ref}
       key={project._id}
-      className="group relative flex w-screen max-w-[150rem]  flex-col items-center justify-center px-5 py-0  md:h-screen md:py-0 lg:px-20"
+      className="group relative  flex w-screen max-w-[150rem] flex-col items-center  justify-center  px-5  py-0  md:h-screen md:py-0 lg:px-20"
     >
       {!isDesktopClicked && (
         <button
@@ -83,15 +91,16 @@ function OneProject({ project, index, socialMedia, setIsBlendMode }: IProps) {
       )}
       <div className="z-10 flex h-36 w-full translate-y-12 mix-blend-exclusion lg:hidden">
         <AnimUp inView={inView} duration={1.5}>
-          <h2 className="flex pt-5 text-left font-Humane text-[10rem] uppercase leading-[0.8] lg:m-0">
+          <h2
+            className={`flex pt-5 text-left font-Humane text-[10rem] uppercase leading-[0.8] lg:m-0`}
+          >
             {project.name}
           </h2>
         </AnimUp>
       </div>
-
       <div
-        className={`relative ${
-          isDesktopClicked ? "scale-110 opacity-50" : "scale-100"
+        className={`relative top-20 ${
+          isDesktopClicked ? "scale-110 opacity-30" : "scale-100"
         } h-[220px]  max-h-[600px] w-full max-w-5xl transform cursor-pointer overflow-hidden duration-700 phone:h-[400px] md:h-[80%] lg:w-10/12 `}
       >
         <Image
@@ -105,9 +114,7 @@ function OneProject({ project, index, socialMedia, setIsBlendMode }: IProps) {
           fill
         />
       </div>
-
       <ProjectDetails isDesktopClicked={isDesktopClicked} project={project} />
-
       <HoverProjectDetails
         isDesktopClicked={isDesktopClicked}
         project={project}

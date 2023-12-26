@@ -28,9 +28,9 @@ export default async function Home() {
       <PageTransition>
         <Header />
         <Services />
-        <MacBook />
+        {/* <MacBook /> */}
         <SelectedWork socialMedia={socialMedia} projects={projects} />
-        <Experience />
+        {/* <Experience /> */}
         <AboutSection />
         <Footer socialMedia={socialMedia} />
       </PageTransition>

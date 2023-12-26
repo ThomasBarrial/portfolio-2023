@@ -26,15 +26,14 @@ interface IProps {
 
 const ProjectList = ({ projects, socialMedia }: IProps) => {
   const { scrollYProgress } = useScroll();
+  const [isDesktopClicked, setIsDesktopClicked] = useState(false);
   const ref = useRef(null);
 
-  const distance2 = projects.length * 63.6 + -59;
-  const distance = (projects.length - 1) * 225;
-
-  const inView = useInView(ref, { margin: "0px 0px -50px 0px", once: true });
+  // const distance2 = projects.length * 63.6 + -59;
+  const distance = (projects.length - 1) * 230;
 
   const y = useParallax(scrollYProgress, distance, 8);
-  const y2 = useParallax(scrollYProgress, distance2, distance2);
+  // const y2 = useParallax(scrollYProgress, distance2, distance2);
   const [isBlendMode, setIsBlendMode] = useState(false);
 
   const scaleX = useSpring(scrollYProgress, {
@@ -50,10 +49,7 @@ const ProjectList = ({ projects, socialMedia }: IProps) => {
   }, []);
 
   return (
-    <div
-      ref={ref}
-      className="flex flex-col items-center justify-center pb-10 pt-20"
-    >
+    <div ref={ref} className="flex flex-col items-center justify-center pb-10">
       <motion.div className="progress-bar" style={{ scaleX }} />
       <div className="fixed top-20 z-0 flex w-full max-w-[150rem] flex-col px-4 font-Humane text-[28rem]  opacity-10 md:flex-row">
         <div className="flex">
@@ -88,6 +84,8 @@ const ProjectList = ({ projects, socialMedia }: IProps) => {
       {projects.map((project, index) => {
         return (
           <OneProject
+            isDesktopClicked={isDesktopClicked}
+            setIsDesktopClicked={setIsDesktopClicked}
             project={project}
             setIsBlendMode={setIsBlendMode}
             key={project._id}

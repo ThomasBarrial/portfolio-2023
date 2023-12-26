@@ -7,7 +7,7 @@ import Link from "next/link";
 
 function AboutSection() {
   const { scrollYProgress } = useScroll();
-  const y = useParallax(scrollYProgress, -1400, 200);
+  const y = useParallax(scrollYProgress, -1400, 250);
 
   return (
     <LayoutSection className="flex items-center justify-center font-Antonio">

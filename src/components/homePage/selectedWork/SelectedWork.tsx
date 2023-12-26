@@ -11,6 +11,7 @@ interface IProps {
 }
 
 function SelectedWork({ projects, socialMedia }: IProps) {
+  const [isDesktopClicked, setIsDesktopClicked] = useState(false);
   const { scrollYProgress } = useScroll();
   const y = useParallax(scrollYProgress, 480, -980);
   const ref = useRef(null);
@@ -26,7 +27,7 @@ function SelectedWork({ projects, socialMedia }: IProps) {
       <h2 className="sticky top-20 z-0 mr-5 w-screen max-w-[150rem] text-right font-Humane text-[10rem] uppercase leading-[0.8] opacity-10 lg:mr-0 lg:pl-20 lg:text-left lg:text-[20rem]">
         Selected Work
       </h2>
-      {inView && (
+      {/* {inView && (
         <div
           className={`${
             isBlendMode ? "mix-blend-difference" : ""
@@ -45,10 +46,12 @@ function SelectedWork({ projects, socialMedia }: IProps) {
             })}
           </motion.div>
         </div>
-      )}
+      )} */}
       {projects.map((project: Project, index) => {
         return (
           <OneProject
+            isDesktopClicked={isDesktopClicked}
+            setIsDesktopClicked={setIsDesktopClicked}
             setIsBlendMode={setIsBlendMode}
             socialMedia={socialMedia}
             project={project}
