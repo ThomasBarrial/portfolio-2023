@@ -8,7 +8,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: "#080808",
+        background: "#111111",
+        background2: "#181818",
       },
       fontFamily: {
         Humane: ["var(--font-Humane)"],
@@ -24,12 +25,17 @@ module.exports = {
       },
       animation: {
         "page-transition": "moveAnimation 3s linear",
+        fadeIn: "fadeIn 3s linear",
       },
       keyframes: {
         moveAnimation: {
           "0%": { transform: "translateY(100%)" },
           "50%": { transform: "translateY(0)" },
           "100%": { transform: "translateY(-100%)" },
+        },
+        fadeIn: {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 1 },
         },
       },
     },

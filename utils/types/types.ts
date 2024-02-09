@@ -12,6 +12,7 @@ export interface Project {
   date: string;
   projectState: ProjectState;
   techno: Techno[];
+  gallery: SanityImage[];
   //   gallery: Array<
   //     SanityKeyed<{
   //       _type: "image";

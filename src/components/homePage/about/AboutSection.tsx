@@ -21,6 +21,7 @@ function AboutSection() {
             priority
           />
         </motion.div>
+
         <p className="absolute left-5 top-10 w-8/12 text-sm md:text-base lg:left-10 lg:w-6/12 ">
           I am an enthusiast of extreme sports and what I love about these
           sports is the creative aspect and the fact that each athlete has their

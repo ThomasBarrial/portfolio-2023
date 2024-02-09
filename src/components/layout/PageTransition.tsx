@@ -4,7 +4,13 @@ import AnimUp from "../animated/AnimUp";
 import { usePathname } from "next/navigation";
 import { useInView } from "react-intersection-observer";
 
-function PageTransition({ children }: { children: React.ReactNode }) {
+function PageTransition({
+  children,
+  value,
+}: {
+  children: React.ReactNode;
+  value?: string;
+}) {
   const [translatePage, setTranslatePage] = useState(false);
   const pathName = usePathname();
 
@@ -57,7 +63,9 @@ function PageTransition({ children }: { children: React.ReactNode }) {
       >
         <AnimUp inView={inView} duration={1} y={100}>
           <h1 className="font-Humane text-[14rem] uppercase lg:text-[20rem]">
-            {generatePathName(pathName)}
+            {value
+              ? value.toUpperCase()
+              : generatePathName(pathName.toUpperCase())}
           </h1>
         </AnimUp>
       </div>

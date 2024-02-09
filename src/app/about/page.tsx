@@ -1,17 +1,14 @@
-import TestComponent from "@/components/about/TestComponent";
+import AboutComponent from "@/components/about/AboutComponent";
 import Services from "@/components/homePage/services/Services";
 import Macbook from "@/components/homePage/macbook/Macbook";
 import PageTransition from "@/components/layout/PageTransition";
+import ProfilPic from "@/components/homePage/ProfilPic";
+import { Canvas } from "@react-three/fiber";
 
 export default function page() {
   return (
     <PageTransition>
-      <TestComponent color="200" />
-      <TestComponent color="400" />
-      <Macbook />
-      <Services />
-      <TestComponent color="300" />
-      <TestComponent color="300" />
+      <AboutComponent />
     </PageTransition>
   );
 }

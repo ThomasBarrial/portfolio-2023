@@ -1,17 +1,19 @@
 "use client";
+
 import React, { useEffect, useRef, useState } from "react";
-import { extend, useFrame, useThree } from "@react-three/fiber";
+import { Canvas, extend, useFrame, useThree } from "@react-three/fiber";
 import {
   shaderMaterial,
   Plane,
   useTexture,
   PerspectiveCamera,
+  Text,
 } from "@react-three/drei";
 import thomasBarrial from "../../../public/image/thomasbarrial.webp";
 import thomasBarrialDepthMap from "../../../public/image/thomasbarrialDepthMap.webp";
 
 extend({
-  Pseudo3DMaterial: shaderMaterial(
+  Face3DMaterial: shaderMaterial(
     { uMouse: [0, 0], uImage: null, uDepthMap: null },
     `
         varying vec2 vUv;
@@ -50,7 +52,7 @@ extend({
 });
 
 function ProfilPic({ ...props }) {
-  const depthMaterial = useRef<any>();
+  const depthMaterial = useRef<any>(null);
   const cameraRef = useRef<any>();
   const planeRef = useRef<any>();
   const [fovY, setFovY] = useState(0);
@@ -96,12 +98,13 @@ function ProfilPic({ ...props }) {
         far={100}
         position={[0, 0, 0.7]}
       />
+
       <Plane
         ref={planeRef}
         args={[0.5, 0.5]}
         position={[viewport.width * 0.25, -0.1, 0]}
       >
-        {React.createElement("pseudo3DMaterial", {
+        {React.createElement("face3DMaterial", {
           ref: depthMaterial,
           uImage: texture,
           uDepthMap: depthMap,

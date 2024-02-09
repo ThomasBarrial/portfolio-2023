@@ -11,7 +11,7 @@ interface IProps {
 function ProjectDetails({ project, isDesktopClicked }: IProps) {
   return (
     <div
-      className={`mt-5 h-32 w-full max-w-6xl transform overflow-hidden pt-10   duration-1000 lg:mt-10 lg:translate-y-16`}
+      className={`mt-5 h-32 w-full max-w-6xl transform overflow-hidden  pt-10   duration-1000 lg:mt-10 lg:translate-y-16`}
     >
       <div
         className={`${
