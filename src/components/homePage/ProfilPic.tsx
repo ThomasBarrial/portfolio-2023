@@ -10,7 +10,7 @@ import {
   Text,
 } from "@react-three/drei";
 import thomasBarrial from "../../../public/image/thomasBarrial.webp";
-import thomasBarrialDepthMap from "../../../public/image/thomasbarrialDepthMap.webp";
+import thomasBarrialDepthMap from "../../../public/image/thomasBarrialDepthMap.webp";
 
 extend({
   Face3DMaterial: shaderMaterial(
