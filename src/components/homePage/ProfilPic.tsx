@@ -9,13 +9,13 @@ import {
   PerspectiveCamera,
   Text,
 } from "@react-three/drei";
-import thomasBarrial from "../../../public/image/thomasbarrial.webp";
+import thomasBarrial from "../../../public/image/thomasBarrial.webp";
 import thomasBarrialDepthMap from "../../../public/image/thomasbarrialDepthMap.webp";
 
 extend({
   Face3DMaterial: shaderMaterial(
     { uMouse: [0, 0], uImage: null, uDepthMap: null },
-    `
+    ` 
         varying vec2 vUv;
         void main() {
           vec4 modelPosition = modelMatrix * vec4(position, 1.0);
