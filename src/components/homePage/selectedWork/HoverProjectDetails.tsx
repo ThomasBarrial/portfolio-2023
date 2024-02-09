@@ -23,7 +23,7 @@ function HoverProjectDetails({
     return `#${index}`;
   };
   return (
-    <div className="absolute left-1/3 top-20 z-20 hidden h-[70%] w-[25%] -translate-x-2/3 flex-col    lg:flex">
+    <div className="absolute left-[35%] top-1/4 z-20 hidden h-[70%] w-[25%] -translate-x-2/3 flex-col     lg:flex">
       {/* INDEX NUMBER */}
       <AnimUp
         duration={1.2}

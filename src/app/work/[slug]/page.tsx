@@ -1,9 +1,17 @@
-import React from "react";
+import React, { cache } from "react";
 import { Slug } from "sanity";
 import { client } from "../../../../sanity/lib/client";
-import { getOneProject, getProjectsSlug } from "../../../../sanity/lib/queries";
+import {
+  getAllSocialMedia,
+  getOneProject,
+  getProjectsSlug,
+} from "../../../../sanity/lib/queries";
 import { Project } from "../../../../utils/types/types";
 import PageTransition from "@/components/layout/PageTransition";
+import Header from "@/components/work/oneWork/Header";
+import Footer from "@/components/homePage/footer/Footer";
+
+const clientFetch = cache(client.fetch.bind(client));
 
 export const revalidate = 60;
 
@@ -24,12 +32,12 @@ export async function generateStaticParams() {
 
 async function page({ params: { slug } }: Props) {
   const project: Project = await client.fetch(getOneProject, { slug });
+  const socialMedia = await clientFetch(getAllSocialMedia);
 
   return (
-    <PageTransition>
-      <div className="flex h-screen w-screen items-center justify-center">
-        {project.name}
-      </div>
+    <PageTransition value={"WORK"}>
+      <Header project={project} />
+      <Footer socialMedia={socialMedia} />
     </PageTransition>
   );
 }
