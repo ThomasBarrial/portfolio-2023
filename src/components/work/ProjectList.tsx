@@ -49,7 +49,7 @@ const ProjectList = ({ projects, socialMedia }: IProps) => {
   }, []);
 
   return (
-    <div ref={ref} className="flex flex-col items-center justify-center pb-10">
+    <div ref={ref} className=" flex flex-col items-center justify-center pb-10">
       <motion.div className="progress-bar" style={{ scaleX }} />
       <div className="fixed top-20 z-0 flex w-full max-w-[150rem] flex-col px-4 font-Humane text-[28rem]  opacity-10 md:flex-row">
         <div className="flex">
