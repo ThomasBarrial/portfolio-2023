@@ -10,12 +10,12 @@ function Navbar() {
 
   return (
     <>
-      <div className="fixed left-1/2 top-0 z-30 flex w-screen max-w-[150rem] -translate-x-1/2 items-center justify-between px-5 py-3 font-Antonio mix-blend-difference lg:px-20">
+      <div className="fixed left-1/2 top-0 z-50 flex w-screen max-w-[150rem] -translate-x-1/2 items-center justify-between px-5 py-3 font-Antonio mix-blend-difference lg:px-20">
         <Link href="/">
           <h2>Thomas Barrial</h2>
           <p className="text-xs opacity-50">@Anglet France</p>
         </Link>
-        <div className="hidden md:flex">
+        <div className="hidden md:flex md:space-x-10">
           {navBarLinks.map((item) => {
             return (
               <Link href={item.link} key={item.name}>

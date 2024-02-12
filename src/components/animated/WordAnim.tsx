@@ -7,6 +7,7 @@ interface IProps {
 
 function WordAnim({ isAnim, word }: IProps) {
   const wordArray = word.split("");
+
   return (
     <div className="flex">
       {wordArray.map((letter, index) => {
@@ -17,7 +18,7 @@ function WordAnim({ isAnim, word }: IProps) {
                 isAnim ? "rotationInitial" : "rotation"
               } `}
             >
-              {letter}
+              {letter === " " ? <span>&nbsp;</span> : letter}
             </p>
           </div>
         );
