@@ -12,7 +12,7 @@ function Header() {
   });
 
   return (
-    <div className="top-0 flex h-screen w-screen flex-col lg:sticky">
+    <div className="top-0 flex h-screen w-full flex-col lg:sticky">
       <div style={{ width: "100%", height: "100%" }}>
         <Canvas performance={{ min: 0.1 }} gl={{ antialias: false }}>
           <HeaderBackground />
@@ -21,7 +21,7 @@ function Header() {
 
       <div
         ref={ref}
-        className="pointer-events-none absolute left-1/2 z-10 flex h-screen w-screen max-w-[150rem] -translate-x-1/2 flex-col items-center justify-end px-5 font-Humane mix-blend-difference lg:px-20"
+        className="pointer-events-none absolute left-1/2 z-10 flex h-screen w-full max-w-[150rem] -translate-x-1/2 flex-col items-center justify-end px-5 font-Humane mix-blend-difference lg:px-20"
       >
         <div className="mb-32 w-full md:mb-10">
           <AnimUp inView={inView} duration={2.5}>

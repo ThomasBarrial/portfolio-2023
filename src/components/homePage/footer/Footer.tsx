@@ -18,7 +18,7 @@ function Footer({ socialMedia }: IProps) {
 
   return (
     <LayoutSection className="flex flex-col items-center justify-center">
-      <h2 className="absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-center font-Humane text-[10rem] leading-[0.8] opacity-10 md:text-[25rem]">{`LET'S WORK`}</h2>
+      <h2 className="absolute left-1/2 top-1/2 w-10/12 -translate-x-1/2 -translate-y-1/2 text-center font-Humane text-[10rem] leading-[0.8] opacity-10 md:text-[25rem]">{`LET'S WORK`}</h2>
       <div
         ref={ref}
         className="z-10 flex w-11/12 flex-col items-center justify-center text-center  font-Antonio text-2xl uppercase leading-relaxed md:w-6/12"
