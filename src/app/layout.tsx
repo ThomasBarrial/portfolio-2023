@@ -5,6 +5,7 @@ import ReduxProvider from "@/store/ReduxProvider";
 import localFont from "next/font/local";
 import Loading from "@/components/layout/Loading";
 import PageTransition from "@/components/layout/PageTransition";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata = {
   title: "ThomasBarrial",
@@ -29,6 +30,7 @@ export default function RootLayout({
           <Navbar />
           <Loading />
           {children}
+          <SpeedInsights />
         </ReduxProvider>
       </body>
     </html>
