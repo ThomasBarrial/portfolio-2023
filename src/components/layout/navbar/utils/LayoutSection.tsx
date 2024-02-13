@@ -13,7 +13,7 @@ function LayoutSection({ children, className, ref }: IProps) {
       className="relative  z-20 flex  items-center justify-center bg-background "
     >
       <div
-        className={`${className} h-screen w-screen max-w-[150rem] px-5 lg:px-20`}
+        className={`${className} h-screen w-full max-w-[150rem] px-5 lg:px-20`}
       >
         {children}
       </div>

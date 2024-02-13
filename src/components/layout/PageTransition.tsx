@@ -59,7 +59,7 @@ function PageTransition({
     <>
       <div
         ref={ref}
-        className="page-transition fixed z-50 flex h-screen w-screen items-center justify-center bg-background"
+        className="page-transition fixed z-50 flex h-screen w-full items-center justify-center bg-background"
       >
         <AnimUp inView={inView} duration={1} y={100}>
           <h1 className="font-Humane text-[14rem] uppercase lg:text-[20rem]">
@@ -70,7 +70,7 @@ function PageTransition({
         </AnimUp>
       </div>
       <div
-        className={`underpage-transition fixed z-40 flex h-screen w-screen flex-col items-center justify-center bg-white text-white `}
+        className={`underpage-transition fixed z-40 flex h-screen w-full flex-col items-center justify-center bg-white text-white `}
       />
       {translatePage && <div>{children}</div>}
     </>

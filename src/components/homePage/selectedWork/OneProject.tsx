@@ -81,12 +81,12 @@ function OneProject({
       id={project._id}
       ref={ref}
       key={project._id}
-      className="group relative  flex w-screen max-w-[150rem] flex-col items-center  justify-center  px-5  py-0  md:h-screen md:py-0 lg:px-20"
+      className="group relative  flex w-full max-w-[150rem] flex-col items-center  justify-center  px-5  py-0  md:h-screen md:py-0 lg:px-20"
     >
       {!isDesktopClicked && (
         <button
           onClick={onProjectClick}
-          className="absolute z-30 h-screen w-screen bg-transparent"
+          className="absolute z-30 h-screen w-full bg-transparent"
         />
       )}
       <div className="z-10 flex h-36 w-full translate-y-12 mix-blend-exclusion lg:hidden">

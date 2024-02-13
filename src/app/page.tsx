@@ -11,7 +11,6 @@ import {
 import SelectedWork from "@/components/homePage/selectedWork/SelectedWork";
 
 import PageTransition from "@/components/layout/PageTransition";
-import Experience from "@/components/homePage/experience/Experience";
 import AboutSection from "@/components/homePage/about/AboutSection";
 import Footer from "@/components/homePage/footer/Footer";
 
@@ -27,11 +26,17 @@ export default async function Home() {
     <main>
       <PageTransition>
         <Header />
+
         <Services />
+
         {/* <MacBook /> */}
+
         <SelectedWork socialMedia={socialMedia} projects={projects} />
+
         {/* <Experience /> */}
+
         <AboutSection />
+
         <Footer socialMedia={socialMedia} />
       </PageTransition>
     </main>
