@@ -1,11 +1,12 @@
 "use client";
 import { useInView } from "react-intersection-observer";
-import ProfilPic from "../homePage/ProfilPic";
+import ProfilPic from "./ProfilPic";
 import { Canvas } from "@react-three/fiber";
 import LayoutSection from "../layout/navbar/utils/LayoutSection";
 import WordAnim from "../animated/WordAnim";
 import AnimUp from "../animated/AnimUp";
 import TextTileComp from "./TextTileComp";
+import Cursor from "../Cursor";
 
 function AboutComponent() {
   const [ref, inView] = useInView({ triggerOnce: true });
@@ -13,12 +14,14 @@ function AboutComponent() {
   return (
     <LayoutSection>
       {inView && (
-        <Canvas
-          className="absolute z-30 hidden animate-fadeIn lg:flex"
-          performance={{ min: 0.1 }}
-        >
-          <ProfilPic />
-        </Canvas>
+        <div className="h-full">
+          <Canvas
+            className="absolute z-30 hidden animate-fadeIn lg:flex"
+            performance={{ min: 0.1 }}
+          >
+            <ProfilPic />
+          </Canvas>
+        </div>
       )}
       <div
         ref={ref}
@@ -61,6 +64,7 @@ function AboutComponent() {
           </div>
         </div>
       </div>
+      <Cursor />
     </LayoutSection>
   );
 }
