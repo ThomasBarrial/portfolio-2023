@@ -8,6 +8,7 @@ import projects from "./schemas/projects";
 import projectState from "./schemas/projectState";
 import techno from "./schemas/techno";
 import socialMedia from "./schemas/socialMedia";
+import services from "./schemas/services";
 
 const schemas: SchemaTypeDefinition[] = [
   post,
@@ -17,6 +18,7 @@ const schemas: SchemaTypeDefinition[] = [
   projects,
   projectState,
   techno,
+  services,
   socialMedia,
 ];
 

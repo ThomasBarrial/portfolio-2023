@@ -16,7 +16,7 @@ function Experience() {
     <LayoutSection className="flex flex-col  items-end justify-center">
       <div
         ref={ref}
-        className="absolute left-1/2 top-1/2 flex h-screen w-screen -translate-x-1/2 -translate-y-1/2 items-center justify-center overflow-hidden"
+        className="absolute left-1/2 top-1/2 flex h-screen w-full -translate-x-1/2 -translate-y-1/2 items-center justify-center overflow-hidden"
       >
         <div className="rotate-3">
           <ParallaxText baseVelocity={-5}>
@@ -27,7 +27,7 @@ function Experience() {
           </ParallaxText>
         </div>
       </div>
-      <div className=" w-10/12 font-Antonio text-xl leading-relaxed phone:w-8/12 md:w-5/12">
+      <div className=" w-10/12 font-Antonio text-base leading-relaxed phone:w-8/12 md:w-5/12">
         <AnimUp inView={inView}>
           <p>
             A good user experience is vital for online business success. It

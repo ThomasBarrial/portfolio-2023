@@ -32,7 +32,7 @@ function OneProject({
   setIsDesktopClicked,
 }: IProps) {
   const [ref, inView] = useInView({
-    triggerOnce: false,
+    triggerOnce: true,
     threshold: 0.5,
   });
 
@@ -89,7 +89,7 @@ function OneProject({
           className="absolute z-30 h-screen w-full bg-transparent"
         />
       )}
-      <div className="z-10 flex h-36 w-full translate-y-12 mix-blend-exclusion lg:hidden">
+      <div className="z-10 flex w-full translate-y-20 mix-blend-exclusion lg:hidden lg:h-36 lg:translate-y-12">
         <AnimUp inView={inView} duration={1.5}>
           <h2
             className={`flex pt-5 text-left font-Humane text-[10rem] uppercase leading-[0.8] lg:m-0`}

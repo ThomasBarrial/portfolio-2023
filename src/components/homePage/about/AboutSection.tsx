@@ -10,7 +10,7 @@ function AboutSection() {
   const y = useParallax(scrollYProgress, -1400, 250);
 
   return (
-    <LayoutSection className="flex items-center justify-center font-Antonio">
+    <LayoutSection className="mt-20 flex items-center justify-center font-Antonio">
       <div className="relative h-[90%] w-full overflow-hidden">
         <motion.div style={{ y }} className={`w-[105% relative h-[105%] `}>
           <Image

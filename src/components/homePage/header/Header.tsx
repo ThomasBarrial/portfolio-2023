@@ -26,7 +26,7 @@ function Header() {
         <div className="mb-32 w-full md:mb-10">
           <AnimUp inView={inView} duration={2.5}>
             <h2 className="mb-2 font-Antonio  text-lg md:text-xl lg:text-2xl">
-              WELCOME ON MY 2023 PORTFOLIO
+              WELCOME ON MY 2024 PORTFOLIO
             </h2>
           </AnimUp>
 

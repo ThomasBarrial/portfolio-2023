@@ -3,54 +3,55 @@ import AnimUp from "../../animated/AnimUp";
 import { useInView } from "react-intersection-observer";
 import LayoutSection from "@/components/layout/navbar/utils/LayoutSection";
 import Line from "@/components/layout/Line";
+import H1 from "@/components/global/titles/H1";
+import Image from "next/image";
+import { IServices } from "../../../../utils/types/types";
 
-function Services() {
+interface IProps {
+  services: IServices[];
+}
+
+function Services({ services }: IProps) {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.5,
   });
-  const services = ["DEVELOPEMENT", "DESIGN", "3D MOTION"];
 
   return (
-    <LayoutSection className="flex flex-col items-center justify-center lg:flex-row-reverse">
-      <div
-        ref={ref}
-        className="flex h-full w-full max-w-5xl flex-col justify-start pl-20 pt-32 font-Antonio  md:pl-52 md:pt-20 lg:pt-32 xl:pl-64 "
-      >
-        <AnimUp inView={inView} duration={1}>
-          <h3>SERVICES</h3>
-        </AnimUp>
+    <LayoutSection className="flex flex-col items-center justify-center  lg:flex-row-reverse">
+      <div ref={ref}>
+        <div className="flex h-full w-full flex-col items-start justify-start  font-Antonio md:flex-row">
+          <div className="md:w-4/12">
+            <AnimUp className="pt-5" inView={inView} duration={2}>
+              <H1 title="MY SERVICES" />
+            </AnimUp>
+          </div>
 
-        <AnimUp inView={inView} duration={1.5}>
-          <p className="mt-2">
-            {` My name is Thomas, and I'm a creative front-end developer and web
-            designer. My goal is to showcase products, brands, and projects
-            online through innovative, unique, original, and aesthetic user
-            experiences. Working with me would allow you to bring your creative
-            vision to life online, captivate your target audience, and provide a
-            memorable and engaging user experience`}
-          </p>
-        </AnimUp>
+          <div className=" flex w-full flex-col md:w-8/12">
+            {services.map((s, index) => (
+              <AnimUp
+                inView={inView}
+                duration={1.5}
+                className={`${index === 0 ? "mt-0" : "mt-10"}`}
+                key={s.name}
+              >
+                <div className="flex items-center justify-between">
+                  <h3 className="text-xl">{s.name}</h3>
+                  <Image
+                    className="mt-5 rotate-12 transform duration-500 group-hover:-rotate-[80deg]"
+                    src="/Arrow.svg"
+                    alt="arrow"
+                    width={20}
+                    height={20}
+                  />
+                </div>
+                <p className="mt-5">{s.description}</p>
+                <div className={`mt-5 h-[1px] w-full bg-white lg:flex`} />
+              </AnimUp>
+            ))}
+          </div>
+        </div>
       </div>
-      <div className="b flex w-full flex-col justify-end font-Humane text-[8rem] leading-[0.75] phone:text-[12rem] md:text-[12rem]">
-        <>
-          {services.map((service, index) => {
-            return (
-              <div key={service}>
-                <AnimUp
-                  inView={inView}
-                  className="pt-2"
-                  duration={1.5 + index * 0.1}
-                >
-                  {service}
-                </AnimUp>
-              </div>
-            );
-          })}
-        </>
-      </div>
-
-      <Line position={"bottom-right"} />
     </LayoutSection>
   );
 }

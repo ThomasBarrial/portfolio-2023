@@ -24,14 +24,13 @@ function Footer({ socialMedia }: IProps) {
       <AnimUp className="mt-5 md:mt-0" inView={inView}>
         <div className="flex">
           <p>@edition2023/develop & design by Thomas barrial</p>
-          <p className="ml-5">credit</p>
         </div>
       </AnimUp>
       <AnimUp inView={inView}>
-        <div className="flex justify-between  underline">
+        <div className="flex justify-between space-x-5 underline">
           {socialMedia.map((item) => {
             return (
-              <a className="" href={item.link} key={item._id}>
+              <a className="mx-4" href={item.link} key={item._id}>
                 <ComeUpText text={item.name} />
               </a>
             );

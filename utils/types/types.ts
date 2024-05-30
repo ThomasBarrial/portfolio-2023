@@ -68,3 +68,9 @@ export interface SocialMedia {
   _rev: string;
   _id: string;
 }
+
+export interface IServices {
+  _type: "services";
+  name: string;
+  description: string;
+}

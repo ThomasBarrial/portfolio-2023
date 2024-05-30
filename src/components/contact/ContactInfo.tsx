@@ -12,7 +12,7 @@ interface IProps {
 }
 
 function ContactInfo({ socialMedia }: IProps) {
-  const [ref, inView] = useInView({ threshold: 0.5 });
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.5 });
   return (
     <div
       ref={ref}

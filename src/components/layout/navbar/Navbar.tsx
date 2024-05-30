@@ -13,7 +13,7 @@ function Navbar() {
       <div className="fixed left-1/2 top-0 z-50 flex w-full max-w-[150rem] -translate-x-1/2 items-center justify-between px-5 py-3 font-Antonio mix-blend-difference lg:px-20">
         <Link href="/">
           <h2>Thomas Barrial</h2>
-          <p className="text-xs opacity-50">@Anglet France</p>
+          <p className="text-xs opacity-50">@Montréal Canada</p>
         </Link>
         <div className="hidden md:flex md:space-x-10">
           {navBarLinks.map((item) => {

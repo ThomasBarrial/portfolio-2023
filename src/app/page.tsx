@@ -6,6 +6,7 @@ import { client } from "../../sanity/lib/client";
 import {
   getAllPosts,
   getAllProject,
+  getAllServices,
   getAllSocialMedia,
 } from "../../sanity/lib/queries";
 import SelectedWork from "@/components/homePage/selectedWork/SelectedWork";
@@ -13,6 +14,8 @@ import SelectedWork from "@/components/homePage/selectedWork/SelectedWork";
 import PageTransition from "@/components/layout/PageTransition";
 import AboutSection from "@/components/homePage/about/AboutSection";
 import Footer from "@/components/homePage/footer/Footer";
+import SelectedWork2 from "@/components/homePage/selectedWork2/SelectedWork2";
+import Experience from "@/components/homePage/experience/Experience";
 
 const clientFetch = cache(client.fetch.bind(client));
 
@@ -21,20 +24,21 @@ export const revalidate = 60;
 export default async function Home() {
   const projects = await clientFetch(getAllProject);
   const socialMedia = await clientFetch(getAllSocialMedia);
+  const services = await clientFetch(getAllServices);
 
   return (
     <main>
       <PageTransition>
         <Header />
 
-        <Services />
+        <Services services={services} />
 
         {/* <MacBook /> */}
 
-        <SelectedWork socialMedia={socialMedia} projects={projects} />
+        {/* <SelectedWork socialMedia={socialMedia} projects={projects} /> */}
 
-        {/* <Experience /> */}
-
+        <SelectedWork2 projects={projects} socialMedia={socialMedia} />
+        <Experience />
         <AboutSection />
 
         <Footer socialMedia={socialMedia} />

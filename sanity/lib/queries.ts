@@ -34,3 +34,14 @@ export const getAllSocialMedia = groq`
 *[_type == "socialMedia"] {
     ...,
 } `;
+
+export const getAllServices = groq`
+*[_type == "services"] {
+    ...,
+}`;
+
+export const getAllProjectCategories = groq`
+*[_type == "category"] {
+    ...,
+}
+`;

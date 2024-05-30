@@ -11,14 +11,14 @@ interface IProps {
 function ProjectDetails({ project, isDesktopClicked }: IProps) {
   return (
     <div
-      className={`mt-5 h-32 w-full max-w-6xl transform overflow-hidden  pt-10   duration-1000 lg:mt-10 lg:translate-y-16`}
+      className={`mt-24 h-20 w-full  max-w-6xl transform overflow-hidden  pt-10  duration-1000   lg:mt-10 lg:h-32 lg:translate-y-16`}
     >
       <div
         className={`${
           isDesktopClicked ? "-translate-y-20" : "max-w-5xl -translate-y-10"
         } transform  duration-1000`}
       >
-        <div className="flex w-full flex-col items-end pb-10 font-Antonio  text-sm md:w-full  lg:flex-row">
+        <div className="flex w-full flex-col items-end font-Antonio text-sm  md:w-full lg:flex-row  lg:pb-10">
           <div className="flex items-center lg:mr-5">
             <p className="mr-2 hidden opacity-50 md:flex">Completed</p>
             {new Date(project.date).toLocaleDateString("en-En", {

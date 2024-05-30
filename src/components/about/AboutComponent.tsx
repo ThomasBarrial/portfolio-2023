@@ -31,13 +31,16 @@ function AboutComponent() {
           <WordAnim word="ABOUT" isAnim={inView} />
 
           <AnimUp inView={inView} duration={2.5}>
-            {`I'm a creative front-end developer and web designer. My goal is to
-            showcase products, brands, and projects online through innovative,
-            unique, original, and aesthetic user experiences.`}
+            {`  I am an enthusiast of extreme sports and what I love about these
+          sports is the creative aspect and the fact that each athlete has their
+          own identity and style. Over two years ago, my passion for technology
+          caught up with me. Since then, I have been training in web
+          development, and my current goal is to create websites that reflect
+          the values of the sports i pratice: creativity, originality, and
+          technical skill.`}
           </AnimUp>
         </div>
         <div>
-          <TextTileComp inView={inView} title="Experience" text="2 years" />
           <div className="mt-5">
             <TextTileComp
               inView={inView}
