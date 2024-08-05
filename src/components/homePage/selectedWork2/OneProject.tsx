@@ -26,7 +26,7 @@ function OneProject({ project, index, key }: IProps) {
       } group cursor-pointer border border-white p-5`}
     >
       <Link href={`/work/${project.slug.current}`} key={key}>
-        <AnimUp inView={inView} duration={1.2} className="flex justify-between">
+        <AnimUp inView={inView} duration={1} className="flex justify-between">
           <h2 className="mb-2 font-Antonio text-xl font-bold uppercase">
             {project.name}
           </h2>
@@ -38,26 +38,25 @@ function OneProject({ project, index, key }: IProps) {
             height={20}
           />
         </AnimUp>
-        <AnimUp inView={inView} duration={2}>
-          <div
-            className={`relative overflow-hidden ${
-              inView ? "scale-100" : "scale-20"
-            } ${
-              index === 2 ? "h-[200px] lg:h-[800px]" : "h-[20px] lg:h-[400px]"
-            } w-full`}
-          >
-            <Image
-              className={`transform  object-cover opacity-100 transition duration-500 group-hover:scale-110 group-hover:opacity-100 lg:opacity-90`}
-              src={urlFor(project.mainImage).url()}
-              alt={
-                project.mainImage?.alt
-                  ? project.mainImage.alt
-                  : "Main project Image"
-              }
-              fill
-            />
-          </div>
-        </AnimUp>
+
+        <div
+          className={`relative overflow-hidden ${
+            inView ? "scale-100" : "scale-20"
+          } ${
+            index === 2 ? "h-[200px] lg:h-[800px]" : "h-[200px] lg:h-[400px]"
+          } w-full`}
+        >
+          <Image
+            className={`transform  object-cover opacity-100 transition duration-700 group-hover:scale-110 group-hover:opacity-100 lg:opacity-90`}
+            src={urlFor(project.mainImage).url()}
+            alt={
+              project.mainImage?.alt
+                ? project.mainImage.alt
+                : "Main project Image"
+            }
+            fill
+          />
+        </div>
 
         <div className="mt-2 flex justify-between space-x-2">
           <AnimUp inView={inView} duration={2}>

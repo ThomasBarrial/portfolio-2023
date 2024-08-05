@@ -10,6 +10,7 @@ import { Project } from "../../../../utils/types/types";
 import PageTransition from "@/components/layout/PageTransition";
 import Header from "@/components/work/oneWork/Header";
 import Footer from "@/components/homePage/footer/Footer";
+import ProjectImages from "@/components/work/ProjectImages";
 
 const clientFetch = cache(client.fetch.bind(client));
 
@@ -37,6 +38,7 @@ async function page({ params: { slug } }: Props) {
   return (
     <PageTransition value={"WORK"}>
       <Header project={project} />
+      <ProjectImages project={project} />
       <Footer socialMedia={socialMedia} />
     </PageTransition>
   );

@@ -72,8 +72,8 @@ function ProfilPic({ ...props }) {
 
   useFrame((state) => {
     depthMaterial.current.uniforms.uMouse.value = [
-      state.mouse.x * 0.03,
-      state.mouse.y * 0.03,
+      state.mouse.x * 0.02,
+      state.mouse.y * 0.02,
     ];
 
     if (viewport.height / viewport.height < aspectRatio) {

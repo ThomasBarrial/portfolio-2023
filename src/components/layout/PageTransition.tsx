@@ -59,7 +59,7 @@ function PageTransition({
     <>
       <div
         ref={ref}
-        className="page-transition fixed z-50 flex h-screen w-full items-center justify-center bg-background"
+        className="page-transition fixed z-50 flex h-screen w-full items-center justify-center "
       >
         <AnimUp inView={inView} duration={1} y={100}>
           <h1 className="font-Humane text-[14rem] uppercase lg:text-[20rem]">

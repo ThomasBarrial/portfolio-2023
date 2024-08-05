@@ -2,7 +2,6 @@
 import AnimUp from "../../animated/AnimUp";
 import { useInView } from "react-intersection-observer";
 import LayoutSection from "@/components/layout/navbar/utils/LayoutSection";
-import Line from "@/components/layout/Line";
 import H1 from "@/components/global/titles/H1";
 import Image from "next/image";
 import { IServices } from "../../../../utils/types/types";
@@ -18,7 +17,7 @@ function Services({ services }: IProps) {
   });
 
   return (
-    <LayoutSection className="flex flex-col items-center justify-center  lg:flex-row-reverse">
+    <LayoutSection className="justify-centern flex flex-col items-center pt-11  lg:flex-row-reverse">
       <div ref={ref}>
         <div className="flex h-full w-full flex-col items-start justify-start  font-Antonio md:flex-row">
           <div className="md:w-4/12">
@@ -31,7 +30,7 @@ function Services({ services }: IProps) {
             {services.map((s, index) => (
               <AnimUp
                 inView={inView}
-                duration={1.5}
+                duration={0.8}
                 className={`${index === 0 ? "mt-0" : "mt-10"}`}
                 key={s.name}
               >

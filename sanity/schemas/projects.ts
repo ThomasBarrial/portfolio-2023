@@ -84,5 +84,10 @@ export default defineType({
         },
       ],
     }),
+    defineField({
+      name: "videoUrl",
+      title: "Video URL",
+      type: "url",
+    }),
   ],
 });
