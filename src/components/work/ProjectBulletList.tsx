@@ -15,10 +15,11 @@ interface IProps {
 }
 
 function ProjectBulletList({ project, index, key }: IProps) {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.5,
-  });
+  const [inView, setIsInview] = useState(false);
+
+  useEffect(() => {
+    setIsInview(!inView);
+  }, []);
 
   // const [isHover, setIsHover] = useState(false);
 
@@ -43,7 +44,6 @@ function ProjectBulletList({ project, index, key }: IProps) {
       // onMouseEnter={() => setIsHover(true)}
       // onMouseLeave={() => setIsHover(false)}
       className="group cursor-pointer"
-      ref={ref}
     >
       {/* <div
         className={`${isHover ? "lg:flex" : "hidden"} z-10`}

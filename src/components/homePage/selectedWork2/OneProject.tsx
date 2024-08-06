@@ -45,7 +45,7 @@ function OneProject({ project, index, key }: IProps) {
             }  w-full`}
           > */}
           <Image
-            className={`transform  object-cover opacity-100 transition duration-700 ease-out hover:scale-[97%] group-hover:opacity-100 lg:opacity-90`}
+            className={`transform  object-cover opacity-100 transition duration-700 ease-out hover:scale-[97%] group-hover:opacity-100 lg:opacity-80`}
             src={urlFor(project.mainImage).url()}
             alt={
               project.mainImage?.alt
@@ -60,7 +60,7 @@ function OneProject({ project, index, key }: IProps) {
 
         <div className="mt-2 flex justify-between space-x-2">
           <AnimUp inView={inView} duration={2}>
-            <div className="flex w-6/12 font-Antonio text-sm">
+            <div className="flex w-6/12 font-Antonio text-base">
               {project.categories.map((c) => {
                 return (
                   <p className="flex" key={c._id}>
@@ -75,7 +75,7 @@ function OneProject({ project, index, key }: IProps) {
           <AnimUp
             inView={inView}
             duration={2}
-            className="flex w-full items-start justify-end  font-Antonio text-sm lg:mr-5"
+            className="flex w-full items-start justify-end  font-Antonio text-base lg:mr-5"
           >
             <p className="mr-2 hidden opacity-50 md:flex">Completed</p>
             {new Date(project.date).toLocaleDateString("en-En", {

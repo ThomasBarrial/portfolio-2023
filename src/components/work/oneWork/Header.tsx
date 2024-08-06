@@ -38,13 +38,13 @@ function Header({ project }: { project: Project }) {
       <div className="justify-centers relative flex w-full max-w-[150rem] flex-col items-start px-5 pt-20  font-Antonio lg:flex-row lg:px-20">
         <div
           ref={ref}
-          className=" w-full  lg:sticky lg:top-1/2 lg:w-[35%] lg:-translate-y-1/2 "
+          className=" w-full  lg:sticky lg:top-1/2 lg:w-[35%] lg:-translate-y-1/2 lg:pr-20 "
         >
           <AnimUp
             duration={1.2}
             delay={1.2}
             inView={inView}
-            className="font-Humane text-[10rem]"
+            className="font-Humane text-[10rem] leading-[8rem]"
           >
             <p>{project.name.toUpperCase()}</p>
           </AnimUp>
