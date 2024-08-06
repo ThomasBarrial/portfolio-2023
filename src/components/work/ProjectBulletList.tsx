@@ -6,6 +6,7 @@ import Image from "next/image";
 import urlFor from "../../../sanity/lib/urlFor";
 import AnimUp from "../animated/AnimUp";
 import { useInView } from "react-intersection-observer";
+import { useEffect, useState } from "react";
 
 interface IProps {
   project: Project;
@@ -19,8 +20,51 @@ function ProjectBulletList({ project, index, key }: IProps) {
     threshold: 0.5,
   });
 
+  // const [isHover, setIsHover] = useState(false);
+
+  // const [position, setPosition] = useState({ x: 0, y: 0 });
+
+  // useEffect(() => {
+  //   const handleMouseMove = (event) => {
+  //     setPosition({ x: event.clientX, y: event.clientY });
+  //   };
+
+  //   // Ajoute l'écouteur d'événement de la souris
+  //   window.addEventListener("mousemove", handleMouseMove);
+
+  //   // Nettoie l'écouteur d'événement lors du démontage du composant
+  //   return () => {
+  //     window.removeEventListener("mousemove", handleMouseMove);
+  //   };
+  // }, []);
+
   return (
-    <div className="cursor-pointer" ref={ref}>
+    <div
+      // onMouseEnter={() => setIsHover(true)}
+      // onMouseLeave={() => setIsHover(false)}
+      className="group cursor-pointer"
+      ref={ref}
+    >
+      {/* <div
+        className={`${isHover ? "lg:flex" : "hidden"} z-10`}
+        style={{
+          position: "absolute",
+          left: position.x,
+          top: position.y,
+          transform: "translate(-50%, 50%)",
+        }}
+      >
+        <Image
+          src={urlFor(project.mainImage).url()}
+          alt={
+            project.mainImage?.alt
+              ? project.mainImage.alt
+              : "Main project Image"
+          }
+          width={670}
+          height={600}
+        />
+      </div> */}
       <AnimUp
         className={`border-b border-white border-opacity-50 duration-1000 hover:border-opacity-100`}
         inView={inView}

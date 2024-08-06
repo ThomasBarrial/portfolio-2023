@@ -52,7 +52,7 @@ function AboutComponent() {
             <TextTileComp
               inView={inView}
               title="Location"
-              text="South West France"
+              text="Montréal Canada"
             />
             <TextTileComp
               inView={inView}
@@ -67,7 +67,6 @@ function AboutComponent() {
           </div>
         </div>
       </div>
-      <Cursor />
     </LayoutSection>
   );
 }

@@ -14,15 +14,16 @@ function ProjectImage({ image }: { image: SanityImage }) {
   return (
     <div ref={ref}>
       <div
-        className={`relative ${
+        className={` ${
           inView ? "scale-100" : "scale-[0.95]"
-        } mb-10 h-[200px] max-h-[1000px] w-full transform transition duration-700 md:h-[450px] lg:h-[420px] xl:h-[500px] `}
+        }  transform transition duration-700 `}
       >
         <Image
-          className={`object-cover`}
+          className={``}
           src={urlFor(image).url()}
           alt={image?.alt ? image.alt : "project Image"}
-          fill
+          width={1700}
+          height={1000}
         />
       </div>
     </div>

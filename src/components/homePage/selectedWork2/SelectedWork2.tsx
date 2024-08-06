@@ -16,14 +16,16 @@ interface IProps {
 
 function SelectedWork2({ projects }: IProps) {
   return (
-    <div className="relative z-20 flex max-w-[150rem] flex-col items-start justify-start bg-background px-5 lg:mt-0 lg:px-20 lg:pt-20">
-      <H1 title="SELECTED WORK" />
-      <div className=" mt-5 flex w-full flex-col flex-wrap lg:mt-10 lg:flex-row">
-        {projects.map((project: Project, index) => {
-          return (
-            <OneProject index={index} project={project} key={project._id} />
-          );
-        })}
+    <div className="relative z-20 flex w-screen  justify-center bg-background">
+      <div className=" flex max-w-[150rem] flex-col items-start justify-center   px-5 lg:mt-0 lg:px-20 lg:pt-20">
+        <H1 title="SELECTED WORK" />
+        <div className=" mt-5 flex w-full flex-col flex-wrap lg:mt-10 lg:flex-row">
+          {projects.slice(0, 3).map((project: Project, index) => {
+            return (
+              <OneProject index={index} project={project} key={project._id} />
+            );
+          })}
+        </div>
       </div>
     </div>
   );

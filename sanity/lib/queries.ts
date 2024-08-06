@@ -14,7 +14,7 @@ export const getAllProject = groq`
     projectState->,
     categories[]->,
     techno[]->
-} | order(publishedAt desc)`;
+} | order(date desc)`;
 
 export const getProjectsSlug = groq`
 *[_type == "project"] {

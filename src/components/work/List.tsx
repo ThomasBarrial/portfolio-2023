@@ -13,9 +13,9 @@ interface IProps {
 
 function List({ projects, categories }: IProps) {
   const [categorySelected, setCategorySelected] = useState<Category>(
-    categories[0]
+    categories[2]
   );
-  const [isBulletList, setIsBulletList] = useState(true);
+  const [isBulletList, setIsBulletList] = useState(false);
 
   const filteredProjects = useMemo(() => {
     if (!categorySelected) return projects;
@@ -42,13 +42,12 @@ function List({ projects, categories }: IProps) {
 
   return (
     <div className="w-full max-w-[150rem] px-5  lg:px-20 lg:pt-20">
-      <div className="sticky top-0 z-10 flex flex-col justify-between pt-24 mix-blend-difference md:top-24 md:flex-row md:items-end md:pt-0">
-        <H1 title="PROJECTS" />
-        <div className="flex flex-col items-end  space-x-5 ">
+      <div className="md:pt-18 sticky top-0 z-10 flex flex-col justify-between pt-16 mix-blend-difference md:top-10 md:flex-row  md:items-end">
+        <div className="flex w-full flex-col items-end justify-between space-x-5 md:flex-row  lg:items-center ">
           <div className="relative mb-4 flex w-20 items-center justify-between mix-blend-difference ">
             <div
               className={`absolute  h-8 w-8 ${
-                isBulletList ? "translate-x-0 " : "translate-x-[50px] "
+                isBulletList ? "translate-x-0 " : "translate-x-[49.6px] "
               }  transform border border-b-2 border-white duration-500`}
             />
             <button
@@ -82,7 +81,13 @@ function List({ projects, categories }: IProps) {
           </div>
           <div className="mt-2 flex items-center space-x-5 font-Antonio text-base underline md:mt-0">
             {categories.map((c) => (
-              <button onClick={() => onClick(c)} key={c._id}>
+              <button
+                className={`${
+                  categorySelected === c ? "opacity-100" : "opacity-50"
+                }`}
+                onClick={() => onClick(c)}
+                key={c._id}
+              >
                 {c.title} ({projectCounts[c.title] || 0})
               </button>
             ))}
@@ -92,7 +97,7 @@ function List({ projects, categories }: IProps) {
 
       <div>
         {isBulletList ? (
-          <div className=" mt-5 flex min-h-screen w-full animate-fadeIn flex-col lg:mt-10">
+          <div className=" mt-5 flex min-h-screen w-full animate-fadeIn flex-col space-y-10 pb-52 pt-10">
             {filteredProjects.map((project: Project, index) => {
               return (
                 <ProjectBulletList
@@ -104,10 +109,14 @@ function List({ projects, categories }: IProps) {
             })}
           </div>
         ) : (
-          <div className=" mt-5 flex w-full animate-fadeIn flex-col flex-wrap lg:mt-10 lg:flex-row">
+          <div className="mt-10 flex w-full animate-fadeIn flex-col flex-wrap md:mt-32 lg:mt-10 lg:flex-row">
             {filteredProjects.map((project: Project, index) => {
               return (
-                <OneProject index={index} project={project} key={project._id} />
+                <OneProject
+                  index={index}
+                  project={project}
+                  key={project.name}
+                />
               );
             })}
           </div>

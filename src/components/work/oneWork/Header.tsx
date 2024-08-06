@@ -34,114 +34,129 @@ function Header({ project }: { project: Project }) {
 
   const imagesArray = [1, 2, 3, 4, 5];
   return (
-    <div className="relative flex max-w-[150rem] flex-col items-start justify-center px-5 pt-20  font-Antonio lg:flex-row lg:px-20">
-      <div ref={ref} className=" top-20 mr-10 w-full lg:sticky lg:w-[35%] ">
-        <AnimUp
-          duration={1.2}
-          delay={1.2}
-          inView={inView}
-          className="font-Humane text-9xl"
+    <div className="flex w-screen justify-center">
+      <div className="justify-centers relative flex w-full max-w-[150rem] flex-col items-start px-5 pt-20  font-Antonio lg:flex-row lg:px-20">
+        <div
+          ref={ref}
+          className=" w-full  lg:sticky lg:top-1/2 lg:w-[35%] lg:-translate-y-1/2 "
         >
-          <p>{project.name.toUpperCase()}</p>
-        </AnimUp>
-        <AnimUp
-          duration={1.2}
-          delay={1.2}
-          inView={inView}
-          className="font-Humane text-9xl"
-        >
-          <p>{displayIndex(1)}</p>
-        </AnimUp>
-        <div className="flex-flex-col h-full items-center justify-center space-y-1 pt-5  font-Antonio  text-sm">
           <AnimUp
-            inView={inView}
-            duration={1}
-            delay={1.2}
-            className="flex items-center lg:mr-5"
-          >
-            <p className="mr-2 hidden text-gray-300 md:flex">Completed</p>
-            <p className="text-sm">
-              {new Date(project.date).toLocaleDateString("en-En", {
-                day: "numeric",
-                month: "long",
-                year: "numeric",
-              })}
-            </p>
-          </AnimUp>
-          <AnimUp
-            inView={inView}
             duration={1.2}
             delay={1.2}
-            className="flex items-center lg:mr-5"
+            inView={inView}
+            className="font-Humane text-[10rem]"
           >
-            <p className="mr-2 hidden items-center text-gray-300 md:flex">
-              Role
-            </p>
-            {project.categories.map((c) => {
-              return (
-                <p className="flex text-sm" key={c._id}>
-                  <span className="flex">&nbsp;</span>
-                  {c.title}&nbsp;/
-                </p>
-              );
-            })}
+            <p>{project.name.toUpperCase()}</p>
           </AnimUp>
           <AnimUp
-            inView={inView}
-            duration={1.5}
+            duration={1.2}
             delay={1.2}
-            className="flex items-center lg:mr-5"
+            inView={inView}
+            className="font-Humane text-9xl"
           >
-            <p className="mr-2 hidden text-gray-300 md:flex">Technologies</p>
-            <div className="flex flex-wrap text-sm">
-              {project.techno.map((t) => {
+            <p>{displayIndex(1)}</p>
+          </AnimUp>
+          <div className="flex-flex-col h-full items-center justify-center space-y-1 pt-5  font-Antonio  text-sm">
+            <AnimUp
+              inView={inView}
+              duration={1}
+              delay={1.2}
+              className="flex items-center lg:mr-5"
+            >
+              <p className="mr-2 hidden text-gray-300 md:flex">Completed</p>
+              <p className="text-base">
+                {new Date(project.date).toLocaleDateString("en-En", {
+                  day: "numeric",
+                  month: "long",
+                  year: "numeric",
+                })}
+              </p>
+            </AnimUp>
+            <AnimUp
+              inView={inView}
+              duration={1.2}
+              delay={1.2}
+              className="flex items-center lg:mr-5"
+            >
+              <p className="mr-2 hidden items-center text-gray-300 md:flex">
+                Role
+              </p>
+              {project.categories.map((c) => {
                 return (
-                  <p key={t._id}>
-                    {" "}
-                    <span>&nbsp;</span>
-                    {t.title}&nbsp;/
+                  <p className="flex text-base" key={c._id}>
+                    <span className="flex">&nbsp;</span>
+                    {c.title}&nbsp;/
                   </p>
                 );
               })}
-            </div>
-          </AnimUp>
-          {/* INDEX 2 */}
-          <AnimUp
-            inView={inView}
-            duration={1.5}
-            delay={1.2}
-            className="pt-5 text-sm"
-          >
-            <p>{project.description}</p>
-          </AnimUp>
+            </AnimUp>
+            <AnimUp
+              inView={inView}
+              duration={1.5}
+              delay={1.2}
+              className="flex items-center lg:mr-5"
+            >
+              <p className="mr-2 hidden text-gray-300 md:flex">Technologies</p>
+              <div className="flex flex-wrap text-sm">
+                {project.techno.map((t) => {
+                  return (
+                    <p key={t._id}>
+                      {" "}
+                      <span>&nbsp;</span>
+                      {t.title}&nbsp;/
+                    </p>
+                  );
+                })}
+              </div>
+            </AnimUp>
+            {/* INDEX 2 */}
+            <AnimUp
+              inView={inView}
+              duration={1.5}
+              delay={1.2}
+              className="pt-5 text-base"
+            >
+              <p>{project.description}</p>
+            </AnimUp>
+            <AnimUp
+              inView={inView}
+              duration={1.5}
+              delay={1.2}
+              className="pt-5 text-base"
+            >
+              <a href={project.link} target="_blank" className="underline">
+                VISITE PROJECT
+              </a>
+            </AnimUp>
+          </div>
         </div>
-      </div>
+        {/* 
+        <div className="fixed -bottom-10 left-0 z-0 flex w-full max-w-[150rem] flex-col px-4 font-Humane text-[28rem] opacity-5  md:flex-row md:px-20">
+          <div className="flex">
+            <h2 className="uppercase leading-[0.8]">W</h2>
+            <h2 className="uppercase leading-[0.8]">0</h2>
+          </div>
+          <div className="flex">
+            <h2 className="uppercase leading-[0.8]">R</h2>
+            <h2 className="uppercase leading-[0.8]">K</h2>
+          </div>
+        </div> */}
 
-      <div className="fixed -bottom-10 z-0 flex w-full max-w-[150rem] flex-col px-4 font-Humane text-[28rem] opacity-10  md:flex-row md:px-20">
-        <div className="flex">
-          <h2 className="uppercase leading-[0.8]">W</h2>
-          <h2 className="uppercase leading-[0.8]">0</h2>
-        </div>
-        <div className="flex">
-          <h2 className="uppercase leading-[0.8]">R</h2>
-          <h2 className="uppercase leading-[0.8]">K</h2>
-        </div>
-      </div>
-
-      {/* <div className=" fixed bottom-0 hidden  w-full max-w-[150rem] flex-col px-4 font-Humane text-[28rem] md:flex-row  md:px-20 lg:flex">
+        {/* <div className=" fixed bottom-0 hidden  w-full max-w-[150rem] flex-col px-4 font-Humane text-[28rem] md:flex-row  md:px-20 lg:flex">
         <h1 className="font-humane text-[8rem]">
           {project.name.toUpperCase()}
         </h1>
       </div> */}
-      {project.gallery && (
-        <div className="mt-10 w-full lg:mt-0 lg:w-[70%]">
-          {project.gallery.map((image, index) => (
-            <div key={index}>
-              <ProjectImage image={image} />
-            </div>
-          ))}
-        </div>
-      )}
+        {project.gallery && (
+          <div className="mt-10 w-full lg:mt-0 lg:w-[70%]">
+            {project.gallery.map((image, index) => (
+              <div className="my-10" key={index}>
+                <ProjectImage image={image} />
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   );
 }

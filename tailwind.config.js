@@ -22,6 +22,7 @@ module.exports = {
         lg: "1100px",
         md: "780px",
         phone: "550px",
+        xsphone: "450px",
       },
       animation: {
         "page-transition": "moveAnimation 3s linear",
