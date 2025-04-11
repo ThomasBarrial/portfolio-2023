@@ -101,8 +101,8 @@ function ProfilPic({ ...props }) {
 
       <Plane
         ref={planeRef}
-        args={[0.31, 0.46]}
-        position={[viewport.width * -0.01, 0, 0]}
+        args={[0.45, 0.66]}
+        position={[viewport.width * 0.2, 0, 0]}
       >
         {React.createElement("face3DMaterial", {
           ref: depthMaterial,
