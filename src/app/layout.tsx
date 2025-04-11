@@ -4,8 +4,10 @@ import Navbar from "@/components/layout/navbar/Navbar";
 import ReduxProvider from "@/store/ReduxProvider";
 import localFont from "next/font/local";
 import Loading from "@/components/layout/Loading";
-import PageTransition from "@/components/layout/PageTransition";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import SmoothScrolling from "@/components/layout/LenisScrollProvider";
+import Lenis from "@studio-freight/lenis";
+import LenisScrollProvider from "@/components/layout/LenisScrollProvider";
 
 export const metadata = {
   title: "ThomasBarrial",
@@ -24,13 +26,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`bg-background text-white ${humane.variable}`}>
+      <body className={` bg-background text-white ${humane.variable} `}>
         <ReduxProvider>
-          <ProgressBar />
-          <Navbar />
-          <Loading />
-          {children}
-          <SpeedInsights />
+          <LenisScrollProvider>
+            <ProgressBar />
+            <Navbar />
+            <Loading />
+            {children}
+            <SpeedInsights />
+          </LenisScrollProvider>
         </ReduxProvider>
       </body>
     </html>

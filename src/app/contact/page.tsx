@@ -13,7 +13,7 @@ export default async function page() {
   const socialMedia = await clientFetch(getAllSocialMedia);
   return (
     <PageTransition>
-      <div className="relative w-full max-w-[150rem] px-5 pt-20 lg:px-20">
+      <div className="relative mx-auto w-full max-w-[150rem] px-5 pt-20 lg:px-10">
         <ContactHeader />
         <div className="flex flex-col items-start md:flex-row">
           <ContactForm />

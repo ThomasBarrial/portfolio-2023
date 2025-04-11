@@ -18,7 +18,7 @@ function Experience() {
         ref={ref}
         className="absolute left-1/2 top-1/2 flex h-screen w-full -translate-x-1/2 -translate-y-1/2 items-center justify-center overflow-hidden"
       >
-        <div className="rotate-3">
+        <div>
           <ParallaxText baseVelocity={-5}>
             USER EXPERIENCE TECHNOLOGIES PERFOMANCES
           </ParallaxText>

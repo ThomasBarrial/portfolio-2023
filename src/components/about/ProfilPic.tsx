@@ -72,8 +72,8 @@ function ProfilPic({ ...props }) {
 
   useFrame((state) => {
     depthMaterial.current.uniforms.uMouse.value = [
-      state.mouse.x * 0.03,
-      state.mouse.y * 0.03,
+      state.mouse.x * 0.01,
+      state.mouse.y * 0.02,
     ];
 
     if (viewport.height / viewport.height < aspectRatio) {
@@ -96,13 +96,13 @@ function ProfilPic({ ...props }) {
         aspect={viewport.width / viewport.height}
         near={0.1}
         far={100}
-        position={[0, 0, 0.7]}
+        position={[0, 0, 1]}
       />
 
       <Plane
         ref={planeRef}
-        args={[0.5, 0.5]}
-        position={[viewport.width * 0.25, -0.1, 0]}
+        args={[0.31, 0.46]}
+        position={[viewport.width * -0.01, 0, 0]}
       >
         {React.createElement("face3DMaterial", {
           ref: depthMaterial,

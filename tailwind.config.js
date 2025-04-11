@@ -19,7 +19,7 @@ module.exports = {
         desktop: "1200px",
         xxl: "1550px",
         // => @media (min-width: 1280px) { ... }
-        lg: "1100px",
+        lg: "1300px",
         md: "780px",
         phone: "550px",
         xsphone: "450px",

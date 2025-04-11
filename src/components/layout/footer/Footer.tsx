@@ -19,7 +19,7 @@ function Footer({ socialMedia }: IProps) {
   return (
     <div
       ref={ref}
-      className="flex w-full flex-col-reverse justify-between px-5 py-10 font-Antonio md:flex-row lg:px-20 "
+      className="flex w-full flex-col-reverse justify-between px-5 py-10 font-Antonio md:flex-row lg:px-10 "
     >
       <AnimUp className="mt-5 md:mt-0" inView={inView}>
         <div className="flex">

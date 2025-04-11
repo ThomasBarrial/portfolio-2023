@@ -80,3 +80,15 @@
     transform: translateY(-100%);
   }
 }
+
+/* Hide scrollbar while still allowing scrolling */
+html,
+body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer & Edge */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}

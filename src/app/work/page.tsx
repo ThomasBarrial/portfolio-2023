@@ -19,6 +19,7 @@ async function page() {
   const projects = await clientFetch(getAllProject);
   const socialMedia = await clientFetch(getAllSocialMedia);
   const categories = await clientFetch(getAllProjectCategories);
+
   return (
     <main>
       <PageTransition>

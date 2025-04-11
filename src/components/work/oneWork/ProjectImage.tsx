@@ -14,7 +14,7 @@ function ProjectImage({ image }: { image: SanityImage }) {
   return (
     <div ref={ref}>
       <div
-        className={` ${
+        className={`${
           inView ? "scale-100" : "scale-[0.95]"
         }  transform transition duration-700 `}
       >

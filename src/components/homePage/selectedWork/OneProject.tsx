@@ -81,7 +81,7 @@ function OneProject({
       id={project._id}
       ref={ref}
       key={project._id}
-      className="group relative  flex w-full max-w-[150rem] flex-col items-center  justify-center  px-5  py-0  md:h-screen md:py-0 lg:px-20"
+      className="group relative  flex w-full max-w-[150rem] flex-col items-center  justify-center  px-10  px-5  py-0 md:h-screen md:py-0"
     >
       {!isDesktopClicked && (
         <button

@@ -8,7 +8,10 @@ export interface Project {
   link: string;
   categories: Category[];
   mainImage: SanityImage;
+  title: string;
   description: string;
+  primaryColor: string;
+  secondaryColor: string;
   date: string;
   projectState: ProjectState;
   techno: Techno[];

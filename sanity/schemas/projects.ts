@@ -53,10 +53,28 @@ export default defineType({
       ],
     }),
     defineField({
+      name: "title",
+      title: "titre",
+      type: "string",
+    }),
+    defineField({
       name: "description",
       title: "Description",
       type: "string",
     }),
+    defineField({
+      name: "primaryColor",
+      title: "primaryColor",
+      type: "string",
+      initialValue: "#111111",
+    }),
+    defineField({
+      name: "secondaryColor",
+      title: "secondaryColor",
+      type: "string",
+      initialValue: "#fffff",
+    }),
+
     defineField({
       name: "date",
       title: "Date",

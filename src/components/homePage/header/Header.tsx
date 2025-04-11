@@ -21,22 +21,22 @@ function Header() {
 
       <div
         ref={ref}
-        className="pointer-events-none absolute left-1/2 z-10 flex h-screen w-full max-w-[150rem] -translate-x-1/2 flex-col items-center justify-end px-5 font-Humane mix-blend-difference lg:px-20"
+        className="pointer-events-none absolute left-1/2 z-10 flex h-screen w-full max-w-[150rem] -translate-x-1/2 flex-col items-center justify-end px-5 font-Humane mix-blend-difference lg:px-10"
       >
         <div className="mb-32 w-full md:mb-10">
           <AnimUp inView={inView} duration={2.5}>
             <h2 className="mb-2 font-Antonio  text-lg md:text-xl lg:text-2xl">
-              WELCOME ON MY 2024 PORTFOLIO
+              WELCOME ON MY PORTFOLIO
             </h2>
           </AnimUp>
 
           <h1>
-            <WordAnim word="DESIGNER" isAnim={inView} />
+            <WordAnim word="DESIGNER &" isAnim={inView} />
           </h1>
 
           <h1 className="flex flex-col md:flex-row">
             <div className="mr-0 md:mr-5">
-              <WordAnim word="CREATIVE" isAnim={inView} />
+              <WordAnim word="WEB" isAnim={inView} />
             </div>
 
             <WordAnim word="DEVELOPER" isAnim={inView} />

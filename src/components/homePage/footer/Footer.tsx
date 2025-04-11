@@ -43,10 +43,10 @@ function Footer({ socialMedia }: IProps) {
           </Link>
         </AnimUp>
       </div>
-      <div className="absolute bottom-10 flex w-full flex-col-reverse justify-between px-5 font-Antonio md:flex-row lg:px-20 ">
+      <div className="absolute bottom-10 flex w-full flex-col-reverse justify-between px-5 font-Antonio md:flex-row lg:px-10 ">
         <AnimUp className="mt-5 md:mt-0" inView={inView}>
           <div className="flex">
-            <p>@edition2023/develop & design by Thomas barrial</p>
+            <p>@edition2025/develop & design by Thomas barrial</p>
           </div>
         </AnimUp>
         <AnimUp inView={inView}>

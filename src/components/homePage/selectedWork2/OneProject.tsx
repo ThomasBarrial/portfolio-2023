@@ -23,7 +23,7 @@ function OneProject({ project, index, key }: IProps) {
       ref={ref}
       className={`${
         index % 3 === 0 ? "w-full" : "w-full lg:w-1/2"
-      } group cursor-pointer border border-white border-opacity-20 p-10`}
+      } group flex cursor-pointer flex-col items-center border border-white border-opacity-20 p-4 lg:p-10`}
     >
       <Link href={`/work/${project.slug.current}`} key={key}>
         <AnimUp inView={inView} duration={1.2} className="flex justify-between">

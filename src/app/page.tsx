@@ -1,15 +1,12 @@
-import MacBook from "@/components/homePage/macbook/Macbook";
 import Services from "@/components/homePage/services/Services";
 import Header from "@/components/homePage/header/Header";
 import { cache } from "react";
 import { client } from "../../sanity/lib/client";
 import {
-  getAllPosts,
   getAllProject,
   getAllServices,
   getAllSocialMedia,
 } from "../../sanity/lib/queries";
-import SelectedWork from "@/components/homePage/selectedWork/SelectedWork";
 
 import PageTransition from "@/components/layout/PageTransition";
 import AboutSection from "@/components/homePage/about/AboutSection";
@@ -30,17 +27,10 @@ export default async function Home() {
     <main>
       <PageTransition>
         <Header />
-
         <Services services={services} />
-
-        {/* <MacBook /> */}
-
-        {/* <SelectedWork socialMedia={socialMedia} projects={projects} /> */}
-
         <SelectedWork2 projects={projects} socialMedia={socialMedia} />
         <Experience />
         <AboutSection />
-
         <Footer socialMedia={socialMedia} />
       </PageTransition>
     </main>
