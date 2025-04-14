@@ -34,7 +34,7 @@ function Header({ project }: { project: Project }) {
         backgroundColor: project.primaryColor,
       }}
     >
-      <div className="justify-centers relative flex w-full max-w-[150rem] flex-col items-start px-0 pb-10 pt-20 font-Antonio lg:flex-row">
+      <div className="justify-centers relative flex w-full max-w-[150rem] flex-col items-start  px-0 pb-10 pt-20 font-Antonio lg:flex-row lg:px-10">
         <div
           ref={ref}
           className=" flex w-full flex-col justify-between px-5 lg:sticky   lg:top-[55%] lg:min-h-[80vh] lg:w-[22%] lg:-translate-y-1/2 lg:px-0 lg:pr-10"
