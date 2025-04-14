@@ -39,11 +39,11 @@ function Services({ services }: IProps) {
           <div className=" mt-10 flex w-full flex-col space-y-10 md:w-8/12">
             {sortedArray.map((s, index) => (
               <AnimUp inView={inView} duration={1.5} className="" key={s.name}>
-                <div className={`mb-5 h-[1px] w-full bg-white lg:flex`} />
                 <div className="flex items-center justify-between">
                   <h3 className="text-xl lg:text-2xl">{s.name}</h3>
                 </div>
-                <p className="ml-10 mt-5">{s.description}</p>
+                <p className="ml-10 mt-5 lg:ml-0">{s.description}</p>
+                <div className={`mt-5 h-[1px] w-full bg-white lg:flex`} />
               </AnimUp>
             ))}
           </div>

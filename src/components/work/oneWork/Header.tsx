@@ -5,6 +5,7 @@ import { useScroll } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import AnimUp from "@/components/animated/AnimUp";
 import ProjectImage from "./ProjectImage";
+import WordAnim from "@/components/animated/WordAnim";
 
 function Header({ project }: { project: Project }) {
   const { scrollYProgress } = useScroll();
@@ -46,12 +47,14 @@ function Header({ project }: { project: Project }) {
             <div className="flex flex-wrap ">
               {splitedName.map((word, index) => {
                 return (
-                  <p
-                    key={index}
-                    className="font-Humane text-[10rem] leading-[8rem]"
-                  >
-                    {word.toUpperCase()}
-                  </p>
+                  <div key={index} className="font-Humane ">
+                    <WordAnim
+                      marge=""
+                      textSize="text-[9rem] leading-[8rem]"
+                      word={word.toUpperCase()}
+                      isAnim={inView}
+                    />
+                  </div>
                 );
               })}
             </div>

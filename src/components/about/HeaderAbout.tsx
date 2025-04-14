@@ -2,9 +2,7 @@
 import { useInView } from "react-intersection-observer";
 import ProfilPic from "./ProfilPic";
 import { Canvas } from "@react-three/fiber";
-import LayoutSection from "../layout/navbar/utils/LayoutSection";
 import WordAnim from "../animated/WordAnim";
-import AnimUp from "../animated/AnimUp";
 import TextTileComp from "./TextTileComp";
 import Cursor from "../Cursor";
 import Image from "next/image";
