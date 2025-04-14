@@ -18,7 +18,6 @@ function ProjectImage({ image }: { image: SanityImage }) {
         }  transform transition duration-700 `}
       >
         <Image
-          priority
           loading="lazy"
           src={urlFor(image).url()}
           alt={image?.alt ? image.alt : "project Image"}

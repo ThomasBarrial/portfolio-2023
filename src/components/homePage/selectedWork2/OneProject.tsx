@@ -50,7 +50,6 @@ function OneProject({ project, index, key }: IProps) {
             }  w-full`}
           >
             <Image
-              loading="lazy"
               className={`group transform object-cover opacity-100 transition duration-700 ease-out hover:scale-[97%] group-hover:opacity-100 lg:opacity-80`}
               src={urlFor(project.mainImage).url()}
               alt={
@@ -58,8 +57,8 @@ function OneProject({ project, index, key }: IProps) {
                   ? project.mainImage.alt
                   : "Main project Image"
               }
-              width={1700}
-              height={1000}
+              width={1500}
+              height={900}
             />
           </div>
         </AnimUp>

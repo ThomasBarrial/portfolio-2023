@@ -11,6 +11,7 @@ import PageTransition from "@/components/layout/PageTransition";
 import Header from "@/components/work/oneWork/Header";
 import Footer from "@/components/homePage/footer/Footer";
 import StructuredData from "@/components/layout/StructuredDataProject";
+import urlFor from "../../../../sanity/lib/urlFor";
 
 const clientFetch = cache(client.fetch.bind(client));
 
@@ -27,19 +28,17 @@ export async function generateMetadata({ params }: Props) {
     slug: params.slug,
   });
 
+  const techno = Array.isArray(project.techno)
+    ? project.techno.map((item) => item.title).join(", ") // Map pour extraire les titres et les joindre
+    : "";
+
   return {
-    title: `${project.title} – Thomas Barrial`,
-    description:
-      project.name ||
-      `Discover ${
-        project.title
-      }, a project by Thomas Barrial focusing on ${project.techno?.join(
-        ", "
-      )}.`,
+    title: `${project.name} – Thomas Barrial`,
+    description: `Discover ${project.title}, a project by Thomas Barrial focusing on ${techno}.`,
     openGraph: {
       images: [
         {
-          url: project.mainImage || "/images/og-default.jpg",
+          url: urlFor(project.mainImage).url(),
           alt: project.title,
         },
       ],
