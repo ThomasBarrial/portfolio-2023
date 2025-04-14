@@ -14,6 +14,7 @@ import Footer from "@/components/homePage/footer/Footer";
 import SelectedWork2 from "@/components/homePage/selectedWork2/SelectedWork2";
 import Experience from "@/components/homePage/experience/Experience";
 import globalMetadata from "../../utils/metaData";
+import StructuredData from "@/components/layout/StructuredData";
 
 const clientFetch = cache(client.fetch.bind(client));
 
@@ -28,26 +29,7 @@ export default async function Home() {
 
   return (
     <main>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Person",
-            name: "Thomas Barrial",
-            url: "https://www.thomasbarrial.dev/",
-            sameAs: [
-              "https://github.com/thomasbarrial",
-              "http://linkedin.com/in/thomas-barrial-758a6a130/",
-            ],
-            jobTitle: "Frontend Developer & UI/UX Designer",
-            worksFor: {
-              "@type": "Organization",
-              name: "Freelance",
-            },
-          }),
-        }}
-      ></script>
+      <StructuredData />
       <PageTransition>
         <Header />
         <Services services={services} />

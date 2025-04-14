@@ -54,6 +54,13 @@ const globalMetadata: Metadata = {
     ],
     type: "website",
   },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "https://www.thomasbarrial.dev/",
+  },
 };
 
 export default globalMetadata;

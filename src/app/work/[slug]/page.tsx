@@ -10,7 +10,7 @@ import { Project } from "../../../../utils/types/types";
 import PageTransition from "@/components/layout/PageTransition";
 import Header from "@/components/work/oneWork/Header";
 import Footer from "@/components/homePage/footer/Footer";
-import globalMetadata from "../../../../utils/metaData";
+import StructuredData from "@/components/layout/StructuredDataProject";
 
 const clientFetch = cache(client.fetch.bind(client));
 
@@ -22,7 +22,30 @@ type Props = {
   };
 };
 
-export const metadata = globalMetadata;
+export async function generateMetadata({ params }: Props) {
+  const project: Project = await client.fetch(getOneProject, {
+    slug: params.slug,
+  });
+
+  return {
+    title: `${project.title} – Thomas Barrial`,
+    description:
+      project.name ||
+      `Discover ${
+        project.title
+      }, a project by Thomas Barrial focusing on ${project.techno?.join(
+        ", "
+      )}.`,
+    openGraph: {
+      images: [
+        {
+          url: project.mainImage || "/images/og-default.jpg",
+          alt: project.title,
+        },
+      ],
+    },
+  };
+}
 
 export async function generateStaticParams() {
   const slugs: Slug[] = await client.fetch(getProjectsSlug);
@@ -39,6 +62,7 @@ async function page({ params: { slug } }: Props) {
 
   return (
     <PageTransition value={"WORK"}>
+      <StructuredData project={project} />
       <Header project={project} />
       <Footer socialMedia={socialMedia} />
     </PageTransition>

@@ -104,7 +104,6 @@ function OneProject({
         } h-[220px]  max-h-[600px] w-full max-w-5xl transform cursor-pointer overflow-hidden duration-700 phone:h-[400px] md:h-[80%] lg:w-10/12 `}
       >
         <Image
-          priority
           loading="lazy"
           className={`object-cover`}
           src={urlFor(project.mainImage).url()}

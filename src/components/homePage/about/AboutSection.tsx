@@ -21,7 +21,6 @@ function AboutSection() {
             src="/image/aboutMontagne.webp"
             fill
             alt="AboutMe"
-            priority
             loading="lazy"
           />
         </motion.div>

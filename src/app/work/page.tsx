@@ -14,7 +14,12 @@ const clientFetch = cache(client.fetch.bind(client));
 
 export const revalidate = 60;
 
-export const metadata = globalMetadata;
+export const metadata = {
+  ...globalMetadata,
+  title: "My Work – Thomas Barrial",
+  description:
+    "Discover selected web development and UI/UX design projects by Thomas Barrial. Built with modern frameworks like React, Next.js, and Three.js.",
+};
 
 async function page() {
   const projects = await clientFetch(getAllProject);
@@ -24,8 +29,6 @@ async function page() {
   return (
     <main>
       <PageTransition>
-        {/* <Indicator projects={projects} /> */}
-        {/* <ProjectList projects={projects} socialMedia={socialMedia} /> */}
         <List projects={projects} categories={categories} />
         <Footer socialMedia={socialMedia} />
       </PageTransition>

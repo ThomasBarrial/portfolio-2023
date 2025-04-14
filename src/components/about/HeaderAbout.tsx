@@ -34,7 +34,6 @@ function HeaderAbout() {
           alt="Description of image"
           width={800}
           height={200}
-          loading="lazy"
         />
       )}
       <div
@@ -43,6 +42,7 @@ function HeaderAbout() {
       >
         <div className="flex h-full w-full max-w-[150rem] flex-col  justify-between px-5 pt-20 lg:flex-row lg:px-10">
           <div className="flex h-full w-full flex-col justify-end pb-10 pr-20 lg:w-1/2 lg:justify-between">
+            <h1 className="hidden">About me</h1>
             <div className="max-w-[38rem] -translate-x-5 scale-95">
               <WordAnim word="THOMAS" isAnim={inView} />
               <WordAnim word="BARRIAL" isAnim={inView} />
