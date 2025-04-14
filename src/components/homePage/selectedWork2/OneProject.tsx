@@ -5,6 +5,7 @@ import { Project } from "../../../../utils/types/types";
 import urlFor from "../../../../sanity/lib/urlFor";
 import { useInView } from "react-intersection-observer";
 import AnimUp from "@/components/animated/AnimUp";
+import Cursor from "@/components/Cursor";
 
 interface IProps {
   project: Project;
@@ -23,8 +24,12 @@ function OneProject({ project, index, key }: IProps) {
       ref={ref}
       className={`${
         index % 3 === 0 ? "w-full" : "w-full lg:w-1/2"
-      } group flex cursor-pointer flex-col items-center border border-white border-opacity-20 p-4 lg:p-10`}
+      } group flex flex-col items-center border border-white border-opacity-20 p-4 lg:p-10`}
     >
+      <Cursor
+        className={`hidden group-hover:flex group-hover:bg-white`}
+        name={project.name}
+      />
       <Link href={`/work/${project.slug.current}`} key={key}>
         <AnimUp inView={inView} duration={1.2} className="flex justify-between">
           <h2 className="mb-2 font-Antonio text-xl font-bold uppercase">
@@ -39,23 +44,23 @@ function OneProject({ project, index, key }: IProps) {
           />
         </AnimUp>
         <AnimUp inView={inView} duration={2}>
-          {/* <div
+          <div
             className={`relative overflow-hidden ${
               inView ? "scale-100" : "scale-20"
             }  w-full`}
-          > */}
-          <Image
-            className={`transform  object-cover opacity-100 transition duration-700 ease-out hover:scale-[97%] group-hover:opacity-100 lg:opacity-80`}
-            src={urlFor(project.mainImage).url()}
-            alt={
-              project.mainImage?.alt
-                ? project.mainImage.alt
-                : "Main project Image"
-            }
-            width={1700}
-            height={1000}
-          />
-          {/* </div> */}
+          >
+            <Image
+              className={`group transform object-cover opacity-100 transition duration-700 ease-out hover:scale-[97%] group-hover:opacity-100 lg:opacity-80`}
+              src={urlFor(project.mainImage).url()}
+              alt={
+                project.mainImage?.alt
+                  ? project.mainImage.alt
+                  : "Main project Image"
+              }
+              width={1700}
+              height={1000}
+            />
+          </div>
         </AnimUp>
 
         <div className="mt-2 flex justify-between space-x-2">

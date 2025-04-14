@@ -6,6 +6,8 @@ import LayoutSection from "../layout/navbar/utils/LayoutSection";
 import WordAnim from "../animated/WordAnim";
 import AnimUp from "../animated/AnimUp";
 import TextTileComp from "./TextTileComp";
+import Cursor from "../Cursor";
+import Image from "next/image";
 
 function HeaderAbout() {
   const [ref, inView] = useInView({ triggerOnce: true });
@@ -13,23 +15,33 @@ function HeaderAbout() {
   return (
     <div className="h-screen overflow-hidden">
       {inView && (
-        <div className="h-screen">
+        <div className="group h-screen cursor-none">
           <Canvas
             className="absolute z-0 hidden animate-fadeIn lg:flex"
             performance={{ min: 0.1 }}
           >
             <ProfilPic />
           </Canvas>
+          <Cursor className="hidden group-hover:flex" />
         </div>
+      )}
+
+      {inView && (
+        <Image
+          priority
+          className="translate-x-[10%]animate-fadeIn absolute right-0 top-0 z-10 flex lg:hidden"
+          src="/image/thomasBarrial.webp"
+          alt="Description of image"
+          width={800}
+          height={200}
+        />
       )}
       <div
         ref={ref}
-        className="pointer-events-none absolute left-0 top-0 z-20 flex h-screen w-full flex-col  items-center justify-center  font-Antonio"
+        className="pointer-events-none absolute left-0 top-0 z-20 flex h-screen w-full flex-col  items-center justify-center font-Antonio"
       >
         <div className="flex h-full w-full max-w-[150rem] flex-col  justify-between px-5 pt-20 lg:flex-row lg:px-10">
-          {/* <h2 className="absolute left-1/2 top-1/2 hidden -translate-y-[80%] text-center  font-Humane text-[10rem] leading-[0.8] opacity-[2%] md:text-[25rem] lg:flex lg:translate-x-[22%]">{`THOMAS`}</h2>
-          <h2 className="absolute left-1/2 top-1/2 hidden translate-y-[10%] text-center font-Humane  text-[10rem] leading-[0.8] opacity-[2%] md:text-[25rem] lg:flex lg:translate-x-1/4">{`BARRIAL`}</h2> */}
-          <div className="flex w-full flex-col justify-between pb-10 pr-20 lg:w-1/2">
+          <div className="flex h-full w-full flex-col justify-end pb-10 pr-20 lg:w-1/2 lg:justify-between">
             <div className="max-w-[38rem] -translate-x-5 scale-95">
               <WordAnim word="THOMAS" isAnim={inView} />
               <WordAnim word="BARRIAL" isAnim={inView} />

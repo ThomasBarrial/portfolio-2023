@@ -16,5 +16,10 @@ export default defineType({
       title: "Description",
       type: "string",
     }),
+    defineField({
+      name: "order",
+      title: "Order",
+      type: "number",
+    }),
   ],
 });

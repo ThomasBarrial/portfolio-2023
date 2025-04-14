@@ -109,7 +109,7 @@ function List({ projects, categories }: IProps) {
             })}
           </div>
         ) : (
-          <div className="mt-10 flex w-full animate-fadeIn flex-col flex-wrap md:mt-32 lg:mt-10 lg:flex-row">
+          <div className="mt-10 flex w-full animate-fadeIn cursor-none flex-col flex-wrap md:mt-32 lg:mt-10 lg:flex-row">
             {filteredProjects.map((project: Project, index) => {
               return (
                 <OneProject

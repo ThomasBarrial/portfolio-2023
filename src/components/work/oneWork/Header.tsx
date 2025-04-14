@@ -1,17 +1,10 @@
 "use client";
 import React from "react";
 import { Project } from "../../../../utils/types/types";
-import LayoutSection from "@/components/layout/navbar/utils/LayoutSection";
-import { useScroll, motion } from "framer-motion";
-import useParallax from "../../../../utils/useParallax";
-import WordAnim from "@/components/animated/WordAnim";
+import { useScroll } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import Image from "next/image";
-import urlFor from "../../../../sanity/lib/urlFor";
-import HoverProjectDetails from "@/components/homePage/selectedWork/HoverProjectDetails";
 import AnimUp from "@/components/animated/AnimUp";
 import ProjectImage from "./ProjectImage";
-import Link from "next/link";
 
 function Header({ project }: { project: Project }) {
   const { scrollYProgress } = useScroll();

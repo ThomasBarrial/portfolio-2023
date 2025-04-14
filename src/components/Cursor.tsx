@@ -3,7 +3,13 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-function Cursor() {
+function Cursor({
+  className,
+  name = "HOVER ME",
+}: {
+  className?: string;
+  name?: string;
+}) {
   const [mousePosition, setMousePosition] = useState({
     x: 0,
     y: 0,
@@ -32,12 +38,12 @@ function Cursor() {
   };
   return (
     <motion.div
-      className="pointer-events-none fixed left-0 top-0 z-50 h-[50px] w-[50px] cursor-none rounded-full border border-white"
+      className={`pointer-events-none fixed left-0 top-0 z-50 h-[50px] w-[50px] cursor-none rounded-full border border-white ${className} mix-blend-difference`}
       variants={variants}
       animate={"default"}
     >
-      <h3 className="fixed w-[150px] translate-x-14 translate-y-2 font-Antonio font-bold">
-        HOVER ME
+      <h3 className="fixed w-[150px] translate-x-14 translate-y-2 font-Antonio font-bold ">
+        {name}
       </h3>
     </motion.div>
   );
