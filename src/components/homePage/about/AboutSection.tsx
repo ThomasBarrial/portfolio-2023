@@ -22,6 +22,7 @@ function AboutSection() {
             fill
             alt="AboutMe"
             priority
+            loading="lazy"
           />
         </motion.div>
 

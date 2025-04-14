@@ -50,6 +50,8 @@ function OneProject({ project, index, key }: IProps) {
             }  w-full`}
           >
             <Image
+              priority
+              loading="lazy"
               className={`group transform object-cover opacity-100 transition duration-700 ease-out hover:scale-[97%] group-hover:opacity-100 lg:opacity-80`}
               src={urlFor(project.mainImage).url()}
               alt={

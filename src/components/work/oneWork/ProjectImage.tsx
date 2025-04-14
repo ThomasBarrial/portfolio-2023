@@ -10,7 +10,6 @@ function ProjectImage({ image }: { image: SanityImage }) {
     threshold: 0.5,
   });
 
-  // console.log(inView);
   return (
     <div ref={ref}>
       <div
@@ -19,7 +18,8 @@ function ProjectImage({ image }: { image: SanityImage }) {
         }  transform transition duration-700 `}
       >
         <Image
-          className={``}
+          priority
+          loading="lazy"
           src={urlFor(image).url()}
           alt={image?.alt ? image.alt : "project Image"}
           width={1700}

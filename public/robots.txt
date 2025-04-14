@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.thomasbarrial.dev/
+
+# Sitemaps
+Sitemap: https://www.thomasbarrial.dev/sitemap.xml

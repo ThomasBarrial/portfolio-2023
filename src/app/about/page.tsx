@@ -5,10 +5,13 @@ import { cache } from "react";
 import { client } from "../../../sanity/lib/client";
 import { getAllSocialMedia } from "../../../sanity/lib/queries";
 import Footer from "@/components/homePage/footer/Footer";
+import globalMetadata from "../../../utils/metaData";
 
 const clientFetch = cache(client.fetch.bind(client));
 
 export const revalidate = 60;
+
+export const metadata = globalMetadata;
 
 export default async function page() {
   const socialMedia = await clientFetch(getAllSocialMedia);

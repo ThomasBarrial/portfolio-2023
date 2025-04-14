@@ -34,6 +34,7 @@ function HeaderAbout() {
           alt="Description of image"
           width={800}
           height={200}
+          loading="lazy"
         />
       )}
       <div

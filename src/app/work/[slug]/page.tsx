@@ -10,6 +10,7 @@ import { Project } from "../../../../utils/types/types";
 import PageTransition from "@/components/layout/PageTransition";
 import Header from "@/components/work/oneWork/Header";
 import Footer from "@/components/homePage/footer/Footer";
+import globalMetadata from "../../../../utils/metaData";
 
 const clientFetch = cache(client.fetch.bind(client));
 
@@ -20,6 +21,8 @@ type Props = {
     slug: string;
   };
 };
+
+export const metadata = globalMetadata;
 
 export async function generateStaticParams() {
   const slugs: Slug[] = await client.fetch(getProjectsSlug);
