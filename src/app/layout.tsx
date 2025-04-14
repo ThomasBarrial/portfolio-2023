@@ -5,8 +5,7 @@ import ReduxProvider from "@/store/ReduxProvider";
 import localFont from "next/font/local";
 import Loading from "@/components/layout/Loading";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import SmoothScrolling from "@/components/layout/LenisScrollProvider";
-import Lenis from "@studio-freight/lenis";
+import { Analytics } from "@vercel/analytics/react";
 import LenisScrollProvider from "@/components/layout/LenisScrollProvider";
 
 export const metadata = {
@@ -37,6 +36,7 @@ export default function RootLayout({
           <LenisScrollProvider>
             <ProgressBar />
             <Navbar />
+            <Analytics />
             <Loading />
             {children}
             <SpeedInsights />
