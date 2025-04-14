@@ -10,9 +10,12 @@ function AboutSection() {
   const y = useParallax(scrollYProgress, -1400, 250);
 
   return (
-    <LayoutSection className="mt-20 flex items-center justify-center font-Antonio">
+    <LayoutSection className="mt-20 flex h-screen items-center justify-center font-Antonio">
       <div className="relative h-[90%] w-full overflow-hidden">
-        <motion.div style={{ y }} className={`w-[105% relative h-[105%] `}>
+        <motion.div
+          style={{ y }}
+          className={`relative h-[110%] w-[105%] lg:w-[105%] `}
+        >
           <Image
             className={`object-cover `}
             src="/image/aboutMontagne.webp"

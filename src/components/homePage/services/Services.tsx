@@ -27,7 +27,7 @@ function Services({ services }: IProps) {
   }, [services]);
 
   return (
-    <LayoutSection className="flex flex-col items-center justify-center  lg:flex-row-reverse">
+    <LayoutSection className="flex flex-col items-center justify-center  py-20 lg:flex-row-reverse lg:py-0">
       <div ref={ref}>
         <div className="flex h-full w-full flex-col items-start justify-start  font-Antonio md:flex-row">
           <div className="md:w-4/12">
@@ -36,19 +36,14 @@ function Services({ services }: IProps) {
             </AnimUp>
           </div>
 
-          <div className=" flex w-full flex-col space-y-10 md:w-8/12">
+          <div className=" mt-10 flex w-full flex-col space-y-10 md:w-8/12">
             {sortedArray.map((s, index) => (
-              <AnimUp
-                inView={inView}
-                duration={1.5}
-                // className={`${index === 0 ? "mt-0" : "mt-10"}`}
-                key={s.name}
-              >
+              <AnimUp inView={inView} duration={1.5} className="" key={s.name}>
                 <div className={`mb-5 h-[1px] w-full bg-white lg:flex`} />
                 <div className="flex items-center justify-between">
                   <h3 className="text-xl lg:text-2xl">{s.name}</h3>
                 </div>
-                <p className="mt-5">{s.description}</p>
+                <p className="ml-10 mt-5">{s.description}</p>
               </AnimUp>
             ))}
           </div>

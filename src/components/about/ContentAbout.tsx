@@ -82,7 +82,7 @@ function ContentAbout() {
           </div>
         </div>
       </div>
-      <AnimUp inView={inView} duration={2} className="w-6/12 pt-32">
+      <AnimUp inView={inView} duration={2} className="w-full pt-32 lg:w-6/12">
         {`My passion for technology 
   caught up with me. Since then, I have been training in web
   development, and my current goal is to create websites that reflect

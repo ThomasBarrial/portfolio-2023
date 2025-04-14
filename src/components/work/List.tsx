@@ -41,8 +41,8 @@ function List({ projects, categories }: IProps) {
   };
 
   return (
-    <div className="mx-auto w-full max-w-[150rem]  px-5 lg:px-10 lg:pt-20">
-      <div className="md:pt-18 sticky top-0 z-10 flex flex-col justify-between pt-16 mix-blend-difference md:top-10 md:flex-row  md:items-end">
+    <div className="mx-auto w-full max-w-[150rem]  px-0 lg:px-10 lg:pt-20">
+      <div className="md:pt-18 sticky top-0 z-10 flex flex-col justify-between px-5 pt-16 mix-blend-difference md:top-10  md:flex-row md:items-end">
         <div className="flex w-full flex-col items-end justify-between space-x-5 md:flex-row  lg:items-center ">
           <div className="relative mb-4 flex w-20 items-center justify-between mix-blend-difference ">
             <div

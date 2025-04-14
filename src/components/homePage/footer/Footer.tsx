@@ -44,10 +44,8 @@ function Footer({ socialMedia }: IProps) {
         </AnimUp>
       </div>
       <div className="absolute bottom-10 flex w-full flex-col-reverse justify-between px-5 font-Antonio md:flex-row lg:px-10 ">
-        <AnimUp className="mt-5 md:mt-0" inView={inView}>
-          <div className="flex">
-            <p>@edition2025/develop & design by Thomas barrial</p>
-          </div>
+        <AnimUp className="mt-5 text-center md:mt-0" inView={inView}>
+          <p>@edition2025/develop & design by Thomas barrial</p>
         </AnimUp>
         <AnimUp inView={inView}>
           <div className="flex justify-between space-x-5  underline">

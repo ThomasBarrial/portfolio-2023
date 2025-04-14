@@ -7,7 +7,7 @@ interface IProps {
 function H1({ title, className }: IProps) {
   return (
     <h1
-      className={`${className} font-Humane text-[4rem] leading-[0.75] phone:text-[6rem] md:text-[8rem]`}
+      className={`${className} font-Humane text-[6rem] leading-[0.75] tracking-wide phone:text-[6rem] md:text-[8rem] md:tracking-normal`}
     >
       {title}
     </h1>
