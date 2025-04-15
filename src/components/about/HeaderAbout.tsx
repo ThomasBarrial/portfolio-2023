@@ -45,8 +45,8 @@ function HeaderAbout() {
               <WordAnim word="THOMAS" isAnim={inView} />
               <WordAnim word="BARRIAL" isAnim={inView} />
             </div>
-            <div className="w-10/12">
-              <div className="flex w-full flex-col justify-between space-y-3 py-5 lg:flex-row lg:space-y-0">
+            <div className="w-full">
+              <div className="flex w-full flex-col justify-between space-y-3 py-5 lg:flex-row lg:space-x-5 lg:space-y-0">
                 <TextTileComp
                   inView={inView}
                   title="Location"

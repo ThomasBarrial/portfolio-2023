@@ -16,7 +16,7 @@ function WordAnim({
   const wordArray = word.split("");
 
   return (
-    <div className="flex">
+    <div className="flex" translate="no">
       {wordArray.map((letter, index) => {
         return (
           <div key={index} className={`overflow-hidden ${marge}`}>

@@ -20,7 +20,7 @@ function MobileMenuItem({ isOpen, setIsOpen, item, duration }: IProps) {
     <div style={styles}>
       <Link
         onClick={() => setIsOpen(false)}
-        className={`ml-10`}
+        className={`ml-5`}
         href={item.link}
       >
         {item.name}

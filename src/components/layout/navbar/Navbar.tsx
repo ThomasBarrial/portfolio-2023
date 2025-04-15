@@ -24,8 +24,8 @@ function Navbar() {
             );
           })}
         </div>
-        <button className="flex md:hidden" onClick={() => setIsOpen(true)}>
-          MENU
+        <button className="flex md:hidden" onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? "CLOSE" : "MENU"}
         </button>
       </div>
       <MobileMenu isOpen={isOpen} setIsOpen={setIsOpen} />

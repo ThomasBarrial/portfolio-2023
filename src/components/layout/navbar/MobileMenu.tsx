@@ -13,18 +13,11 @@ interface IProps {
 function MobileMenu({ isOpen, setIsOpen }: IProps) {
   return (
     <div
-      className={`fixed z-40 h-screen w-full bg-background transition duration-700 ease-in-out ${
+      className={`fixed z-40 h-screen w-full bg-background pt-14 transition duration-700 ease-in-out ${
         isOpen ? "translate-x-0" : "translate-x-full"
       }`}
     >
-      <button
-        onClick={() => setIsOpen(false)}
-        className="flex w-full justify-end p-5 font-Antonio"
-      >
-        <span>CLOSE</span>
-      </button>
-
-      <div className=" flex flex-col items-start  pt-10 font-Humane text-[10rem] leading-[0.80]">
+      <div className="flex flex-col items-start pt-10 font-Humane text-[10rem] leading-[0.80]">
         <>
           {navBarLinks.map((item, index) => {
             return (
