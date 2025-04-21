@@ -12,7 +12,7 @@ function Header() {
   });
 
   return (
-    <div className="top-0 flex h-screen w-full flex-col lg:sticky">
+    <div className="top-0 flex h-screen w-full flex-col  lg:sticky">
       <div style={{ width: "100%", height: "100%" }}>
         <Canvas performance={{ min: 0.1 }} gl={{ antialias: false }}>
           <HeaderBackground />

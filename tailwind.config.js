@@ -9,7 +9,6 @@ module.exports = {
     extend: {
       colors: {
         background: "#111111",
-        background2: "#181818",
       },
       fontFamily: {
         Humane: ["var(--font-Humane)"],

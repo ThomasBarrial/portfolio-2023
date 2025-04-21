@@ -19,9 +19,9 @@ function Footer({ socialMedia }: IProps) {
   return (
     <div
       ref={ref}
-      className="flex w-full flex-col-reverse items-center justify-center px-5 py-10 font-Antonio md:flex-row lg:items-start lg:justify-between lg:px-10"
+      className="flex w-full flex-col-reverse items-center justify-center  px-5 pb-5 pt-10 font-Antonio md:flex-row lg:items-start lg:justify-between lg:px-10"
     >
-      <AnimUp className="mt-5 text-center md:mt-0" inView={inView}>
+      <AnimUp className="mt-10 text-center md:mt-0" inView={inView}>
         <p>@edition2023/develop & design by Thomas barrial</p>
       </AnimUp>
       <AnimUp inView={inView}>

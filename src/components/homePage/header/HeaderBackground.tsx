@@ -9,7 +9,7 @@ extend({
     {
       uTime: 0,
       uColorStart: new THREE.Color("#ffffff"),
-      uColorEnd: new THREE.Color("#000000"),
+      uColorEnd: new THREE.Color("#111111"),
     },
     `
     varying vec2 vUv;
@@ -137,7 +137,7 @@ extend({
 
 function HeaderBackground() {
   const shaderRef = useRef<any>();
-  const { viewport } = useThree();
+  const { viewport, scene } = useThree();
 
   useFrame((state, delta) => {
     shaderRef.current.uTime += delta * 0.2;
