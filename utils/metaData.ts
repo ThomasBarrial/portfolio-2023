@@ -46,7 +46,7 @@ const globalMetadata: Metadata = {
     siteName: "Thomas Barrial – Frontend Developer & UI/UX Designer Freelance",
     images: [
       {
-        url: "/image/thomasBarrial.webp",
+        url: "/image/thumbnail-folio.png",
         width: 1200,
         height: 630,
         alt: "Thomas Barrial – Frontend Developer & UI/UX Designer Freelance",
