@@ -28,7 +28,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" />
         <link rel="manifest" href="/site.webmanifest" />
-        <meta name="theme-color" content="#000000" />
+        <meta name="theme-color" content="#111111" />
         <link rel="canonical" href="https://wwww.thomasbarrial.dev" />
       </head>
       <body className={` bg-background text-white ${humane.variable} `}>

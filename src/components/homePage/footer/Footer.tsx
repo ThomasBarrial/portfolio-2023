@@ -43,12 +43,12 @@ function Footer({ socialMedia }: IProps) {
           </Link>
         </AnimUp>
       </div>
-      <div className="absolute bottom-10 flex w-full flex-col-reverse justify-between px-5 font-Antonio md:flex-row lg:px-10 ">
-        <AnimUp className="mt-5 text-center md:mt-0" inView={inView}>
+      <div className="absolute bottom-5 flex w-full flex-col-reverse items-center justify-center px-5 font-Antonio md:flex-row md:justify-between lg:px-10">
+        <AnimUp className="mt-8 text-center md:mt-0" inView={inView}>
           <p>@edition2025/develop & design by Thomas barrial</p>
         </AnimUp>
         <AnimUp inView={inView}>
-          <div className="flex justify-between space-x-5  underline">
+          <div className="flex w-8/12 justify-between  space-x-5 underline md:w-full">
             {socialMedia.map((item) => {
               return (
                 <a className="" href={item.link} key={item._id}>
