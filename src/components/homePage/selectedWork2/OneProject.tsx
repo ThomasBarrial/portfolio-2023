@@ -10,7 +10,7 @@ import Cursor from "@/components/Cursor";
 interface IProps {
   project: Project;
   index: number;
-  key: string;
+  key: number | string;
 }
 
 function OneProject({ project, index, key }: IProps) {

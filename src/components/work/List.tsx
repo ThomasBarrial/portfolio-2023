@@ -115,7 +115,7 @@ function List({ projects, categories }: IProps) {
                 <OneProject
                   index={index}
                   project={project}
-                  key={project.name}
+                  key={`${project._id}-${categorySelected._id}`}
                 />
               );
             })}
