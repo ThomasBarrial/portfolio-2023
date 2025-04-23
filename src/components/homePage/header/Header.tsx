@@ -23,7 +23,7 @@ function Header() {
         ref={ref}
         className="pointer-events-none absolute left-1/2 z-10 flex h-screen w-full max-w-[150rem] -translate-x-1/2 flex-col items-center justify-end px-5 font-Humane mix-blend-difference lg:px-10"
       >
-        <div className="mb-32 w-full md:mb-10">
+        <div className="mb-24 w-full md:mb-10">
           <AnimUp inView={inView} duration={2.5}>
             <h2 className="mb-2 font-Antonio  text-lg md:text-xl lg:text-2xl">
               WELCOME ON MY PORTFOLIO

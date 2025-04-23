@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useMemo, useState } from "react";
 import { Category, Project } from "../../../utils/types/types";
-import H1 from "../global/titles/H1";
 import OneProject from "../homePage/selectedWork2/OneProject";
 import Image from "next/image";
 import ProjectBulletList from "./ProjectBulletList";
@@ -97,7 +96,7 @@ function List({ projects, categories }: IProps) {
 
       <div>
         {isBulletList ? (
-          <div className=" mt-5 flex min-h-screen w-full animate-fadeIn flex-col space-y-10 pb-52 pt-10">
+          <div className=" mt-5 flex min-h-screen w-full animate-fadeIn flex-col space-y-10 px-5 pb-52 pt-10">
             {filteredProjects.map((project: Project, index) => {
               return (
                 <ProjectBulletList
