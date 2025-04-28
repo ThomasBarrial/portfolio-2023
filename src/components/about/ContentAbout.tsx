@@ -21,14 +21,14 @@ function ContentAbout() {
     },
     {
       name: "CREATIVE DEV",
-      stacks: ["ReactThreeFiber", "ThreeJS", "FramerMotion"],
+      stacks: ["ReactThreeFiber", "ThreeJS", "FramerMotion", "WebGL"],
     },
     {
       name: "CONTENT MANAGEMENT",
       stacks: ["Firebase", "Sanity"],
     },
     {
-      name: "CONTENT MANAGEMENT",
+      name: "DESIGN & 3D",
       stacks: ["Figma", "Spline.io"],
     },
   ];
