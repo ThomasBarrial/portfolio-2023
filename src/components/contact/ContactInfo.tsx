@@ -19,17 +19,17 @@ function ContactInfo({ socialMedia }: IProps) {
       className="flex w-full flex-col font-Antonio  md:w-1/4 md:pl-10  lg:pl-20 "
     >
       <div>
-        <AnimUp duration={2} inView={inView}>
+        <AnimUp duration={1.2} inView={inView}>
           <h3 className="bold text-xl  opacity-50">CONTACT DETAILS</h3>
         </AnimUp>
         <div className="mt-5 flex flex-col space-y-1">
-          <AnimUp duration={2.2} inView={inView}>
+          <AnimUp duration={1.5} inView={inView}>
             <p>+33 07 78 02 28 23</p>
           </AnimUp>
-          <AnimUp duration={2.4} inView={inView}>
+          <AnimUp duration={1.8} inView={inView}>
             <p>thomas@gmail.com</p>
           </AnimUp>
-          <AnimUp duration={2.6} inView={inView}>
+          <AnimUp duration={2} inView={inView}>
             <p>Location: France</p>
           </AnimUp>
         </div>
@@ -52,7 +52,7 @@ function ContactInfo({ socialMedia }: IProps) {
         </div>
       </div>
 
-      <TimeZoneComponent />
+      <TimeZoneComponent inView={inView} />
     </div>
   );
 }
