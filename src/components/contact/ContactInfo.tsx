@@ -24,13 +24,13 @@ function ContactInfo({ socialMedia }: IProps) {
         </AnimUp>
         <div className="mt-5 flex flex-col space-y-1">
           <AnimUp duration={1.5} inView={inView}>
-            <p>+33 07 78 02 28 23</p>
+            <p>438-365-2289</p>
           </AnimUp>
           <AnimUp duration={1.8} inView={inView}>
-            <p>thomas@gmail.com</p>
+            <p>thomas@barrial.fr</p>
           </AnimUp>
           <AnimUp duration={2} inView={inView}>
-            <p>Location: France</p>
+            <p>Location: Montréal</p>
           </AnimUp>
         </div>
       </div>
