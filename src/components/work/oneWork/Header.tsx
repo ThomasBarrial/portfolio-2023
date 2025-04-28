@@ -6,6 +6,9 @@ import { useInView } from "react-intersection-observer";
 import AnimUp from "@/components/animated/AnimUp";
 import ProjectImage from "./ProjectImage";
 import WordAnim from "@/components/animated/WordAnim";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
+import ComeUpText from "@/components/animated/ComeUpText";
 
 function Header({ project }: { project: Project }) {
   const { scrollYProgress } = useScroll();
@@ -13,6 +16,7 @@ function Header({ project }: { project: Project }) {
     triggerOnce: true,
     threshold: 0.2,
   });
+  const router = useRouter();
   // const y = useParallax(scrollYProgress, 0, 100);
   // const scale = useParallax(scrollYProgress, 1, 0.9);
   // const opacity = useParallax(scrollYProgress, 1, 0);
@@ -25,8 +29,6 @@ function Header({ project }: { project: Project }) {
   };
 
   const splitedName = project.name.split("");
-  console.log(splitedName);
-  const imagesArray = [1, 2, 3, 4, 5];
 
   return (
     <div
@@ -38,13 +40,35 @@ function Header({ project }: { project: Project }) {
       <div className="justify-centers relative flex w-full max-w-[150rem] flex-col items-start  px-0 pb-10 pt-20 font-Antonio lg:flex-row lg:px-10">
         <div
           ref={ref}
-          className="z-10 flex w-full flex-col justify-between px-5   lg:sticky lg:top-[55%] lg:min-h-[80vh] lg:w-[22%] lg:-translate-y-1/2 lg:px-0 lg:pr-10"
+          className="z-10 flex w-full flex-col justify-between px-5  lg:sticky lg:top-[50%] lg:min-h-[80vh] lg:w-[22%] lg:-translate-y-1/2 lg:px-0 lg:pr-10"
           style={{
             color: project.secondaryColor,
           }}
         >
-          <div className="flex  flex-col justify-between ">
-            <div className="flex flex-wrap ">
+          <div className="flex  flex-col justify-between">
+            <button
+              type="button"
+              onClick={() => router.push("/work")}
+              className="group"
+            >
+              <AnimUp
+                inView={inView}
+                duration={1.5}
+                delay={1.2}
+                className=" flex space-x-2 text-base"
+              >
+                <Image
+                  className="rotate-[150deg] transform duration-500 group-hover:rotate-[185deg]"
+                  src="/Arrow.svg"
+                  alt="arrow"
+                  width={20}
+                  height={20}
+                />
+                <ComeUpText text={"BACK TO WORKS"} />
+              </AnimUp>
+            </button>
+
+            <div className="mt-10 flex flex-wrap ">
               {splitedName.map((word, index) => {
                 return (
                   <div key={index} className="font-Humane ">
@@ -152,13 +176,13 @@ function Header({ project }: { project: Project }) {
             <p>{project.description}</p>
           </AnimUp>
         </div>
-        <div className="w-full lg:w-[70%]">
+        <div className="w-full px-4 lg:w-[70%] lg:px-0 lg:pb-80">
           {project.gallery && (
             <AnimUp
               inView={inView}
               duration={1.5}
               delay={1.2}
-              className="flex w-full flex-col items-center justify-center space-y-5 pt-10 lg:space-y-10 lg:pb-80 lg:pt-0"
+              className="flex w-full flex-col items-center justify-center space-y-5 pt-10 lg:space-y-10  lg:pt-0"
             >
               {project.gallery.map((image, index) => (
                 <div key={index}>
@@ -167,6 +191,27 @@ function Header({ project }: { project: Project }) {
               ))}
             </AnimUp>
           )}
+          <button
+            type="button"
+            onClick={() => router.push("/work")}
+            className="group ml-5 mt-5 lg:ml-0 lg:mt-10"
+          >
+            <AnimUp
+              inView={inView}
+              duration={1.5}
+              delay={1.2}
+              className=" flex space-x-2 text-base"
+            >
+              <Image
+                className="rotate-[150deg] transform duration-500 group-hover:rotate-[185deg]"
+                src="/Arrow.svg"
+                alt="arrow"
+                width={20}
+                height={20}
+              />
+              <ComeUpText text={"BACK TO WORKS"} />
+            </AnimUp>
+          </button>
         </div>
         <div className="hidden w-full flex-col justify-between lg:sticky  lg:top-1/2 lg:flex lg:min-h-[80vh] lg:w-[25%] lg:-translate-y-1/2 lg:pl-10">
           <AnimUp
